@@ -1,0 +1,84 @@
+.contenedor-principal{
+    background: var(--azul);
+    width: 100%;
+    height: 100vh;
+}
+
+.contenedor{
+    width: 100%;
+    height: 15.5vh;
+    position: relative;
+}
+
+.logo-login{
+    width: 300px;
+    margin-left: 50px;
+    
+}
+
+.row{
+    width: 100%;
+}
+
+.texto{
+    color: var(--blanco);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.necesitas-ayuda{
+    color: var(--azul);
+    font-weight: bold;
+    width: 300px;
+    height: 50px;
+    border-radius: 250px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: var(--blanco);
+}
+
+.necesitas-ayuda:hover {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+/* PARTE LOGIN */
+
+.contenerdor-login{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-login{
+    width: 60%;
+    height: 65vh;
+    background: var(--celeste-oscuro);
+    margin-top: -20px;
+    border-radius: 35px;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-login{
+    height: 61vh;
+}
+.datos-login{
+    width: 100%;
+    padding: 10px 55px 10px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formulario{
+    width: 100%;
+}
+
+

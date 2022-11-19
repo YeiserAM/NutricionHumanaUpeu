@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    position: relative;
+}
+
+:root{
+    --azul:#023052;
+    --amarillo:#F8A900;
+    --amarillo-oscuro: #DA950C;
+    --celeste-oscuro: #145E92;
+    --blanco: #fff;
+    --azul-oscuro: #01223b;
+}
+
+/* #splash-screen {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f2f3f8;
+  }
+  
+  #splash-screen img {
+    margin-left: calc(100vw - 100%);
+    margin-bottom: 30px;
+  }
+  
+  #splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .splash-spinner {
+    animation: rotate 2s linear infinite;
+    margin-left: calc(100vw - 100%);
+    width: 50px;
+    height: 50px;
+  }
+  
+  .splash-spinner .path {
+    stroke: #5d78ff;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+  
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+  
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+   */
