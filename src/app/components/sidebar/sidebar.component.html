@@ -1,2 +1,48 @@
-<p>sidebar works!</p>
-<router-outlet></router-outlet>
+<div class="sidebar-contenedor" [ngClass]="collapsed ? 'sidebar' : 'sidebar-collapsed'">
+  <div class="header-sidebar">
+    <img class="logo-header" src="../../../assets/img/logo-login.png" alt="">
+  </div>
+  <!-- <div class="body-sidebar">
+    <ul class="accordion" id="accordionExample">
+      <li class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+        Accordion Item #1
+      </li>
+      <div id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <li>Aqui</li>
+      </div>
+    </ul>
+  </div> -->
+  <div class="row">
+    <div class="col">
+      <div class="tabs">
+        <ul>
+          <li>Dashboard</li>
+          <li>Perfil</li>
+          <li>
+            <div class="tab">
+              <input type="checkbox" id="chck1">
+              <label class="tab-label" for="chck1">Formalario</label>
+              <div class="tab-content">
+                <li>
+                  Solicitudes
+                </li>
+                <li>
+                  Lista de Solicitudes
+                </li>
+              </div>
+            </div>
+          </li>
+          <li>Reportes</li>
+          <li>Configuracion</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-sidebar">
+  <img src="../../../assets/img/" alt="">
+</div>
+
+<div class="menu-routers" [ngClass]="collapsed ? '' : 'menu-routers-2'">
+  <router-outlet></router-outlet>
+</div>
