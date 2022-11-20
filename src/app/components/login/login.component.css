@@ -81,4 +81,17 @@
     width: 100%;
 }
 
+/* RESPONSIVE */
 
+@media (max-width: 1400px) {
+    .imagen-login{
+        height: 47vh;
+        width: 90%;
+    }
+}
+
+@media (max-width: 900px) {
+    .imagen-login{
+       
+    }
+}

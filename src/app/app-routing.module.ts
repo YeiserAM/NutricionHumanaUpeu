@@ -15,12 +15,10 @@ const dashboard: Routes = [
   {path: 'dashboard', component:DashboardComponent, children:dashboarddata}
 ];
 
-
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'menu', component:SidebarComponent, children:dashboard}
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

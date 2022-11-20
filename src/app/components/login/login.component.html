@@ -36,7 +36,11 @@
           <!-- <span>Bienvenido</span> -->
           <form class="formulario">
             <div class="mb-3">
-              <input 
+              <input
+                [(ngModel)]="user.username"
+                type="email"
+                id="email"
+                name="email"
                 placeholder="Usuario"
                 type="email"
                 class="form-control form-control-lg"
@@ -44,9 +48,12 @@
                 aria-describedby="emailHelp"
               />
             </div>
-            <div class="mb-3 ">
+            <div class="mb-3">
               <input
+              [(ngModel)]="user.password"
+               id="password"
                 placeholder="Contraseña"
+                name="password"
                 type="password"
                 class="form-control form-control-lg"
                 id="exampleInputPassword1"
@@ -60,10 +67,22 @@
                 id="exampleCheck1"
               />
             </div>
+
+            <div>
+              
+            </div>
+
             <div class="d-grid gap-2">
-              <button class="btn btn-primary" (click)="iniciarsesion()" type="button">
+              <input class="button" (click)="logIn()" type="submit" value="Sign In">
+              <!-- <a
+                href="menu"
+                class="btn btn-primary"
+                style="background-color: var(--amarillo)"
+                (click)="logIn()"
+                type="button"
+              >
                 Iniciar Sesion
-              </button>
+              </a> -->
             </div>
           </form>
         </div>
