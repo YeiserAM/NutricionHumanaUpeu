@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class LoginComponent implements OnInit{
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     }
+
+  users = new User();
 
   user = {
     username: 'chris',
@@ -27,11 +30,12 @@ export class LoginComponent implements OnInit{
   }
 
  logIn(){
-   console.log(this.user);
-  this.loginService.singin(this.user).subscribe( (res:any) => {
+   console.log(this.users);
+  this.loginService.singin(this.users).subscribe( (res) => {
      console.log(res);
-     localStorage.setItem('token',res.token);
-    this.router.navigate(['']);
+     sessionStorage.setItem('data',res.data);
+    this.router.navigate(['/menu/dashboard']);
+    console.log('true');
   },
    err=>console.log(err)
   )
