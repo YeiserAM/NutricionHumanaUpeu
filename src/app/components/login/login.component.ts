@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -9,6 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+
   ngOnInit() {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -22,7 +24,8 @@ export class LoginComponent implements OnInit{
   }
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   iniciarsesion(){
@@ -35,6 +38,7 @@ export class LoginComponent implements OnInit{
      console.log(res);
      sessionStorage.setItem('data',res.data);
     this.router.navigate(['/menu/dashboard']);
+    this.toastr.success('Se inicio sesión correctamente')
     console.log('true');
   },
    err=>console.log(err)

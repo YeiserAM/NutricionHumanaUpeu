@@ -6,13 +6,10 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
 
-const dashboarddata: Routes = [
-  {path: 'solicitudes', component:SolicitudesComponent}
-];
-
 const dashboard: Routes = [
-  {path: 'dashboard', component:DashboardComponent, children:dashboarddata},
-  {path: 'profile', component:PerfilComponent}
+  {path: 'dashboard', component:DashboardComponent },
+  {path: 'profile', component:PerfilComponent},
+  {path: 'solicitudes', component:SolicitudesComponent}
 ];
 
 const routes: Routes = [

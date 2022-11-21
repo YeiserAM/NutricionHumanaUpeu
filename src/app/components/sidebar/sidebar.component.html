@@ -2,41 +2,48 @@
   <div class="header-sidebar">
     <img class="logo-header" src="../../../assets/img/logo-login.png" alt="">
   </div>
-  <!-- <div class="body-sidebar">
-    <ul class="accordion" id="accordionExample">
-      <li class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-        Accordion Item #1
+  <div class="sidebar-body">
+    <ul class="menu">
+      <li class="menu-items" [routerLink]="['/menu/dashboard']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <i class='bx bxs-dashboard menu-items-icon'></i>
+        <span class="menu-items-text">
+          Dashboard
+        </span>
       </li>
-      <div id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <li>Aqui</li>
-      </div>
+      <li class="menu-items" [routerLink]="['/menu/profile']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <i class='bx bxs-user-pin menu-items-icon'></i>
+        <span class="menu-items-text">
+          Perfil
+        </span>
+      </li>
+      <li class="menu-items" [routerLink]="['/menu/solicitudes']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <i class='bx bx-book-reader menu-items-icon'></i>
+        <span class="menu-items-text">
+          Solicitudes
+        </span>
+      </li>
+      <li class="menu-items">
+        <i class='bx bx-bar-chart-alt-2 menu-items-icon'></i>
+        <span class="menu-items-text">
+          Reportes
+        </span>
+      </li>
+      <li class="menu-items">
+        <i class='bx bx-cog menu-items-icon'></i>
+        <span class="menu-items-text">
+          Configuracion
+        </span>
+      </li>
+      <li class="menu-items" [routerLink]="['/']">
+        <i class='bx bx-log-out menu-items-icon'></i>
+        <span class="menu-items-text">
+          Cerrar Sesión
+        </span>
+      </li>
     </ul>
-  </div> -->
-  <div class="row">
-    <div class="col">
-      <div class="tabs">
-        <ul>
-          <li [routerLink]="['/menu/dashboard']" >Dashboard</li>
-          <li [routerLink]="['/menu/profile']">Perfil</li>
-          <li>
-            <div class="tab">
-              <input type="checkbox" id="chck1">
-              <label class="tab-label" for="chck1">Formalario</label>
-              <div class="tab-content">
-                <li >
-                  Solicitudes
-                </li>
-                <li>
-                  Lista de Solicitudes
-                </li>
-              </div>
-            </div>
-          </li>
-          <li>Reportes</li>
-          <li>Configuracion</li>
-        </ul>
-      </div>
-    </div>
   </div>
 </div>
 <div class="footer-sidebar">
