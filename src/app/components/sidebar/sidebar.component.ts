@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
 
   collapsed = true;
+
+  constructor(private toastr: ToastrService) {}
 }
