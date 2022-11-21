@@ -1,0 +1,99 @@
+
+.card{
+    border-radius: 30px;
+}
+
+  .opacity-6 {
+    opacity: 0.6 !important;
+  }
+ 
+  .mt-n6 {
+    margin-top: -4rem !important;
+  }
+
+  
+  .min-height-300 {
+    min-height: 300px !important;
+  }
+
+
+  .avatar-xl {
+    width: 74px !important;
+    height: 74px !important;
+  }
+
+
+  .page-header {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: 50%;
+  }
+  
+  .bg-gradient-primary {
+    background-image: linear-gradient(195deg, #ecb040 0%, #D81B60 100%);
+  }
+
+
+  .border-radius-xl {
+    border-radius: 0.75rem;
+  }
+
+  .mask {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+
+/* MMODULOS */
+
+/*--------------------------------------------------------------
+# Whu Us
+--------------------------------------------------------------*/
+.why-us .box {
+    padding: 50px 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.3s;
+    border-radius: 25px;
+  }
+  
+  .why-us .box span {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffcf88;
+  }
+  
+  .why-us .box h4 {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0;
+    margin: 20px 0;
+    color: #6c665c;
+  }
+  
+  .why-us .box p {
+    color: #aaaaaa;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .why-us .box:hover {
+    background: #F8A900;
+    padding: 30px 30px 70px 30px;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+  }
+  
+  .why-us .box:hover span, .why-us .box:hover h4, .why-us .box:hover p {
+    color: #fff;
+  }
+  
