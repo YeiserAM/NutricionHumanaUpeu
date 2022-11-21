@@ -30,21 +30,26 @@
                 url(../../../assets/img/carrucel/1.jpg);
             "
           >
-          <div class="carousel-container">
-            <div class="carousel-content">
-              <h2 class="animate__animated animate__fadeInDown">
-                <span></span> Bienvenido
-              </h2>
-              <p class="animate__animated animate__fadeInUp">CARRERA DE NUTRICIÓN HUMANA</p>
-              <div>
-                <a
-                  href="../perfil/perfil"
-                  class="btn-menu animate__animated animate__fadeInUp scrollto"
-                  >Empezamos</a
-                >
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">
+                  <span></span> Bienvenido
+                </h2>
+                <p class="animate__animated animate__fadeInUp">
+                  CARRERA DE NUTRICIÓN HUMANA
+                </p>
+                <div>
+                  <li
+                    class="btn-menu animate__animated animate__fadeInUp scrollto"
+                    Empezamos
+                    [routerLink]="['/menu/profile']"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    <span class="menu-items-text"> Empezamos </span>
+                  </li>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
         <!-- 
@@ -59,7 +64,8 @@
         </a> -->
       </div>
     </div>
-  </section> <br><br>
+  </section>
+  <br /><br />
   <div class="mision">
     <div class="row gx-5 gx-xl-10">
       <div class="col-xxl-6 mb-5 mb-xl-10">
@@ -69,7 +75,7 @@
           alt=""
         />
       </div>
-  
+
       <div class="col-xxl-6 mb-5 mb-xl-10">
         <img
           src="../../../assets/dashboard/vision.jpg"
@@ -82,4 +88,3 @@
 </div>
 
 <!-- End Hero -->
-

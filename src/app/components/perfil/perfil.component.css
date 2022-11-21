@@ -77,7 +77,8 @@
     font-weight: 600;
     padding: 0;
     margin: 20px 0;
-    color: #6c665c;
+    color: 023052;
+    text-align: center;
   }
   
   .why-us .box p {
@@ -88,7 +89,7 @@
   }
   
   .why-us .box:hover {
-    background: #F8A900;
+    background: linear-gradient(195deg, #ecb040 0%, #d81b60d3 100%);
     padding: 30px 30px 70px 30px;
     box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
   }
@@ -97,3 +98,9 @@
     color: #fff;
   }
   
+  /* IMAGENES */
+
+  .why-us .box img{
+    height: 250px;
+    width: 350px;
+  }

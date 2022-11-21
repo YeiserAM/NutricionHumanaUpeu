@@ -50,22 +50,27 @@
 
       <div class="row">
         <div class="col-lg-4">
-          <div class="box">
-            <span>01</span>
+          <div
+            class="box"
+            [routerLink]="['/menu/solicitudes']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <img src="../../../assets/svg/solicitud.svg" alt="" />
             <h4>Generar Solicitudes</h4>
           </div>
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="box">
-            <span>02</span>
+            <img src="../../../assets/svg/Reportes.svg" alt="" />
             <h4>Validaciones</h4>
           </div>
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="box">
-            <span>03</span>
+            <img src="../../../assets/svg/Actividades.svg" alt="" />
             <h4>Validaciones de Practicas</h4>
           </div>
         </div>
@@ -73,7 +78,6 @@
     </div>
   </section>
   <!-- End Whu Us Section -->
-
 
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
