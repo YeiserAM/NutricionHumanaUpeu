@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { FormularioempresaComponent } from './components/formularioEmpresa/formularioempresa.component';
 import { CargadocsComponent } from './components/cargadocs/cargadocs.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { CargadocsComponent } from './components/cargadocs/cargadocs.component';
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
