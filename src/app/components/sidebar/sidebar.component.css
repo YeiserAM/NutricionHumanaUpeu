@@ -111,3 +111,15 @@
   width: calc(100% - 98px);
   left: 98px;
 }
+
+.footer-sidebar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+}
+
+.footer-sidebar-img {
+  width: 200px;
+}
