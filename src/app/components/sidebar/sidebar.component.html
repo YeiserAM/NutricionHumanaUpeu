@@ -37,7 +37,7 @@
           Configuracion
         </span>
       </li>
-      <li class="menu-items" [routerLink]="['/']">
+      <li class="menu-items" (click)="singOff()">
         <i class='bx bx-log-out menu-items-icon'></i>
         <span class="menu-items-text">
           Cerrar Sesión
