@@ -31,15 +31,12 @@ export class LoginComponent implements OnInit{
   }
 
  logIn(){
-   console.log(this.users);
-  this.loginService.singin(this.users).subscribe( (res) => { 
-    //  sessionStorage.setItem('token',res.token);
-    //  let json = JSON.parse(atob(res.token.split(".")[1]));
-    //  console.log(json) 
-    //  this.users.usuario = json.data[0].usuario;
-    //  this.users.id_rol = json.data[0].id_rol;
-    //  console.log(json.data[0])  
-    //  sessionStorage.setItem('usuario', JSON.stringify(this.data_users))
+  this.loginService.singin(this.users).subscribe( (res) => {
+     sessionStorage.setItem('token',res.token);
+     let json = JSON.parse(atob(res.token.split(".")[1]));
+     this.data_users.usuario = res.data.usuario;
+     this.data_users.id_rol = res.data.id_rol;
+     sessionStorage.setItem('users', JSON.stringify(this.data_users))
     this.router.navigate(['/menu/dashboard']);
     this.toastr.success('Se inicio sesión correctamente')
   },

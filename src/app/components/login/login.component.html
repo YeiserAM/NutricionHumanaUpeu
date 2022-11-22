@@ -1,54 +1,92 @@
 <div class="contenedor-principal">
-  <div class="contenedor">
-    <div class="row">
-      <div class="col col-lg-6">
-        <img class="logo-login" src="../../../assets/img/logo-login.png" alt="" />
-      </div>
-      <link rel="stylesheet" href="https://iconos8.es/icon/9p6VXsmLzvTt/salida">
-      <div class="col texto">
-        <span>Mas Informacion</span>
-      </div>
-      <div class="col texto">
-        <span>Contacto</span>
-      </div>
-      <div class="col texto">
-        <div class="necesitas-ayuda">
-          <img src="" alt="" />
-          <span>¿Necesitas ayuda?</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="contenerdor-login">
-    <div class="data-login">
-      <div class="row">
-        <div class="col">
-          <img class="imagen-login" src="../../../assets/img/imagen-login.png" alt="" />
-        </div>
-        <div class="col datos-login">
-          <!-- <span>Bienvenido</span> -->
-          <form class="formulario">
-            <div class="mb-3">
-              <input [(ngModel)]="users.usuario" type="email" id="email" name="email" placeholder="Usuario"
-                type="email" class="form-control form-control-lg" id="exampleInputEmail1"
-                aria-describedby="emailHelp" />
-            </div>
-            <div class="mb-3">
-              <input [(ngModel)]="users.password" id="password" placeholder="Contraseña" name="password" type="password"
-                class="form-control form-control-lg" id="exampleInputPassword1" />
-            </div>
-            <div class="mb-3 form-check">
-              <label for="">Recordarme</label>
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-            </div>
+	<div class="contenedor">
+		<div class="row">
+			<div class="col col-lg-6">
+				<img
+					class="logo-login"
+					src="../../../assets/img/logo-login.png"
+					alt=""
+				/>
+			</div>
+			<link
+				rel="stylesheet"
+				href="https://iconos8.es/icon/9p6VXsmLzvTt/salida"
+			/>
+			<div class="col texto">
+				<span>Mas Informacion</span>
+			</div>
+			<div class="col texto">
+				<span>Contacto</span>
+			</div>
+			<div class="col texto">
+				<div class="necesitas-ayuda">
+					<img src="" alt="" />
+					<span>¿Necesitas ayuda?</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="contenerdor-login">
+		<div class="data-login">
+			<div class="row">
+				<div class="col">
+					<img
+						class="imagen-login"
+						src="../../../assets/img/imagen-login.png"
+						alt=""
+					/>
+				</div>
+				<div class="col datos-login">
+					<!-- <span>Bienvenido</span> -->
+					<form class="formulario">
+						<div class="mb-3">
+							<input
+								[(ngModel)]="users.usuario"
+								type="email"
+								id="email"
+								name="email"
+								placeholder="Usuario"
+								type="email"
+								class="form-control form-control-lg"
+								id="exampleInputEmail1"
+								aria-describedby="emailHelp"
+							/>
+						</div>
+						<div class="mb-3">
+							<input
+								[(ngModel)]="users.password"
+								id="password"
+								placeholder="Contraseña"
+								name="password"
+								type="password"
+								class="form-control form-control-lg"
+								id="exampleInputPassword1"
+							/>
+						</div>
+						<div class="mb-3 form-check">
+							<label for="">Recordarme</label>
+							<input
+								type="checkbox"
+								class="form-check-input"
+								id="exampleCheck1"
+							/>
+						</div>
 
-            <div>
+						<div></div>
 
-            </div>
+						<!-- BOTON DE LOGIN -->
 
-            <div class="d-grid gap-2">
-              <input class="btn btn-warning" (click)="logIn()" type="submit" value="Sign In">
-              <!-- <a
+						<!-- HTML !-->
+						<button class="button-33" role="button">Button 33</button>
+
+						<div class="d-grid gap-2">
+							<input
+								class="btn btn-warning"
+								(click)="logIn()"
+								type="submit"
+								value="Sign In"
+							/>
+							<!-- <a
                 href="menu"
                 class="btn btn-primary"
                 style="background-color: var(--amarillo)"
@@ -57,10 +95,10 @@
               >
                 Iniciar Sesion
               </a> -->
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
