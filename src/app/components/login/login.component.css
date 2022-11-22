@@ -1,3 +1,13 @@
+.bienvenido{
+	color: #fff;
+	font-size: 3.3em;
+	justify-content: center;
+	display: flex;
+	margin-top: -110px;
+    margin-bottom: 70px;
+	font-weight: bold;
+}
+
 .contenedor-principal{
     background: var(--azul);
     width: 100%;
@@ -8,6 +18,7 @@
     width: 100%;
     height: 15.5vh;
     position: relative;
+    padding: 0 45px 0 45px;
 }
 
 .logo-login{
@@ -96,28 +107,43 @@
     }
 }
 
+.bienvenido{
+
+}
+
 /* BOTON DE LOGIN */
 
-.button-33 {
-    background-color: #F8A900;
-    border-radius: 100px;
-    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-    color: rgb(0, 77, 128);
+.button-62 {
+    background: linear-gradient(to bottom right, #F8A900, #ff741d);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-    padding: 7px 20px;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
     text-align: center;
     text-decoration: none;
-    transition: all 250ms;
-    border: 0;
-    font-size: 16px;
+    transition: box-shadow .2s ease-in-out;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    white-space: nowrap;
   }
   
-  .button-33:hover {
-    box-shadow: rgba(44, 94, 187, 0.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
+  .button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
   }
+  
+  .button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+
+  /* .d-grid{
+    padding-left: 120px;
+    padding-right: 120px;
+  } */

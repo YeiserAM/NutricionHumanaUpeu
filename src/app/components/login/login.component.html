@@ -37,9 +37,11 @@
 					/>
 				</div>
 				<div class="col datos-login">
-					<!-- <span>Bienvenido</span> -->
+					
 					<form class="formulario">
+            <label class="bienvenido" for="chk" aria-hidden="true">BIENVENIDO</label>
 						<div class="mb-3">
+              
 							<input
 								[(ngModel)]="users.usuario"
 								type="email"
@@ -72,19 +74,14 @@
 							/>
 						</div>
 
-						<div></div>
-
 						<!-- BOTON DE LOGIN -->
-
-						<!-- HTML !-->
-						
 
 						<div class="d-grid gap-2">
 							<input
-								class="button-33"
+								class="button-62"
 								(click)="logIn()"
 								type="submit"
-								value="Sign In"
+								value="Ingresar"
 							/>
 							<!-- <a
                 href="menu"
