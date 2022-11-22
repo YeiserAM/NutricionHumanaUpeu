@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
+import { ValidacionesComponent } from './components/validaciones/validaciones.component';
 import { AuthGuard } from './services/auth.guard';
 
 const dashboard: Routes = [
@@ -14,7 +15,8 @@ const dashboard: Routes = [
   {path: 'dashboard', component:DashboardComponent },
   {path: 'profile', component:PerfilComponent},
   {path: 'solicitudes', component:SolicitudesComponent},
-  {path: 'cargadocs', component:CargadocsComponent}
+  {path: 'cargadocs', component:CargadocsComponent},
+  {path: 'validaciones', component:ValidacionesComponent}
   
 ];
 
