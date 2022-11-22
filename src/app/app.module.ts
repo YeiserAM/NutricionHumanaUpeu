@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { FormularioempresaComponent } from './components/formularioEmpresa/formularioempresa.component';
 import { CargadocsComponent } from './components/cargadocs/cargadocs.component';
+import { ValidacionesComponent } from './components/validaciones/validaciones.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CargadocsComponent } from './components/cargadocs/cargadocs.component';
     PerfilComponent,
     SolicitudesComponent,
     FormularioempresaComponent,
-    CargadocsComponent
+    CargadocsComponent,
+    ValidacionesComponent
   ],
   imports: [
     FormsModule,

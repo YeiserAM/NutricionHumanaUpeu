@@ -229,6 +229,7 @@ form .user-details .input-box{
     padding-left: 95px;
   }
   .wrapper{
+    border-radius: 25px;
     padding: 30px;
     width: 430px;
     background: #fff;
