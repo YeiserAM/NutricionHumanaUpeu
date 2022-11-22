@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { User } from 'src/app/models/user';
+import { User, UserData } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -18,10 +18,8 @@ export class LoginComponent implements OnInit{
 
   users = new User();
 
-  user = {
-    username: 'chris',
-    password: '123'
-  }
+  data_users = new UserData();
+
   constructor(
     private loginService: LoginService,
     private router: Router,
@@ -34,14 +32,20 @@ export class LoginComponent implements OnInit{
 
  logIn(){
    console.log(this.users);
-  this.loginService.singin(this.users).subscribe( (res) => {
-     console.log(res);
-     sessionStorage.setItem('data',res.data);
+  this.loginService.singin(this.users).subscribe( (res) => { 
+    //  sessionStorage.setItem('token',res.token);
+    //  let json = JSON.parse(atob(res.token.split(".")[1]));
+    //  console.log(json) 
+    //  this.users.usuario = json.data[0].usuario;
+    //  this.users.id_rol = json.data[0].id_rol;
+    //  console.log(json.data[0])  
+    //  sessionStorage.setItem('usuario', JSON.stringify(this.data_users))
     this.router.navigate(['/menu/dashboard']);
     this.toastr.success('Se inicio sesión correctamente')
-    console.log('true');
   },
-   err=>console.log(err)
+   err=>{
+    this.toastr.error('Usuario o contraseña incorrectos')
+   }
   )
 
 }

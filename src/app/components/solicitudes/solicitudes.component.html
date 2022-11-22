@@ -1,1 +1,113 @@
-<p>solicitudes works!</p>
+<link rel="stylesheet" href="solicitudes.component.css" />
+<div class="cabecera">
+  <div class="main-content position-relative max-height-vh-100 h-100">
+    <div class="container-fluid px-2 px-md-4">
+      <div
+        class="page-header min-height-300 border-radius-xl mt-4"
+        style="background-image: url('../../../assets/img/carrucel/1.jpg')"
+      >
+        <span class="mask bg-gradient-primary opacity-6"></span>
+      </div>
+      <div class="card card-body mx-3 mx-md-4 mt-n6">
+        <div class="row gx-4 mb-2">
+          <div class="col-auto">
+            <div class="avatar avatar-xl position-relative">
+              <img
+                src="../../../assets/users/user1.png"
+                alt="profile_image"
+                class="w-100 border-radius-lg shadow-sm"
+              />
+            </div>
+          </div>
+          <div class="col-auto my-auto">
+            <div class="h-100">
+              <h5 class="mb-1">Yeiser Avila</h5>
+              <p class="mb-0 font-weight-normal text-sm">
+                Cod Estudiante / 202011796
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer py-4"></footer>
+  </div>
+</div>
+
+<!-- FORMULARIO -->
+
+<div class="formulario">
+  <div class="container">
+    <div class="title">Datos Principales</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Estado civil </span>
+            <input type="text" placeholder="Ingrese su estado civil" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Religion</span>
+            <input type="text" placeholder="Ingrese su religion" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Nacionalidad</span>
+            <input type="text" placeholder="Ingrese su nacionalidad" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Fecha Nacimiento</span>
+            <input
+              type="date"
+              id="start"
+              name="start"
+              min="2022-03"
+              value="2022-21"
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">Ubigeo</span>
+            <input type="number" placeholder="Ingrese su ubigeo" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Numero Telefono</span>
+            <input type="number" placeholder="Ingrese su telefono" required />
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" />
+          <input type="radio" name="gender" id="dot-2" />
+          <input type="radio" name="gender" id="dot-3" />
+          <span class="gender-title">Genero</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Varon</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Mujer</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Otros</span>
+            </label>
+          </div>
+        </div>
+        <div class="botones col-lg-6">
+          <div class="button" >
+            <input type="submit" value="Atras" class="box"
+            [routerLink]="['/menu/profile']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }" />
+          </div>
+          <div class="button">
+            <input type="submit" value="Continuar" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

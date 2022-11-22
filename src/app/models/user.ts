@@ -1,4 +1,10 @@
 export class User {
-    username!: string;
+    usuario!: string;
     password!: string;
+    id_rol!: string;
+}
+
+export class UserData {
+    usuario! : string;
+    id_rol!: string;
 }
