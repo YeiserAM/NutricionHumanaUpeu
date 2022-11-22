@@ -12,6 +12,8 @@ import { SolicitudesComponent } from './components/solicitudes/solicitudes.compo
 import { HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
+import { FormularioempresaComponent } from './components/formularioEmpresa/formularioempresa.component';
+import { CargadocsComponent } from './components/cargadocs/cargadocs.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ToastrModule } from 'ngx-toastr';
     SidebarComponent,
     DashboardComponent,
     PerfilComponent,
-    SolicitudesComponent
+    SolicitudesComponent,
+    FormularioempresaComponent,
+    CargadocsComponent
   ],
   imports: [
     FormsModule,

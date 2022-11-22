@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="cargadocs.component.css" />
+
+<div class="cabecera">
+  <div class="main-content position-relative max-height-vh-100 h-100">
+    <div class="container-fluid px-2 px-md-4">
+      <div
+        class="page-header min-height-300 border-radius-xl mt-4"
+        style="background-image: url('../../../assets/img/carrucel/1.jpg')"
+      >
+        <span class="mask bg-gradient-primary opacity-6"></span>
+      </div>
+      <div class="card card-body mx-3 mx-md-4 mt-n6">
+        <div class="row gx-4 mb-2">
+          <div class="col-auto">
+            <div class="avatar avatar-xl position-relative">
+              <img
+                src="../../../assets/users/user1.png"
+                alt="profile_image"
+                class="w-100 border-radius-lg shadow-sm"
+              />
+            </div>
+          </div>
+          <div class="col-auto my-auto">
+            <div class="h-100">
+              <h5 class="mb-1">Yeiser Avila</h5>
+              <p class="mb-0 font-weight-normal text-sm">
+                Cod Estudiante / 202011796
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer py-4"></footer>
+  </div>
+</div>
+
+<!-- FORMULARIO -->
+
+<div class="formulario">
+  <div class="container">
+    <div class="title">Documentos Requeridos</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Empresa </span>
+            <input type="text" placeholder="Ingrese empresa" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Nombres y Apellidos</span>
+            <input
+              type="text"
+              placeholder="Ingrese datos del Representante"
+              required
+            />
+          </div>
+          <!-- SUBIR DOCUMENTOS -->
+          <div class="load">
+            <div class="wrapper">
+            <header>Arrastre Aqui sus Documentos</header>
+            <form action="#">
+              <input class="file-input" type="file" name="file" hidden />
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>Buscar Doc para subir</p>
+            </form>
+            <section class="progress-area"></section>
+            <section class="uploaded-area"></section>
+          </div>
+          </div>
+          
+
+          <!-- FIN DE SUBIR DOCUMENTOS -->
+        </div>
+        <div class="botones col-lg-6">
+          <div class="button">
+            <input
+              type="submit"
+              value="Atras"
+              class="box"
+              [routerLink]="['/menu/solicitudes']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            />
+          </div>
+          <div class="button">
+            <input type="submit" value="Continuar" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="solicitudes.component.css" />
+<link rel="stylesheet" href="formularioempresa.component.css" />
+
 <div class="cabecera">
   <div class="main-content position-relative max-height-vh-100 h-100">
     <div class="container-fluid px-2 px-md-4">
@@ -41,24 +42,40 @@
 
 <div class="formulario">
   <div class="container">
-    <div class="title">Datos Principales</div>
+    <div class="title">Datos de la Empresa</div>
     <div class="content">
       <form action="#">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Estado civil </span>
-            <input type="text" placeholder="Ingrese su estado civil" required />
+            <span class="details">Empresa </span>
+            <input type="text" placeholder="Ingrese empresa" required />
           </div>
           <div class="input-box">
-            <span class="details">Religion</span>
-            <input type="text" placeholder="Ingrese su religion" required />
+            <span class="details">Nombres y Apellidos</span>
+            <input
+              type="text"
+              placeholder="Ingrese datos del Representante"
+              required
+            />
           </div>
           <div class="input-box">
-            <span class="details">Nacionalidad</span>
-            <input type="text" placeholder="Ingrese su nacionalidad" required />
+            <span class="details">Cargo del Representante</span>
+            <input type="text" placeholder="Ingrese cargo academico" required />
           </div>
           <div class="input-box">
-            <span class="details">Fecha Nacimiento</span>
+            <span class="details">Grado Academico del Supervisor</span>
+            <input type="text" placeholder="Ingrese Grado academico" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Direccion</span>
+            <input type="number" placeholder="Ingrese su direccion" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Numero Telefono</span>
+            <input type="number" placeholder="Ingrese su telefono" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Fecha de PPP</span>
             <input
               type="date"
               id="start"
@@ -68,32 +85,12 @@
             />
           </div>
           <div class="input-box">
-            <span class="details">Ubigeo</span>
-            <input type="number" placeholder="Ingrese su ubigeo" required />
-          </div>
-          <div class="input-box">
-            <span class="details">Numero Telefono</span>
-            <input type="number" placeholder="Ingrese su telefono" required />
-          </div>
-        </div>
-        <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1" />
-          <input type="radio" name="gender" id="dot-2" />
-          <input type="radio" name="gender" id="dot-3" />
-          <span class="gender-title">Genero</span>
-          <div class="category">
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Varon</span>
-            </label>
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">Mujer</span>
-            </label>
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Otros</span>
-            </label>
+            <span class="details">Area de Practica</span>
+            <input
+              type="text"
+              placeholder="Ingrese su Area de practica"
+              required
+            />
           </div>
         </div>
         <div class="botones col-lg-6">
@@ -102,7 +99,7 @@
               type="submit"
               value="Atras"
               class="box"
-              [routerLink]="['/menu/profile']"
+              [routerLink]="['/menu/solicitudes']"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             />
@@ -112,7 +109,7 @@
               type="submit"
               value="Continuar"
               class="box"
-              [routerLink]="['/menu/formempresa']"
+              [routerLink]="['/menu/cargadocs']"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             />
