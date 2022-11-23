@@ -4,11 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+  
 }
 
 body{
     position: relative;
+    background-color: var(--fondo);
 }
 
 :root{
@@ -18,6 +19,7 @@ body{
     --celeste-oscuro: #145E92;
     --blanco: #fff;
     --azul-oscuro: #01223b;
+    --fondo: #eeeeee;
 }
 
 /* #splash-screen {

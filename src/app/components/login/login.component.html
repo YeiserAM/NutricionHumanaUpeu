@@ -26,6 +26,9 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- LOGIN -->
+
 	<div class="contenerdor-login">
 		<div class="data-login">
 			<div class="row">
@@ -37,11 +40,12 @@
 					/>
 				</div>
 				<div class="col datos-login">
-					
-					<form class="formulario">
-            <label class="bienvenido" for="chk" aria-hidden="true">BIENVENIDO</label>
+					<form class="formulario card">
+						<label class="bienvenido" for="chk" aria-hidden="true"
+							>BIENVENIDO</label
+						>
 						<div class="mb-3">
-              
+							
 							<input
 								[(ngModel)]="users.usuario"
 								type="email"
@@ -65,23 +69,27 @@
 								id="exampleInputPassword1"
 							/>
 						</div>
-						<div class="mb-3 form-check">
+						<div class="checkbox">
+							<input type="checkbox" id="rememberMeCheckbox" checked>
+							<label for="rememberMeCheckbox">Recordarme</label>
+						</div>
+						<!-- <div class="mb-3 form-check">
 							<label for="">Recordarme</label>
 							<input
 								type="checkbox"
 								class="form-check-input"
 								id="exampleCheck1"
 							/>
-						</div>
+						</div> -->
 
 						<!-- BOTON DE LOGIN -->
-
-						<div class="d-grid gap-2">
+						<br>
+						<div class="d-grid gap-2 botoncito">
 							<input
 								class="button-62"
 								(click)="logIn()"
 								type="submit"
-								value="Ingresar"
+								value="Iniciar Sesion"
 							/>
 							<!-- <a
                 href="menu"

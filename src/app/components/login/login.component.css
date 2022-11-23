@@ -1,5 +1,5 @@
 .bienvenido{
-	color: #fff;
+	color: #F8A900;
 	font-size: 3.3em;
 	justify-content: center;
 	display: flex;
@@ -9,7 +9,11 @@
 }
 
 .contenedor-principal{
-    background: var(--azul);
+    background: linear-gradient(
+        #023052,
+        #166caa,
+        #023052
+    );
     width: 100%;
     height: 100vh;
 }
@@ -89,7 +93,7 @@
     align-items: center;
 }
 .formulario{
-    width: 100%;
+    width: 80%;
 }
 
 /* RESPONSIVE */
@@ -115,12 +119,11 @@
 
 .button-62 {
     background: linear-gradient(to bottom right, #F8A900, #ff741d);
-    border: 0;
+    width: 75%;
     border-radius: 12px;
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 2.5;
@@ -134,6 +137,21 @@
     touch-action: manipulation;
     white-space: nowrap;
   }
+  .botoncito{
+    width: 100%;
+    padding-left: 20%;
+    height: 50px;
+  }
+  .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+input[type="checkbox"] {
+    width: 50px;
+    height: 16px;
+    accent-color: rgb(252, 252, 252);
+}
   
   .button-62:not([disabled]):focus {
     box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
@@ -147,3 +165,24 @@
     padding-left: 120px;
     padding-right: 120px;
   } */
+
+  /* SECCION LOGIN NEW */
+
+  input{
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.877);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    width: 100%;
+    transition: background .5s;
+  }
+   .card{
+    border: none;
+    outline: none;
+    background: #ffffff44;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    width: 100%;
+    height: 65%;
+   }
