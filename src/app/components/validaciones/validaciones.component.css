@@ -68,7 +68,8 @@
     
  }
 .cardio{
-display: flex;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -131,8 +132,8 @@ button:hover i{
 .blog-card{
     position: absolute;
     height: 370px;
-    width: 95%;
-    max-width: 850px;
+    width: 100%;
+    max-width: 1052px;
     margin: auto;
     border-radius: 25px;
     background: white;
@@ -281,3 +282,6 @@ button:hover i{
     transform: scaleX(1);
     width: 100%;
   }
+
+  /* VALIDACIONES  */
+
