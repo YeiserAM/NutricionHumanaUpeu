@@ -44,35 +44,35 @@
   <div class="container">
     <div class="title">Datos de la Empresa</div>
     <div class="content">
-      <form action="#">
+      <form >
         <div class="user-details">
           <div class="input-box">
             <span class="details">Empresa </span>
-            <input type="text" placeholder="Ingrese empresa" [(ngModel)]="empresa.nombree" required />
+            <input type="text" placeholder="Ingrese empresa" [(ngModel)]="empresa.nombree" name="empresa" id="nombreempresa" required />
           </div>
           <div class="input-box">
             <span class="details">Nombres y Apellidos</span>
             <input
               type="text"
-              placeholder="Ingrese datos del Representante" [(ngModel)]="empresa.nombrerep"
+              placeholder="Ingrese datos del Representante" [(ngModel)]="empresa.nombrerep " name="nombrerep" id="nombrerep"
               required
             />
           </div>
           <div class="input-box">
             <span class="details">Cargo del Representante</span>
-            <input type="text" placeholder="Ingrese cargo academico" [(ngModel)]="empresa.cargorep" required />
+            <input type="text" placeholder="Ingrese cargo academico" [(ngModel)]="empresa.cargorep" name="cargorep" id="cargorep" required />
           </div>
           <div class="input-box">
             <span class="details">Grado Academico del Supervisor</span>
-            <input type="text" placeholder="Ingrese Grado academico" [(ngModel)]="empresa.gradosup" required />
+            <input type="text" placeholder="Ingrese Grado academico" [(ngModel)]="empresa.gradosup" name="gradosup" id="gradosup" required />
           </div>
           <div class="input-box">
             <span class="details">Direccion</span>
-            <input type="number" placeholder="Ingrese su direccion" [(ngModel)]="empresa.direccion" required />
+            <input type="number" placeholder="Ingrese su direccion" [(ngModel)]="empresa.direccion" name="direccion" id="direccion" required />
           </div>
           <div class="input-box">
             <span class="details">Numero Telefono</span>
-            <input type="number" placeholder="Ingrese su telefono" [(ngModel)]="empresa.telefono" required />
+            <input type="number" placeholder="Ingrese su telefono" [(ngModel)]="empresa.telefono" name="telefono" id="telefono" required />
           </div>
           <div class="input-box">
             <span class="details">Fecha de PPP</span>
@@ -81,15 +81,15 @@
               id="start"
               name="start"
               min="2022-03"
-              value="2022-21" 
-              [(ngModel)]="empresa.fechappp"
+              value="2022-21"
+              [(ngModel)]="empresa.fechappp" name="fechappp" id="fechappp"
             />
           </div>
           <div class="input-box">
             <span class="details">Area de Practica</span>
             <input
               type="text"
-              placeholder="Ingrese su Area de practica" [(ngModel)]="empresa.areappp"
+              placeholder="Ingrese su Area de practica" [(ngModel)]="empresa.areappp" name="areappp" id="areappp"
               required
             />
           </div>
@@ -113,7 +113,7 @@
               [routerLink]="['/menu/cargadocs']"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
-              (click)="registrarempresa"
+              (click)="registrarempresa()"
             />
           </div>
         </div>

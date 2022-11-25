@@ -14,8 +14,8 @@ export class EmpresaService {
 
   constructor(private http: HttpClient) { }
 
-  CrearEmpresa(empresa:Empresa){
-      return this.http.post<Empresa[]>(this.URL+'/create-empresa',empresa);
+  CrearEmpresa(empresa:{}){
+      return this.http.post<Empresa[]>(this.URL+'/api/empresa/create-empresa',empresa);
     // return this.http.post<Empresa[]>(`{this.URL}/api/empresa/create-empresa`,empresa);
   }
 }
