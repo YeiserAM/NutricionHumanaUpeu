@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Empresa } from 'src/app/models/empresa';
+import { UserData } from 'src/app/models/user';
 import { EmpresaService } from 'src/app/services/empresa.service';
 import Swal from 'sweetalert2';
 
@@ -13,6 +14,8 @@ export class FormularioempresaComponent implements OnInit{
 
   empresa = new Empresa();
 
+  user = new UserData();
+
   constructor(private router : Router, private empresaService : EmpresaService) { }
 
   ngOnInit(): void {
@@ -21,6 +24,8 @@ export class FormularioempresaComponent implements OnInit{
   registrarempresa(){
     // console.log("Funciono bien");
     // console.log(this.empresa);
+    console.log(this.user);
+
     let dataempresa = {
       idempresa: 5,
       nombree: "Posta San Matooo",

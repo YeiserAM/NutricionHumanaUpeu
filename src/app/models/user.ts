@@ -7,4 +7,5 @@ export class User {
 export class UserData {
     usuario! : string;
     id_rol!: string;
+    idperson!: number;
 }
