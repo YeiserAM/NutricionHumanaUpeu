@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit{
      sessionStorage.setItem('token',res.token);
      let json = JSON.parse(atob(res.token.split(".")[1]));
      this.data_users.usuario = res.data.usuario;
+    //  this.data_users.idperson 
      this.data_users.id_rol = res.data.id_rol;
      sessionStorage.setItem('users', JSON.stringify(this.data_users))
     this.router.navigate(['/menu/dashboard']);
