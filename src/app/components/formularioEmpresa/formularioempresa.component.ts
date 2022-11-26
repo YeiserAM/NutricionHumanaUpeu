@@ -26,20 +26,20 @@ export class FormularioempresaComponent implements OnInit{
     // console.log(this.empresa);
     console.log(this.user);
 
-    let dataempresa = {
-      idempresa: 5,
-      nombree: "Posta San Matooo",
-      ruc: "ooo",
-      direccion: "san mate",
-      nombrerep: "  humpiri",
-      cargorep: "ooo",
-      gradosup: "licenciado",
-      telefono: "159236478",
-      fechappp: "2022-07-10",
-      areappp: "54444",
-      idestudian: 4
-    }
-    this.empresaService.CrearEmpresa(dataempresa).subscribe(data=>{
+    // let dataempresa = {
+    //   idempresa: 6,
+    //   nombree: "Posta San Matooo",
+    //   ruc: "ooo",
+    //   direccion: "san mate",
+    //   nombrerep: "  humpiri",
+    //   cargorep: "ooo",
+    //   gradosup: "licenciado",
+    //   telefono: "159236478",
+    //   fechappp: "2022-07-10",
+    //   areappp: "54444",
+    //   idestudian: 4
+    // }
+    this.empresaService.CrearEmpresa(this.empresa).subscribe(data=>{
       console.log(data);
       Swal.fire({
         title: '<b style="color: #000000; font-family: Poppins, sans-serif; font-weight: 900; font-size: 45px">Registro Exitoso</b>',

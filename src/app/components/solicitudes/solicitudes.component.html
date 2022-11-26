@@ -47,15 +47,15 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Estado civil </span>
-            <input type="text" placeholder="Ingrese su estado civil" required />
+            <input type="text" placeholder="Ingrese su estado civil" [(ngModel)]="estudiante.estadocivil" name="estcivil" id="estadocivil" required />
           </div>
           <div class="input-box">
             <span class="details">Religion</span>
-            <input type="text" placeholder="Ingrese su religion" required />
+            <input type="text" placeholder="Ingrese su religion" [(ngModel)]="estudiante.religion" name="religion" id="religion" required />
           </div>
           <div class="input-box">
             <span class="details">Nacionalidad</span>
-            <input type="text" placeholder="Ingrese su nacionalidad" required />
+            <input type="text" placeholder="Ingrese su nacionalidad" [(ngModel)]="estudiante.nacionalidad" name="nacionalidad" id="nacionalidad" required />
           </div>
           <div class="input-box">
             <span class="details">Fecha Nacimiento</span>
@@ -65,18 +65,23 @@
               name="start"
               min="2022-03"
               value="2022-21"
+              [(ngModel)]="estudiante.fechanacimiento" name="fechanacimiento" id="fechanacimiento"
             />
           </div>
           <div class="input-box">
             <span class="details">Ubigeo</span>
-            <input type="number" placeholder="Ingrese su ubigeo" required />
+            <input type="number" placeholder="Ingrese su ubigeo" [(ngModel)]="estudiante.ubigeo" name="ubigeo" id="ubigeo" required />
           </div>
           <div class="input-box">
             <span class="details">Numero Telefono</span>
-            <input type="number" placeholder="Ingrese su telefono" required />
+            <input type="number" placeholder="Ingrese su telefono" [(ngModel)]="estudiante.telefono" name="numtelefono" id="numtelefono" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Genero</span>
+            <input type="text" placeholder="Ingrese su Genero" [(ngModel)]="estudiante.genero" name="genero" id="genero" required />
           </div>
         </div>
-        <div class="gender-details">
+        <!-- <div class="gender-details">
           <input type="radio" name="gender" id="dot-1" />
           <input type="radio" name="gender" id="dot-2" />
           <input type="radio" name="gender" id="dot-3" />
@@ -95,7 +100,7 @@
               <span class="gender">Otros</span>
             </label>
           </div>
-        </div>
+        </div> -->
         <div class="botones col-lg-6">
           <div class="button">
             <input
@@ -115,6 +120,7 @@
               [routerLink]="['/menu/formempresa']"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
+              (click)="registrarestudiante()"
             />
           </div>
         </div>

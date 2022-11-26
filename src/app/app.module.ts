@@ -17,6 +17,7 @@ import { FormularioempresaComponent } from './components/formularioEmpresa/formu
 import { CargadocsComponent } from './components/cargadocs/cargadocs.component';
 import { AuthGuard } from './services/auth.guard';
 import { ValidacionesComponent } from './components/validaciones/validaciones.component';
+import { DatosUsuariosDirective } from './directives/datos-usuarios.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ValidacionesComponent } from './components/validaciones/validaciones.co
     SolicitudesComponent,
     FormularioempresaComponent,
     CargadocsComponent,
-    ValidacionesComponent
+    ValidacionesComponent,
+    DatosUsuariosDirective
   ],
   imports: [
     FormsModule,

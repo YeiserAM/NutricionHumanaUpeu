@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User, UserData } from 'src/app/models/user';
+import { DatauserService } from 'src/app/services/datauser.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -10,10 +11,9 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-
+  @Input()idperson:any;
   ngOnInit() {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+    
     }
 
   users = new User();
@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit{
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService, 
+    private datosusuario: DatauserService
   ) { }
 
   iniciarsesion(){
@@ -36,6 +37,9 @@ export class LoginComponent implements OnInit{
      let json = JSON.parse(atob(res.token.split(".")[1]));
      this.data_users.usuario = res.data.usuario;
      this.data_users.idperson = res.data.idperson;
+     this.datosusuario.disparadordeusuarios.emit({
+      data:this.data_users.idperson
+     })
      this.data_users.id_rol = res.data.id_rol;
      sessionStorage.setItem('users', JSON.stringify(this.data_users))
     this.router.navigate(['/menu/dashboard']);
