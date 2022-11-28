@@ -64,7 +64,7 @@
   /* VALIDACIONES */
   
  .validaciones{
-    height: 450px;
+    height: 75px;
     
  }
 .cardio{
@@ -283,5 +283,8 @@ button:hover i{
     width: 100%;
   }
 
-  /* VALIDACIONES  */
+  /* VALIDACIONES VISTA */
 
+.validacion{
+  padding: 0 20px 20px 20px;
+}

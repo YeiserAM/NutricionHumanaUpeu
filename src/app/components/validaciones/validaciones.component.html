@@ -1,114 +1,126 @@
 <link rel="stylesheet" href="validaciones.component.css" />
 <link
-	rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
 <body class="g-sidenav-show bg-gray-200">
-	<div class="main-content position-relative max-height-vh-100 h-100">
-		<div class="container-fluid px-2 px-md-4">
-			<div
-				class="page-header min-height-300 border-radius-xl mt-4"
-				style="background-image: url('../../../assets/img/carrucel/1.jpg')"
-			>
-				<span class="mask bg-gradient-primary opacity-6"></span>
-			</div>
-			<div class="card card-body mx-3 mx-md-4 mt-n6">
-				<div class="row gx-4 mb-2">
-					<div class="col-auto">
-						<div class="avatar avatar-xl position-relative">
-							<img
-								src="../../../assets/users/user1.png"
-								alt="profile_image"
-								class="w-100 border-radius-lg shadow-sm"
-							/>
-						</div>
-					</div>
-					<div class="col-auto my-auto">
-						<div class="h-100">
-							<h5 class="mb-1">Yeiser Avila</h5>
-							<p class="mb-0 font-weight-normal text-sm">
-								Cod Estudiante / 202011796
-							</p>
-						</div>
-					</div>
-					<div class="validaciones">
-						<div class="container">
-							<form>
-								<input type="text" name="" placeholder="Buscar..." />
-								<button type="submit">
-									<i class="fa fa-search" aria-hidden="true"></i>
-								</button>
-							</form>
-						</div>
-						<!-- box -->
+  <div class="main-content position-relative max-height-vh-100 h-100">
+    <div class="container-fluid px-2 px-md-4">
+      <div
+        class="page-header min-height-300 border-radius-xl mt-4"
+        style="background-image: url('../../../assets/img/carrucel/1.jpg')"
+      >
+        <span class="mask bg-gradient-primary opacity-6"></span>
+      </div>
+      <div class="card card-body mx-3 mx-md-4 mt-n6">
+        <div class="row gx-4 mb-2">
+          <div class="col-auto">
+            <div class="avatar avatar-xl position-relative">
+              <img
+                src="../../../assets/users/user1.png"
+                alt="profile_image"
+                class="w-100 border-radius-lg shadow-sm"
+              />
+            </div>
+          </div>
+          <div class="col-auto my-auto">
+            <div class="h-100">
+              <h5 class="mb-1">Yeiser Avila</h5>
+              <p class="mb-0 font-weight-normal text-sm">
+                Cod Estudiante / 202011796
+              </p>
+            </div>
+          </div>
+          <div class="validaciones">
+            <div class="container">
+              <form>
+                <input type="text" name="" placeholder="Buscar..." />
+                <button type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+            <!-- box -->
+          </div>
 
-					</div>
-
-					<!-- VALIDACIONES -->
-                    <div class="cardio">
-                        <div class="blog-card">
-							<input type="radio" name="select" id="tap-1" checked />
-							<input type="radio" name="select" id="tap-2" />
-							<input type="radio" name="select" id="tap-3" />
-							<input type="checkbox" id="imgTap" />
-							<div class="sliders">
-								<label for="tap-1" class="tap tap-1"></label>
-								<label for="tap-2" class="tap tap-2"></label>
-								<label for="tap-3" class="tap tap-3"></label>
-							</div>
-							<div class="inner-part">
-								<label for="imgTap" class="img">
-									<img class="img-1" src="#" />
-								</label>
-								<div class="content content-1">
-									<span>26 December 2017</span>
-									<div class="title">Lorem Ipsum Dolor</div>
-									<div class="text">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Explicabo animi atque aliquid pariatur voluptatem numquam,
-										quisquam. Neque est voluptates doloribus!
-									</div>
-									<button>Read more</button>
-								</div>
-							</div>
-							<div class="inner-part">
-								<label for="imgTap" class="img">
-									<img class="img-2" src="#" />
-								</label>
-								<div class="content content-2">
-									<span>26 December 2018</span>
-									<div class="title">Lorem Ipsum Dolor</div>
-									<div class="text">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Ipsum eos ut consectetur numquam ullam fuga animi laudantium
-										nobis rem molestias.
-									</div>
-									<button>Read more</button>
-								</div>
-							</div>
-							<div class="inner-part">
-								<label for="imgTap" class="img">
-									<img class="img-3" src="#" />
-								</label>
-								<div class="content content-3">
-									<span>26 December 2019</span>
-									<div class="title">Lorem Ipsum Dolor</div>
-									<div class="text">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Quod excepturi nemo commodi sint eum ipsam odit atque
-										aliquam officia impedit.
-									</div>
-								</div>
-							</div>
-						</div>
+          <!-- VALIDACIONES -->
+          <div class="validacion">
+            <section class="section">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"> <b> Solicitudes Registradas</b></h5>
+                      
+                      <table class="table datatable">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">DATA</th>
+                            <th scope="col">FECHA</th>
+                            <th scope="col">LUGAR</th>
+							<th scope="col">ESTADO</th>
+                            <th scope="col">EP</th>
+							<th></th><th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Informe de actividad</td>
+                            <td>05-12-2022</td>
+                            <td>Clinica</td>
+							<td><b>Aceptado</b></td>
+                            <td>EP Nutricion</td>
+							<td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAY1JREFUSEu1lY0xQ1EQhU8qQAWoABWgA6kgdEAF6IAKUAEqkFRAKggd0IH5Mrtm3bvvJzPv3ZlMXm5u9ts9e+5mopHXZOT4KgE3ku4kfQ8FjgCCX0v6kHQ6FCQCtiXNJR0MCSklKiFTSceSziTtSTo06agSGR8lvbZVmzU5Qvq2AnnvM1AGINPnkC2QK0kvkj6NyJkTe81CVVXvMoneTY6l/dB7giznliWwWwMiG1KlvSsBNBnNWfsWzBtfynVkZmA/ysp5KlmvCCC7hxDF7cpWBiGIN9shfN6VdGFV/QOgL1+iN7BYchMEJ+2EpDxJYqFACoCOxuWdyCA/Jo8zHPBlfUwlgo6+MWCTXE9WrUu0MmAqkQekyVnArr03s/bC7Fs1uWwUAcmEitrk4hwLu2Jt7sffsOxzk70f+H7LqgOMCfC/ryp42eToc3x9adM17rc9p1O46w8HEIMOd/BM1iyyRTqvjvdeN7lvtuW5xlHfVcEmwAhhzFNV9Ze5ScDsLBBctA4+BqCCDilRWv0vleJuGYI2aeIAAAAASUVORK5CYII="/></td>
+                            <td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKlJREFUSEvtlcERQDAQRZ9KlIBOlEIFlKQUOqASJjM4hJ0fIje5ZTbZ9//uJJuReGWJ86MANdABpSFkBlpgsIQqgEuQC5cjUL0FrPtFS4iKyxKpBCp+ARwXYnt/OvatJwccyqV1z6J5/nXzvgb4CtX+5Ic6UAmjS/QDLu/qaUn+HsivKbpEivAYEDJofOh0N/msl+xGZQ8USvoeX4DmbnSqkRmY3z6WHLABUDk4GfuOp84AAAAASUVORK5CYII="/></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Informe de actividad</td>
+                            <td>15-12-2022</td>
+                            <td>Clinica</td>
+							<td><b>Aceptado</b></td>
+                            <td>EP Nutricion</td>
+							<td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAY1JREFUSEu1lY0xQ1EQhU8qQAWoABWgA6kgdEAF6IAKUAEqkFRAKggd0IH5Mrtm3bvvJzPv3ZlMXm5u9ts9e+5mopHXZOT4KgE3ku4kfQ8FjgCCX0v6kHQ6FCQCtiXNJR0MCSklKiFTSceSziTtSTo06agSGR8lvbZVmzU5Qvq2AnnvM1AGINPnkC2QK0kvkj6NyJkTe81CVVXvMoneTY6l/dB7giznliWwWwMiG1KlvSsBNBnNWfsWzBtfynVkZmA/ysp5KlmvCCC7hxDF7cpWBiGIN9shfN6VdGFV/QOgL1+iN7BYchMEJ+2EpDxJYqFACoCOxuWdyCA/Jo8zHPBlfUwlgo6+MWCTXE9WrUu0MmAqkQekyVnArr03s/bC7Fs1uWwUAcmEitrk4hwLu2Jt7sffsOxzk70f+H7LqgOMCfC/ryp42eToc3x9adM17rc9p1O46w8HEIMOd/BM1iyyRTqvjvdeN7lvtuW5xlHfVcEmwAhhzFNV9Ze5ScDsLBBctA4+BqCCDilRWv0vleJuGYI2aeIAAAAASUVORK5CYII="/></td>
+                            <td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKlJREFUSEvtlcERQDAQRZ9KlIBOlEIFlKQUOqASJjM4hJ0fIje5ZTbZ9//uJJuReGWJ86MANdABpSFkBlpgsIQqgEuQC5cjUL0FrPtFS4iKyxKpBCp+ARwXYnt/OvatJwccyqV1z6J5/nXzvgb4CtX+5Ic6UAmjS/QDLu/qaUn+HsivKbpEivAYEDJofOh0N/msl+xGZQ8USvoeX4DmbnSqkRmY3z6WHLABUDk4GfuOp84AAAAASUVORK5CYII="/></td>
+                          </tr>
+                          <!-- <tr>
+                            <th scope="row">3</th>
+                            <td>Ashleigh Langosh</td>
+                            <td>Finance</td>
+                            <td>45</td>
+                            <td>2011-08-12</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Angus Grady</td>
+                            <td>HR</td>
+                            <td>34</td>
+                            <td>2012-06-11</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Raheem Lehner</td>
+                            <td>Dynamic Division Officer</td>
+                            <td>47</td>
+                            <td>2011-04-19</td>
+                          </tr> -->
+                        </tbody>
+                      </table>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
 
-					<div
-						class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
-					></div>
-				</div>
-			</div>
-		</div>
-		<footer class="footer py-4"></footer>
-	</div>
+          <div
+            class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer py-4"></footer>
+  </div>
 </body>
