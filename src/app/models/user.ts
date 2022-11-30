@@ -8,4 +8,6 @@ export class UserData {
     usuario! : string;
     id_rol!: string;
     idperson!: number;
+    codigo!: number;
+    dni!: number;
 }

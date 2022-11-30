@@ -109,3 +109,33 @@
     height: 250px;
     width: 350px;
   }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 1500px) {
+    .why-us .box img{
+      height: 230px;
+      width: 290px;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .why-us .box img{
+      height: 200px;
+      width: 260px;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    .why-us .box img{
+      height: 200px;
+      width: 220px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .why-us .box img{
+      height: 200px;
+      width: 190px;
+    }
+  }
