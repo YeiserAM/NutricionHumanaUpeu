@@ -19,12 +19,24 @@
 							/>
 						</div>
 					</div>
+					<!-- DATA TRAIDA -->
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Code</th>
+							<th>Dni</th>
+						</tr>
+						<tr *ngFor="let data of userList; let i=index" >
+							<td>{{i+1}}</td>
+							<td>{{data.usuario}}</td>
+						</tr>
+					</table>
 					<div class="col-auto my-auto">
 						<div class="h-100">
-							<h5 class="mb-1">Yeiser Avila</h5>
-							<p class="mb-0 font-weight-normal text-sm">
+							<!-- <h5 class="mb-1">Yeiser Avila</h5> -->
+							<!-- <p class="mb-0 font-weight-normal text-sm">
 								Cod Estudiante / 202011796
-							</p>
+							</p> -->
 						</div>
 					</div>
 					<div
