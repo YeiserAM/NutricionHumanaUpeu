@@ -15,6 +15,7 @@ export class PerfilComponent implements OnInit {
   usuario! : string;
   codigo!: number;
   dni!: number;
+  dataUsers : any= [];
 
   constructor(
     private datosusuario: DatauserService,
@@ -23,8 +24,10 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.dataUsers.push(JSON.parse(this.users));
+    console.log(this.dataUsers);
     let arrIdrol = JSON.parse(this.users);
-    console.log(arrIdrol);
+    // console.log(JSON.parse(this.users));
     this.codigo = arrIdrol["codigo"];
     this.dni = arrIdrol["dni"];
     this.usuario = arrIdrol["id_usuario"];

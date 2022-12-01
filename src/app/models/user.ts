@@ -5,6 +5,7 @@ export class User {
 }
 
 export class UserData {
+  idestudiante!: number;
   id_usuario!: number;
   id_rol!: number;
   idpersona!: number;

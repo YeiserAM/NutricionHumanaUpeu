@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./solicitudes.component.css']
 })
 export class SolicitudesComponent {
+  users: string = `${window.sessionStorage.getItem('users')}`;
+  dataUsers : any= [];
 
   estudiante = new Estudiante();
 
@@ -17,21 +19,26 @@ export class SolicitudesComponent {
   constructor(private router : Router, private estudianteService : EstudianteService) { }
       
   ngOnInit(): void {
+
+
+    this.dataUsers.push(JSON.parse(this.users))
   }
 
   registrarestudiante(){
 
       let dataestudiante = {
-        idestudiante: 5,
-        telefono: "982656635",
-        genero: "M",
-        religion: "adventista",
-        nacionalidad: "peruana",
-        fechanacimiento: "2022-04-06T00:00:00.000Z",
-        ubigeo: "20011",
-        estadocivil: "soltero",
-        idperso: 5
+        idestudiante: this.dataUsers[0].idestudiante,
+        telefono: this.estudiante.telefono,
+        genero: this.estudiante.genero,
+        religion: this.estudiante.religion,
+        nacionalidad: this.estudiante.nacionalidad,
+        fechanacimiento: this.estudiante.fechanacimiento,
+        ubigeo: this.estudiante.ubigeo,
+        estadocivil: this.estudiante.estadocivil,
+        idperso: this.dataUsers[0].idpersona
     }
+    // console.log(dataestudiante);
+    // console.log(this.estudiante);
 
 
     this.estudianteService.CrearEstudiante(dataestudiante).subscribe(data=>{
@@ -46,6 +53,6 @@ export class SolicitudesComponent {
 
       });
     })
-  }
+ }
 
 }

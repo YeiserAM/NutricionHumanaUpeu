@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit{
      this.data_users.apellidos = res.data.apellidos;
      this.data_users.codigo = Number(res.data.codigo);
      this.data_users.rol = res.data.rol;
+     this.data_users.idestudiante = Number(res.data.idestudiante);
      console.log(this.data_users);
 
      this.sidebarData.id_sidebar = Number(res.sidebar.id_sidebar);

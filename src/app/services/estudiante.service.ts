@@ -10,12 +10,10 @@ export class EstudianteService {
 
   private URL = environment.url;
 
-  url = 'https://backend-nutricion.herokuapp.com/api/users/8'
-
   constructor(private http: HttpClient) { }
 
   CrearEstudiante(estudiante:{}){
-    return this.http.post<Estudiante[]>(this.URL+'/api/estudiante/create-estudiante',estudiante);
+    return this.http.post<any>(this.URL+'/api/estudiante/create-estudiante',estudiante);
   // return this.http.post<Empresa[]>(`{this.URL}/api/empresa/create-empresa`,empresa);
 }
 

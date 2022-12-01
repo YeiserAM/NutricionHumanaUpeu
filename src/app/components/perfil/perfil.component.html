@@ -21,8 +21,10 @@
 					</div>
 					<!-- DATA TRAIDA -->
 					<table>
-						<tr *ngFor="let data of userList" >
-							<!-- <td>{{}}</td> -->
+						<tr *ngFor="let data of dataUsers" >
+							<td>{{data.nombre}} {{data.apellidos}}</td>
+							<td>{{data.codigo}}</td>
+							<td>{{data.dni}}</td>
 						</tr>
 						<tr>
 							<th>Name</th>
