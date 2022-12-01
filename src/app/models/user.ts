@@ -5,6 +5,7 @@ export class User {
 }
 
 export class UserData {
+    id_usuario!:String;
     usuario! : string;
     id_rol!: string;
     idperson!: number;

@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
-  url = environment.url;
+  private url = 'https://backend-nutricion.herokuapp.com/api/users/8';
+  Url = environment.url;
 
   constructor( private http: HttpClient ) { }
 

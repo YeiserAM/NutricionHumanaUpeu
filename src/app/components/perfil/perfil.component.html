@@ -21,14 +21,13 @@
 					</div>
 					<!-- DATA TRAIDA -->
 					<table>
+						<tr *ngFor="let data of userList" >
+							<!-- <td>{{}}</td> -->
+						</tr>
 						<tr>
 							<th>Name</th>
 							<th>Code</th>
 							<th>Dni</th>
-						</tr>
-						<tr *ngFor="let data of userList; let i=index" >
-							<td>{{i+1}}</td>
-							<td>{{data.usuario}}</td>
 						</tr>
 					</table>
 					<div class="col-auto my-auto">
