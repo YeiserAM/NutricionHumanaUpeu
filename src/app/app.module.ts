@@ -18,6 +18,8 @@ import { CargadocsComponent } from './components/cargadocs/cargadocs.component';
 import { AuthGuard } from './services/auth.guard';
 import { ValidacionesComponent } from './components/validaciones/validaciones.component';
 import { DatosUsuariosDirective } from './directives/datos-usuarios.directive';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { ConfiguracionComponent } from './components/configuracion/configuracion.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { DatosUsuariosDirective } from './directives/datos-usuarios.directive';
     FormularioempresaComponent,
     CargadocsComponent,
     ValidacionesComponent,
-    DatosUsuariosDirective
+    DatosUsuariosDirective,
+    ReportesComponent,
+    ConfiguracionComponent
   ],
   imports: [
     FormsModule,

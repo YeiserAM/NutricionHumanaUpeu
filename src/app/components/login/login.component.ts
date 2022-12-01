@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit{
   data_users = new UserData();
   sidebarData = new SidebarData();
 
+  arraySidebar : any=[];
+
   constructor(
     private loginService: LoginService,
     private router: Router,
@@ -47,15 +49,19 @@ export class LoginComponent implements OnInit{
      this.data_users.codigo = Number(res.data.codigo);
      this.data_users.rol = res.data.rol;
      this.data_users.idestudiante = Number(res.data.idestudiante);
-     console.log(this.data_users);
+    //  console.log(res.sidebar);
+     this.arraySidebar= res.sidebar;
 
-     this.sidebarData.id_sidebar = Number(res.sidebar.id_sidebar);
-     this.sidebarData.id_rol = Number(res.sidebar.id_rol);
-     this.sidebarData.nombre = res.sidebar.nombre;
-     this.sidebarData.path = res.sidebar.path;
-     this.sidebarData.icon = res.sidebar.icon;
+     console.log(this.arraySidebar);
+    //  console.log(this.data_users);
 
-     console.log(this.sidebarData);
+    //  this.sidebarData.id_sidebar = Number(res.sidebar.id_sidebar);
+    //  this.sidebarData.id_rol = Number(res.sidebar.id_rol);
+    //  this.sidebarData.nombre = res.sidebar.nombre;
+    //  this.sidebarData.path = res.sidebar.path;
+    //  this.sidebarData.icon = res.sidebar.icon;
+
+    //  console.log(this.sidebarData);
     //  let response = this.perfilcomponents.getUserList(res.data.id_usuario);
     //  console.log(response);
     //  this.datosusuario.disparadordeusuarios.emit({
@@ -63,6 +69,7 @@ export class LoginComponent implements OnInit{
     //  })
 
     sessionStorage.setItem('users', JSON.stringify(this.data_users))
+    sessionStorage.setItem('sidebar', JSON.stringify(this.arraySidebar))
     this.router.navigate(['/menu/dashboard']);
     this.toastr.success('Se inicio sesión correctamente')
   },

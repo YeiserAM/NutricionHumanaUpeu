@@ -3,53 +3,15 @@
     <img class="logo-header" src="../../../assets/img/logo-login.png" alt="">
   </div>
   <div class="sidebar-body">
-    <ul class="menu">
-      <li class="menu-items" [routerLink]="['/menu/dashboard']" routerLinkActive="active"
+    <ul *ngFor="let data of sidebar1" class="menu">
+      <li class="menu-items" [routerLink]="[data.path]" routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }">
-        <i class='bx bxs-dashboard menu-items-icon'></i>
+        <i [class]='data.icon'></i>
         <span class="menu-items-text">
-          Dashboard
+          {{data.nombre}}
         </span>
       </li>
-      <li class="menu-items" [routerLink]="['/menu/profile']" routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }">
-        <i class='bx bxs-user-pin menu-items-icon'></i>
-        <span class="menu-items-text">
-          Perfil
-        </span>
-      </li>
-      <!-- <li class="menu-items" [routerLink]="['/menu/solicitudes']" routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }">
-        <i class='bx bx-book-reader menu-items-icon'></i>
-        <span class="menu-items-text">
-          Solicitudes
-        </span>
-      </li> -->
-      <li class="menu-items" [routerLink]="['/menu/validaciones']" routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }">
-        <i class='bx bx-user-check menu-items-icon'></i>
-        <span class="menu-items-text">
-          Validaciones
-        </span>
-      </li>
-      <li class="menu-items">
-        <i class='bx bx-bar-chart-alt-2 menu-items-icon'></i>
-        <span class="menu-items-text">
-          Reportes
-        </span>
-      </li>
-      <li class="menu-items">
-        <i class='bx bx-cog menu-items-icon'></i>
-        <span class="menu-items-text">
-          Configuracion
-        </span>
-      </li>
-      <li class="menu-items" (click)="singOff()">
-        <i class='bx bx-log-out menu-items-icon'></i>
-        <span class="menu-items-text">
-          Cerrar Sesión
-        </span>
-      </li>
+      
     </ul>
   </div>
   <div class="footer-sidebar">
