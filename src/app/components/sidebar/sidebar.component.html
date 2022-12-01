@@ -1,24 +1,38 @@
-<div class="sidebar-contenedor" [ngClass]="collapsed ? 'sidebar' : 'sidebar-collapsed'">
+<div
+  class="sidebar-contenedor"
+  [ngClass]="collapsed ? 'sidebar' : 'sidebar-collapsed'"
+>
   <div class="header-sidebar">
-    <img class="logo-header" src="../../../assets/img/logo-login.png" alt="">
+    <img class="logo-header" src="../../../assets/img/logo-login.png" alt="" />
   </div>
   <div class="sidebar-body">
     <ul *ngFor="let data of sidebar1" class="menu">
-      <li class="menu-items" [routerLink]="[data.path]" routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }">
-        <i [class]='data.icon'></i>
+      <li
+        class="menu-items"
+        [routerLink]="[data.path]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <i [class]="data.icon"></i>
         <span class="menu-items-text">
-          {{data.nombre}}
+          {{ data.nombre }}
         </span>
       </li>
-      
     </ul>
+    <li class="menu-items" (click)="singOff()">
+      <i class="bx bx-log-out menu-items-icon"></i>
+      <span class="menu-items-text"> Cerrar Sesión </span>
+    </li>
   </div>
   <div class="footer-sidebar">
-    <img class="footer-sidebar-img" src="../../../assets/img/logo-inferior.png" alt="">
+    <img
+      class="footer-sidebar-img"
+      src="../../../assets/img/logo-inferior.png"
+      alt=""
+    />
   </div>
 </div>
 
 <div class="menu-routers" [ngClass]="collapsed ? '' : 'menu-routers-2'">
-	<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
