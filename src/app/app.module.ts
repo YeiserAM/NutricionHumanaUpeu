@@ -20,6 +20,8 @@ import { ValidacionesComponent } from './components/validaciones/validaciones.co
 import { DatosUsuariosDirective } from './directives/datos-usuarios.directive';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { ConfiguracionComponent } from './components/configuracion/configuracion.component';
+import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
+import { ValidarsoliadminComponent } from './components/validarsoliadmin/validarsoliadmin.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ConfiguracionComponent } from './components/configuracion/configuracion
     ValidacionesComponent,
     DatosUsuariosDirective,
     ReportesComponent,
-    ConfiguracionComponent
+    ConfiguracionComponent,
+    MenuadminComponent,
+    ValidarsoliadminComponent
   ],
   imports: [
     FormsModule,
