@@ -1,118 +1,111 @@
 <link rel="stylesheet" href="perfil.component.css" />
 <body class="g-sidenav-show bg-gray-200">
-	<div class="main-content position-relative max-height-vh-100 h-100">
-		<div class="container-fluid px-2 px-md-4">
-			<div
-				class="page-header min-height-300 border-radius-xl mt-4"
-				style="background-image: url('../../../assets/img/carrucel/1.jpg')"
-			>
-				<span class="mask bg-gradient-primary opacity-6"></span>
-			</div>
-			<div class="card card-body mx-3 mx-md-4 mt-n6">
-				<div class="row gx-4 mb-2">
-					<div class="col-auto">
-						<div class="avatar avatar-xl position-relative">
-							<img
-								src="../../../assets/users/user1.png"
-								alt="profile_image"
-								class="w-100 border-radius-lg shadow-sm"
-							/>
-						</div>
-					</div>
-					<!-- DATA TRAIDA -->
-					<table>
-						<tr *ngFor="let data of dataUsers" >
-							<td>{{data.nombre}} {{data.apellidos}}</td>
-							<td>{{data.codigo}}</td>
-							<td>{{data.dni}}</td>
-						</tr>
-						<tr>
-							<th>Name</th>
-							<th>Code</th>
-							<th>Dni</th>
-						</tr>
-					</table>
-					<div class="col-auto my-auto">
-						<div class="h-100">
-							<!-- <h5 class="mb-1">Yeiser Avila</h5> -->
-							<!-- <p class="mb-0 font-weight-normal text-sm">
-								Cod Estudiante / 202011796
-							</p> -->
-						</div>
-					</div>
-					<div
-						class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
-					></div>
-				</div>
-			</div>
-		</div>
-		<footer class="footer py-4"></footer>
-	</div>
+  <div class="main-content position-relative max-height-vh-100 h-100">
+    <div class="container-fluid px-2 px-md-4">
+      <div
+        class="page-header min-height-300 border-radius-xl mt-4"
+        style="background-image: url('../../../assets/img/carrucel/1.jpg')"
+      >
+        <span class="mask bg-gradient-primary opacity-6"></span>
+      </div>
+      <div class="card card-body mx-3 mx-md-4 mt-n6">
+        <div class="row gx-4 mb-2">
+          <div class="col-auto">
+            <div class="avatar avatar-xl position-relative">
+              <img
+                src="../../../assets/users/user1.png"
+                alt="profile_image"
+                class="w-100 border-radius-lg shadow-sm"
+              />
+            </div>
+          </div>
+          <!-- DATA TRAIDA -->
+          <div *ngFor="let data of dataUsers" class="col-auto my-auto">
+            <div class="h-100">
+              <h4 class="mb-1">{{ data.nombre }} {{ data.apellidos }}</h4>
+              <p class="mb-0 font-weight-normal text-sm">
+                <b>Cod Estudiante: </b>
+                {{ data.codigo }} &nbsp;&nbsp;&nbsp;&nbsp; <b>Dni:</b>
+                {{ data.dni }}
+              </p>
+            </div>
+          </div>
+          <div class="col-auto my-auto">
+            <div class="h-100"></div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer py-4"></footer>
+  </div>
 
-	<!-- ======= MODULOS =======  -->
+  <!-- ======= MODULOS =======  -->
 
-	<section id="why-us" class="why-us">
-		<div class="container">
-			<div class="section-title">
-				<h2>Modulos</h2>
-				<!-- <p>
+  <section id="why-us" class="why-us">
+    <div class="container">
+      <div class="section-title">
+        <h2>Modulos</h2>
+        <!-- <p>
           Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
           adipisci expedita at voluptas atque vitae autem.
         </p> -->
-			</div>
+      </div>
 
-			<div class="row ">
-				<div class="col-lg-4 ">
-					<div
-						class="box modulos"
-						[routerLink]="['/menu/solicitudes']"
-						routerLinkActive="active"
-						[routerLinkActiveOptions]="{ exact: true }"
-					>
-						<img src="../../../assets/svg/solicitud.svg" alt="" />
-						<h4>Generar Solicitudes</h4>
-					</div>
-				</div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div
+            class="box modulos"
+            [routerLink]="['/menu/solicitudes']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <img src="../../../assets/svg/solicitud.svg" alt="" />
+            <h4>Generar Solicitudes</h4>
+          </div>
+        </div>
 
-				<div class="col-lg-4 mt-4 mt-lg-0">
-					<div
-						class="box modulos"
-						[routerLink]="['/menu/validaciones']"
-						routerLinkActive="active"
-						[routerLinkActiveOptions]="{ exact: true }"
-					>
-						<img src="../../../assets/svg/Reportes.svg" alt="" />
-						<h4>Validaciones</h4>
-					</div>
-				</div>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div
+            class="box modulos"
+            [routerLink]="['/menu/validaciones']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <img src="../../../assets/svg/Reportes.svg" alt="" />
+            <h4>Validaciones</h4>
+          </div>
+        </div>
 
-				<div class="col-lg-4 mt-4 mt-lg-0">
-					<div class="box modulos">
-						<img src="../../../assets/svg/Actividades.svg" alt="" />
-						<h4>Validaciones de Practicas</h4>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Whu Us Section -->
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box modulos">
+            <img src="../../../assets/svg/Actividades.svg" alt="" />
+            <h4>Validaciones de Practicas</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Whu Us Section -->
 
-	<!--   Core JS Files   -->
-	<script src="../assets/js/core/popper.min.js"></script>
-	<script src="../assets/js/core/bootstrap.min.js"></script>
-	<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-	<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-	<script>
-		var win = navigator.platform.indexOf("Win") > -1;
-		if (win && document.querySelector("#sidenav-scrollbar")) {
-			var options = {
-				damping: "0.5",
-			};
-			Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
-		}
-	</script>
-	<!-- Github buttons -->
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
-	<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-	<script src="../assets/js/material-dashboard.min.js?v=3.0.4"></script>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script>
+    var win = navigator.platform.indexOf("Win") > -1;
+    if (win && document.querySelector("#sidenav-scrollbar")) {
+      var options = {
+        damping: "0.5",
+      };
+      Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/material-dashboard.min.js?v=3.0.4"></script>
 </body>

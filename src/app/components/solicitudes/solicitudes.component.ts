@@ -19,8 +19,6 @@ export class SolicitudesComponent {
   constructor(private router : Router, private estudianteService : EstudianteService) { }
       
   ngOnInit(): void {
-
-
     this.dataUsers.push(JSON.parse(this.users))
   }
 

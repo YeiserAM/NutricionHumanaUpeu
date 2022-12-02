@@ -19,11 +19,13 @@
               />
             </div>
           </div>
-          <div class="col-auto my-auto">
+          <div *ngFor="let data of dataUsers" class="col-auto my-auto">
             <div class="h-100">
-              <h5 class="mb-1">Yeiser Avila</h5>
+              <h4 class="mb-1">{{ data.nombre }} {{ data.apellidos }}</h4>
               <p class="mb-0 font-weight-normal text-sm">
-                Cod Estudiante / 202011796
+                <b>Cod Estudiante: </b>
+                {{ data.codigo }} &nbsp;&nbsp;&nbsp;&nbsp; <b>Dni:</b>
+                {{ data.dni }}
               </p>
             </div>
           </div>
@@ -47,15 +49,36 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Estado civil </span>
-            <input type="text" placeholder="Ingrese su estado civil" [(ngModel)]="estudiante.estadocivil" name="estcivil" id="estadocivil" required />
+            <input
+              type="text"
+              placeholder="Ingrese su estado civil"
+              [(ngModel)]="estudiante.estadocivil"
+              name="estcivil"
+              id="estadocivil"
+              required
+            />
           </div>
           <div class="input-box">
             <span class="details">Religion</span>
-            <input type="text" placeholder="Ingrese su religion" [(ngModel)]="estudiante.religion" name="religion" id="religion" required />
+            <input
+              type="text"
+              placeholder="Ingrese su religion"
+              [(ngModel)]="estudiante.religion"
+              name="religion"
+              id="religion"
+              required
+            />
           </div>
           <div class="input-box">
             <span class="details">Nacionalidad</span>
-            <input type="text" placeholder="Ingrese su nacionalidad" [(ngModel)]="estudiante.nacionalidad" name="nacionalidad" id="nacionalidad" required />
+            <input
+              type="text"
+              placeholder="Ingrese su nacionalidad"
+              [(ngModel)]="estudiante.nacionalidad"
+              name="nacionalidad"
+              id="nacionalidad"
+              required
+            />
           </div>
           <div class="input-box">
             <span class="details">Fecha Nacimiento</span>
@@ -65,20 +88,43 @@
               name="start"
               min="2022-03"
               value="2022-21"
-              [(ngModel)]="estudiante.fechanacimiento" name="fechanacimiento" id="fechanacimiento"
+              [(ngModel)]="estudiante.fechanacimiento"
+              name="fechanacimiento"
+              id="fechanacimiento"
             />
           </div>
           <div class="input-box">
             <span class="details">Ubigeo</span>
-            <input type="number" placeholder="Ingrese su ubigeo" [(ngModel)]="estudiante.ubigeo" name="ubigeo" id="ubigeo" required />
+            <input
+              type="number"
+              placeholder="Ingrese su ubigeo"
+              [(ngModel)]="estudiante.ubigeo"
+              name="ubigeo"
+              id="ubigeo"
+              required
+            />
           </div>
           <div class="input-box">
             <span class="details">Numero Telefono</span>
-            <input type="number" placeholder="Ingrese su telefono" [(ngModel)]="estudiante.telefono" name="numtelefono" id="numtelefono" required />
+            <input
+              type="number"
+              placeholder="Ingrese su telefono"
+              [(ngModel)]="estudiante.telefono"
+              name="numtelefono"
+              id="numtelefono"
+              required
+            />
           </div>
           <div class="input-box">
             <span class="details">Genero</span>
-            <input type="text" placeholder="Ingrese su Genero" [(ngModel)]="estudiante.genero" name="genero" id="genero" required />
+            <input
+              type="text"
+              placeholder="Ingrese su Genero"
+              [(ngModel)]="estudiante.genero"
+              name="genero"
+              id="genero"
+              required
+            />
           </div>
         </div>
         <!-- <div class="gender-details">

@@ -23,14 +23,14 @@
               />
             </div>
           </div>
-          <div class="col-auto my-auto">
-            <div class="h-100">
-              <h5 class="mb-1">Yeiser Avila</h5>
-              <p class="mb-0 font-weight-normal text-sm">
-                Cod Estudiante / 202011796
-              </p>
-            </div>
-          </div>
+          <div *ngFor="let data of dataUsers" class="col-auto my-auto">
+						<div class="h-100">
+						  <h4 class="mb-1">{{data.nombre}} {{data.apellidos}}</h4>
+						  <p class="mb-0 font-weight-normal text-sm">
+							<b>Cod Estudiante: </b>  {{data.codigo}} &nbsp;&nbsp;&nbsp;&nbsp;  <b>Dni:</b> {{data.dni}}
+						  </p>
+						</div>
+					  </div>
           <div class="validaciones">
             <div class="container">
               <form>
@@ -42,6 +42,7 @@
             </div>
             <!-- box -->
           </div>
+        </div>
 
           <!-- VALIDACIONES -->
           <div class="validacion">
@@ -122,5 +123,4 @@
       </div>
     </div>
     <footer class="footer py-4"></footer>
-  </div>
 </body>

@@ -11,35 +11,38 @@ import Swal from 'sweetalert2';
   styleUrls: ['./formularioempresa.component.css']
 })
 export class FormularioempresaComponent implements OnInit{
+  empresas: string = `${window.sessionStorage.getItem('empresas')}`;
+  empresa : any= [];
 
-  empresa = new Empresa();
-
-  user = new UserData();
+  dataEmpresa = new Empresa();
 
   constructor(private router : Router, private empresaService : EmpresaService) { }
 
   ngOnInit(): void {
+    this.empresa.push(JSON.parse(this.empresas))
   }
 
   registrarempresa(){
-    // console.log("Funciono bien");
-    // console.log(this.empresa);
-    console.log(this.user);
 
-    // let dataempresa = {
-    //   idempresa: 6,
-    //   nombree: "Posta San Matooo",
-    //   ruc: "ooo",
-    //   direccion: "san mate",
-    //   nombrerep: "  humpiri",
-    //   cargorep: "ooo",
-    //   gradosup: "licenciado",
-    //   telefono: "159236478",
-    //   fechappp: "2022-07-10",
-    //   areappp: "54444",
-    //   idestudian: 4
-    // }
-    this.empresaService.CrearEmpresa(this.empresa).subscribe(data=>{
+    let dataempresa = {
+      // idempresa: this.empresa[0].idempresa,
+      nombree: this.dataEmpresa.nombree,
+      nombrerep: this.dataEmpresa.nombrerep,
+      cargorep: this.dataEmpresa.cargorep,
+      gradosup: this.dataEmpresa.gradosup,
+      direccion: this.dataEmpresa.direccion,
+      telefono: this.dataEmpresa.telefono,
+      fechappp: this.dataEmpresa.fechappp,
+      areappp: this.dataEmpresa.areappp,
+      // idestudian: this.empresa[0].idestudian
+
+
+    }
+
+    console.log("Funciono bien");
+    console.log(this.empresa);
+
+    this.empresaService.CrearEmpresa(dataempresa).subscribe(data=>{
       console.log(data);
       Swal.fire({
         title: '<b style="color: #000000; font-family: Poppins, sans-serif; font-weight: 900; font-size: 45px">Registro Exitoso</b>',
