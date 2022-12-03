@@ -1,1 +1,110 @@
-<p>reportes works!</p>
+<link rel="stylesheet" href="reportes.component.css" />
+<div class="cabecera">
+  <div class="main-content position-relative max-height-vh-100 h-100">
+    <div class="container-fluid px-2 px-md-4">
+      <div
+        class="page-header min-height-300 border-radius-xl mt-4"
+        style="background-image: url('../../../assets/img/carrucel/1.jpg')"
+      >
+        <span class="mask bg-gradient-primary opacity-6"></span>
+      </div>
+      <div class="card card-body mx-3 mx-md-4 mt-n6">
+        <div class="row gx-4 mb-2">
+          <div class="col-auto">
+            <div class="avatar avatar-xl position-relative">
+              <img
+                src="../../../assets/users/user1.png"
+                alt="profile_image"
+                class="w-100 border-radius-lg shadow-sm"
+              />
+            </div>
+          </div>
+          <div *ngFor="let data of dataUsers" class="col-auto my-auto">
+            <div class="h-100">
+              <h4 class="mb-1">{{ data.nombre }} {{ data.apellidos }}</h4>
+              <p class="mb-0 font-weight-normal text-sm">
+                <b>Cod Estudiante: </b>
+                {{ data.codigo }} &nbsp;&nbsp;&nbsp;&nbsp; <b>Dni:</b>
+                {{ data.dni }}
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer py-4"></footer>
+  </div>
+</div>
+
+<!-- FORMULARIO -->
+
+<div class="formulario">
+  <div class="container">
+    <div class="title">Validacion de Practicas</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Titulo </span>
+            <input type="text" placeholder="Ingrese el titulo" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Tipo</span>
+            <input type="text" placeholder="Ingrese el tipo de ppp" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Descripcion</span>
+            <input
+              type="text"
+              placeholder="Ingrese una breve descripcion"
+              required
+            />
+          </div>
+        </div>
+          <!-- SUBIR DOCUMENTOS -->
+        
+        <div class="gender-details">
+          <span class="gender-title">Subir Archivos</span>
+          <div class="load">
+            <div class="wrapper">
+              <header>Arrastre Aqui sus Archivos</header>
+              <form action="#">
+                <input class="file-input" type="file" name="file" hidden />
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Buscar Doc para subir</p>
+              </form>
+              <section class="progress-area"></section>
+              <section class="uploaded-area"></section>
+            </div>
+          </div>
+        </div>
+
+        <div class="botones col-lg-6">
+          <div class="button">
+            <input
+              type="submit"
+              value="Cancelar"
+              class="box"
+              [routerLink]="['/menu/profile']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            />
+          </div>
+          <div class="button">
+            <input
+              type="submit"
+              value="Enviar"
+              class="box"
+              [routerLink]="['/menu/dashboard']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

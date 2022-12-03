@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CargadocsComponent } from './components/cargadocs/cargadocs.component';
 import { ConfiguracionComponent } from './components/configuracion/configuracion.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardadminComponent } from './components/dashboardadmin/dashboardadmin.component';
 import { FormularioempresaComponent } from './components/formularioEmpresa/formularioempresa.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
@@ -24,7 +25,8 @@ const dashboard: Routes = [
   {path: 'reportes', component:ReportesComponent},
   {path: 'configuracion', component:ConfiguracionComponent},
   {path: 'menuadmin', component:MenuadminComponent},
-  {path: 'validarsoliadmin', component:ValidarsoliadminComponent}
+  {path: 'validarsoliadmin', component:ValidarsoliadminComponent},
+  {path: 'dashboardadmin', component:DashboardadminComponent}
   
 ];
 

@@ -22,6 +22,7 @@ import { ReportesComponent } from './components/reportes/reportes.component';
 import { ConfiguracionComponent } from './components/configuracion/configuracion.component';
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 import { ValidarsoliadminComponent } from './components/validarsoliadmin/validarsoliadmin.component';
+import { DashboardadminComponent } from './components/dashboardadmin/dashboardadmin.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ValidarsoliadminComponent } from './components/validarsoliadmin/validar
     ReportesComponent,
     ConfiguracionComponent,
     MenuadminComponent,
-    ValidarsoliadminComponent
+    ValidarsoliadminComponent,
+    DashboardadminComponent
   ],
   imports: [
     FormsModule,

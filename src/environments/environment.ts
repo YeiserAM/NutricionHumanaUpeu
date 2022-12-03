@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  url: 'https://backend-nutricion.herokuapp.com'
+  url: 'http://localhost:3000'
+  // url: 'https://backend-nutricion.herokuapp.com'
 };

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-reportes',
-  templateUrl: './reportes.component.html',
-  styleUrls: ['./reportes.component.css']
+  selector: 'app-dashboardadmin',
+  templateUrl: './dashboardadmin.component.html',
+  styleUrls: ['./dashboardadmin.component.css']
 })
-export class ReportesComponent {
+export class DashboardadminComponent {
   users: string = `${window.sessionStorage.getItem('users')}`;
   dataUsers : any= [];
 

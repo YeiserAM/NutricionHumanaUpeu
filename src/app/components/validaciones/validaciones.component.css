@@ -288,3 +288,29 @@ button:hover i{
 .validacion{
   padding: 0 20px 20px 20px;
 }
+
+.btn-volver{
+  display: flex;
+  padding: 0 0 0 41%;
+   height: 45px;
+   margin: 35px 0
+ }
+ .btn-v input{
+   height: 5vh;
+   width: 25vh;
+   border-radius: 8px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(195deg, #197ddaaf 0%, #16d686ad 100%);
+   
+ }
+ .btn-v input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(195deg, #197ddaaf 0%, #1bd870 100%);
+   
+  }

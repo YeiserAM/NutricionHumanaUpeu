@@ -80,7 +80,12 @@
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
-          <div class="box modulos">
+          <div
+            class="box modulos"
+            [routerLink]="['/menu/reportes']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
             <img src="../../../assets/svg/Actividades.svg" alt="" />
             <h4>Validaciones de Practicas</h4>
           </div>

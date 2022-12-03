@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./validarsoliadmin.component.css']
 })
 export class ValidarsoliadminComponent {
+  users: string = `${window.sessionStorage.getItem('users')}`;
+  dataUsers : any= [];
 
+  ngOnInit(): void {
+    this.dataUsers.push(JSON.parse(this.users))
+  }
 }
