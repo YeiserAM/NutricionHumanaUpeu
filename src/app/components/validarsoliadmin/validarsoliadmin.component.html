@@ -1,7 +1,11 @@
-<link rel="stylesheet" href="validarsoliadmin.component.css">
+<link rel="stylesheet" href="validarsoliadmin.component.css" />
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+  rel="stylesheet"
 />
 <body class="g-sidenav-show bg-gray-200">
   <div class="main-content position-relative max-height-vh-100 h-100">
@@ -27,7 +31,7 @@
             <div class="h-100">
               <h4 class="mb-1">Doc. {{ data.nombre }} {{ data.apellidos }}</h4>
               <p class="mb-0 font-weight-normal text-sm">
-                 <b>Dni:</b>
+                <b>Dni:</b>
                 {{ data.dni }}
               </p>
             </div>
@@ -36,7 +40,7 @@
             <div class="container">
               <form>
                 <input type="text" name="" placeholder="Buscar..." />
-                <button type="submit">
+                <button class="buscar">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
@@ -78,56 +82,132 @@
                           <td>yeiser@upeu.edu.pe</td>
                           <td>Nutricion</td>
                           <td>
-                            <img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAY1JREFUSEu1lY0xQ1EQhU8qQAWoABWgA6kgdEAF6IAKUAEqkFRAKggd0IH5Mrtm3bvvJzPv3ZlMXm5u9ts9e+5mopHXZOT4KgE3ku4kfQ8FjgCCX0v6kHQ6FCQCtiXNJR0MCSklKiFTSceSziTtSTo06agSGR8lvbZVmzU5Qvq2AnnvM1AGINPnkC2QK0kvkj6NyJkTe81CVVXvMoneTY6l/dB7giznliWwWwMiG1KlvSsBNBnNWfsWzBtfynVkZmA/ysp5KlmvCCC7hxDF7cpWBiGIN9shfN6VdGFV/QOgL1+iN7BYchMEJ+2EpDxJYqFACoCOxuWdyCA/Jo8zHPBlfUwlgo6+MWCTXE9WrUu0MmAqkQekyVnArr03s/bC7Fs1uWwUAcmEitrk4hwLu2Jt7sffsOxzk70f+H7LqgOMCfC/ryp42eToc3x9adM17rc9p1O46w8HEIMOd/BM1iyyRTqvjvdeN7lvtuW5xlHfVcEmwAhhzFNV9Ze5ScDsLBBctA4+BqCCDilRWv0vleJuGYI2aeIAAAAASUVORK5CYII="
-                            />
+                            <!-- BOTONES DE VISTAS -->
+
+                            <button
+                              type="button"
+                              class="btn btn-default btn-sm"
+                              data-toggle="modal"
+                              data-target="#modal-vista"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-eye-fill"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"
+                                />
+                                <path
+                                  d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+                                />
+                              </svg>
+                            </button>
+
+                            <!-- FIN DE VISTA -->
+                            <!-- Modal -->
+                            <!-- <div class="modal fade" id="modal-vista" tabindex="-1" role="dialog"  aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    ...
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
                           </td>
                           <td>
-                            <img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKlJREFUSEvtlcERQDAQRZ9KlIBOlEIFlKQUOqASJjM4hJ0fIje5ZTbZ9//uJJuReGWJ86MANdABpSFkBlpgsIQqgEuQC5cjUL0FrPtFS4iKyxKpBCp+ARwXYnt/OvatJwccyqV1z6J5/nXzvgb4CtX+5Ic6UAmjS/QDLu/qaUn+HsivKbpEivAYEDJofOh0N/msl+xGZQ8USvoeX4DmbnSqkRmY3z6WHLABUDk4GfuOp84AAAAASUVORK5CYII="
-                            />
+                            <button
+                              type="button"
+                              class="btn btn-default btn-sm"
+                            >
+                              <span class="glyphicon glyphicon-star"></span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-trash3"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"
+                                />
+                              </svg>
+                            </button>
                           </td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Christian Humpiri</td>
-                            <td>04-12-2022</td>
-                            <td>Lima</td>
-                            <td><b>986574314</b></td>
-                            <td>christian@upeu.edu.pe</td>
-                            <td>Nutricion</td>
+                          <th scope="row">2</th>
+                          <td>Christian Humpiri</td>
+                          <td>04-12-2022</td>
+                          <td>Lima</td>
+                          <td><b>986574314</b></td>
+                          <td>christian@upeu.edu.pe</td>
+                          <td>Nutricion</td>
+
+                          <!-- BOTONES DE VISTAS -->
+
                           <td>
-                            <img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAY1JREFUSEu1lY0xQ1EQhU8qQAWoABWgA6kgdEAF6IAKUAEqkFRAKggd0IH5Mrtm3bvvJzPv3ZlMXm5u9ts9e+5mopHXZOT4KgE3ku4kfQ8FjgCCX0v6kHQ6FCQCtiXNJR0MCSklKiFTSceSziTtSTo06agSGR8lvbZVmzU5Qvq2AnnvM1AGINPnkC2QK0kvkj6NyJkTe81CVVXvMoneTY6l/dB7giznliWwWwMiG1KlvSsBNBnNWfsWzBtfynVkZmA/ysp5KlmvCCC7hxDF7cpWBiGIN9shfN6VdGFV/QOgL1+iN7BYchMEJ+2EpDxJYqFACoCOxuWdyCA/Jo8zHPBlfUwlgo6+MWCTXE9WrUu0MmAqkQekyVnArr03s/bC7Fs1uWwUAcmEitrk4hwLu2Jt7sffsOxzk70f+H7LqgOMCfC/ryp42eToc3x9adM17rc9p1O46w8HEIMOd/BM1iyyRTqvjvdeN7lvtuW5xlHfVcEmwAhhzFNV9Ze5ScDsLBBctA4+BqCCDilRWv0vleJuGYI2aeIAAAAASUVORK5CYII="
-                            />
+                            <button
+                              type="button"
+                              class="btn btn-default btn-sm"
+                              data-toggle="modal"
+                              data-target="#exampleModalCenter"
+                              
+                            >
+                              <span class="glyphicon glyphicon-star"></span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-eye-fill"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"
+                                />
+                                <path
+                                  d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+                                />
+                              </svg>
+                            </button>
                           </td>
                           <td>
-                            <img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKlJREFUSEvtlcERQDAQRZ9KlIBOlEIFlKQUOqASJjM4hJ0fIje5ZTbZ9//uJJuReGWJ86MANdABpSFkBlpgsIQqgEuQC5cjUL0FrPtFS4iKyxKpBCp+ARwXYnt/OvatJwccyqV1z6J5/nXzvgb4CtX+5Ic6UAmjS/QDLu/qaUn+HsivKbpEivAYEDJofOh0N/msl+xGZQ8USvoeX4DmbnSqkRmY3z6WHLABUDk4GfuOp84AAAAASUVORK5CYII="
-                            />
+                            <button
+                              type="button"
+                              class="btn btn-default btn-sm"
+                            >
+                              <span class="glyphicon glyphicon-star"></span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-trash3"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"
+                                />
+                              </svg>
+                            </button>
                           </td>
                         </tr>
-                        <!-- <tr>
-                            <th scope="row">3</th>
-                            <td>Ashleigh Langosh</td>
-                            <td>Finance</td>
-                            <td>45</td>
-                            <td>2011-08-12</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">4</th>
-                            <td>Angus Grady</td>
-                            <td>HR</td>
-                            <td>34</td>
-                            <td>2012-06-11</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">5</th>
-                            <td>Raheem Lehner</td>
-                            <td>Dynamic Division Officer</td>
-                            <td>47</td>
-                            <td>2011-04-19</td>
-                          </tr> -->
                       </tbody>
                     </table>
                   </div>
@@ -136,6 +216,30 @@
             </div>
           </section>
         </div>
+        <!-- VISTA DE MODAL -->
+
+        <ng-template #contenido let-modal>
+          <div class="modal-header">
+              <h4 class="modal-title">Titulo Modal</h4>
+              <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              Este es el contenido de este modal.
+              Este es el contenido de este modal.
+              Este es el contenido de este modal.
+              Este es el contenido de este modal.
+              Este es el contenido de este modal.
+              Este es el contenido de este modal.
+              Este es el contenido de este modal.
+              Este es el contenido de este modal.
+              Este es el contenido de este modal.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-success" (click)="modal.close()">Ok!</button>
+          </div>
+      </ng-template>
 
         <div class="btn-volver col-lg-6">
           <div class="btn-v">

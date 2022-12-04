@@ -102,7 +102,7 @@ input:focus{
     outline: none;
 }
 
-button{
+.buscar{
     position: absolute;
     top: 0;
     right: 0;
@@ -115,11 +115,11 @@ button{
     font-size: 18px;
 }
 
-button i{
+.buscar i{
     color: rgb(93, 94, 95);
 }
 
-button:hover i{
+.buscar:hover i{
     color: rgb(162, 163, 163);
 }
 
@@ -218,7 +218,7 @@ button:hover i{
     line-height: 1.5em;
     text-align: justify;
   }
-  .content button{
+  /* .content .buscar{
     display: inline-flex;
     padding: 15px 20px;
     border: none;
@@ -235,7 +235,7 @@ button:hover i{
   }
   .content button:hover{
     background: linear-gradient(147deg, #fe791b 0%, #fd1c1c 74%);
-  }
+  } */
   .sliders{
     position: absolute;
     bottom: 25px;
