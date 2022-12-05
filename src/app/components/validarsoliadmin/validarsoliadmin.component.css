@@ -314,3 +314,33 @@ input:focus{
   background: linear-gradient(195deg, #882e04bb 0%, #ffa825a8 100%);
    
   }
+
+  /* MODALS  */
+
+  #containery{
+    display: flex;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+  }
+  #containery{
+    width: 100%;
+    height: 600px;
+    box-shadow: 5px 5px 6px rgb(19,19,19,0.2);
+    border-radius: 15px;
+    background-color: #fff;
+
+  }
+
+  #containery #header{
+    border-bottom: 1px solid #ccc;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }

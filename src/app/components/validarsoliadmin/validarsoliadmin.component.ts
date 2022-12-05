@@ -1,5 +1,4 @@
-import { Component,OnInit,ViewEncapsulation } from '@angular/core';
-// import {} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-validarsoliadmin',
@@ -9,6 +8,7 @@ import { Component,OnInit,ViewEncapsulation } from '@angular/core';
 export class ValidarsoliadminComponent {
   users: string = `${window.sessionStorage.getItem('users')}`;
   dataUsers : any= [];
+  showModal = false;
 
 
   ngOnInit(): void {

@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./formularioempresa.component.css']
 })
 export class FormularioempresaComponent implements OnInit{
-  empresas: string = `${window.sessionStorage.getItem('empresas')}`;
+  empresas: string = `${window.sessionStorage.getItem('users')}`;
   empresa : any= [];
 
   dataEmpresa = new Empresa();
@@ -25,22 +25,21 @@ export class FormularioempresaComponent implements OnInit{
   registrarempresa(){
 
     let dataempresa = {
-      // idempresa: this.empresa[0].idempresa,
       nombree: this.dataEmpresa.nombree,
       nombrerep: this.dataEmpresa.nombrerep,
       cargorep: this.dataEmpresa.cargorep,
       gradosup: this.dataEmpresa.gradosup,
       direccion: this.dataEmpresa.direccion,
-      telefono: this.dataEmpresa.telefono,
+      telefono: String(this.dataEmpresa.telefono),
       fechappp: this.dataEmpresa.fechappp,
       areappp: this.dataEmpresa.areappp,
-      // idestudian: this.empresa[0].idestudian
-
-
+      idestudian: this.empresa[0].idestudiante
     }
 
+    // console.log(this.empresa);   
+
     console.log("Funciono bien");
-    console.log(this.empresa);
+    console.log(dataempresa);
 
     this.empresaService.CrearEmpresa(dataempresa).subscribe(data=>{
       console.log(data);
