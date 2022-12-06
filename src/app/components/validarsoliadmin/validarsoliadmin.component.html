@@ -56,28 +56,27 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">SOLICITUDES</th>
-                          <th scope="col">AÑO</th>
-                          <th scope="col">LUGAR</th>
+                          <th scope="col">APELLIDOS</th>
+                          <th scope="col">DIRECCION</th>
                           <th scope="col">NUMERO</th>
-                          <th scope="col">CORREO</th>
-                          <th scope="col">EP</th>
+                          
                           <th></th>
                           <th></th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Yeiser Avila</td>
-                          <td>05-12-2022</td>
-                          <td>Lima</td>
-                          <td><b>978456328</b></td>
-                          <td>yeiser@upeu.edu.pe</td>
-                          <td>Nutricion</td>
+                      <tbody  >
+                        <tr *ngFor="let data of solicitudes let i=index" >
+                          <th scope="row">{{i+1}}</th>
+                          <td>{{data.nombre}}</td>
+                          <td>{{data.apellidos}}</td>
+                          <td>{{data.direccion}}</td>
+                          <td><b>{{data.telefonoe}}</b></td>
+                          <td></td>
+                          
                           <td>
                             <!-- BOTONES DE VISTAS -->
 
-                            <button type="button" class="btn btn-default btn-sm"  data-bs-toggle="modal" data-bs-target="#viewdetail">
+                            <button (click)="buscarDatos(data.idpersona)" type="button" class="btn btn-default btn-sm"  data-bs-toggle="modal" data-bs-target="#viewdetail">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -86,27 +85,6 @@
                               </svg>
                             </button>
 
-                            <!-- FIN DE VISTA -->
-                            <!-- Modal -->
-                            <!-- <div class="modal fade" id="modal-vista" tabindex="-1" role="dialog"  aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    ...
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div> -->
                           </td>
                           <td>
                             <button type="button" class="btn btn-default btn-sm">
@@ -120,41 +98,7 @@
                             </button>
                           </td>
                         </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Christian Humpiri</td>
-                          <td>04-12-2022</td>
-                          <td>Lima</td>
-                          <td><b>986574314</b></td>
-                          <td>christian@upeu.edu.pe</td>
-                          <td>Nutricion</td>
 
-                          <!-- BOTONES DE VISTAS -->
-
-                          <td>
-                            <div data-toggle="modal" data-target="#viewdetail">
-                              <button type="button" class="btn btn-default btn-sm">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                  class="bi bi-eye-fill" viewBox="0 0 16 16">
-                                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                  <path
-                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                </svg>
-                              </button>
-                            </div>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-default btn-sm">
-                              <span class="glyphicon glyphicon-star"></span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-trash3" viewBox="0 0 16 16">
-                                <path
-                                  d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
-                              </svg>
-                            </button>
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -165,63 +109,69 @@
         </div>
 
         <!-- MODAL 1 -->
-        <div class="modal fade" id="viewdetail" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div  class="model-data">
+          <div class="modal fade" id="viewdetail" tabindex="-1" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
-          <div class="modal-dialog modal-lg">
+          <div class="modal-dialog modal-lg ">
             <div class="modal-content">
               <div class="modal-header">
                 <div class="documentologo">
-                  <img src="../../../assets/img/documentos.png">
-                </div>
-                <h1 class="modal-title" id="exampleModalLabel">Solicitudes</h1>
+                  <img src="../../../assets/icons/solicitud.png">
+                  
+                </div> &nbsp;&nbsp;
+                <br><br><h1 class="modal-title" id="exampleModalLabel"> Solicitudes</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
               </div>
               <div class="modal-body">
-                <form class="row g-3">
-                  <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Nombres Completos</label>
-                    <input type="text" class="form-control" id="inputEmail4" name="nombre" disabled>
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label">Empresa:</label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombree}}</div>
                   </div>
-                  <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Apellidos Completos</label>
-                    <input type="text" class="form-control" id="inputPassword4" name="apellido" disabled>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label">Datos del Supervisor:</label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombrerep}}</div>
                   </div>
-                  <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Número de Celular</label>
-                    <input type="text" class="form-control" id="inputPassword4" name="telefonos" disabled>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label">Archivos Adjuntados:</label> 
                   </div>
-                  <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Pais</label>
-                    <input type="text" class="form-control" id="inputPassword4" name="paises" disabled>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label">Cargo Rep de la empresa:</label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.cargorep}}</div>
                   </div>
-                  <div class="col-12">
-                    <label for="inputAddress" class="form-label">Consulta</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="consulta"
-                      disabled></textarea>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label">Teléfono y/o celular:</label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.telefonoe}}</div>
                   </div>
-                </form>
+                  <div class="col-md-4">
+                    
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label">Dirección:</label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.direccion}}</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label">Área de Práctica:</label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.areappp}}</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label">Fecha que inicia las PPP: </label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.fechappp}}</div>
+                  </div>
+                  
+                </div>
               </div>
+              <!-- BOTON DE MODAL  -->
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- VISTA DE MODAL -->
-        <!-- <div id="containery">
-            <div id="header">
-              pls confirmar!
-            </div>
-            <div id="content">
-              estas seguro que deseas eliminar?
-            </div>
-            <div id="acciones">
-              <button class="cancelar" >No</button>
-              <button>Si</button>
-            </div>
-        </div>   -->
+        </div>
+        
 
         <div class="btn-volver col-lg-6">
           <div class="btn-v">
