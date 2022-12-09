@@ -26,7 +26,11 @@
     .avatar-xl {
       width: 74px !important;
       height: 74px !important;
+    
       
+    }
+    .avatar img{
+      border-radius: 35px;
     }
   
   
@@ -102,8 +106,28 @@ input:focus{
     outline: none;
 }
 
-button{
-    position: absolute;
+.buscar{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  border-radius: 30%;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 18px;
+}
+
+.buscar i{
+  color: rgb(93, 94, 95);
+}
+
+.buscar:hover i{
+  color: rgb(162, 163, 163);
+}
+/* button{
+    position: relative;
     top: 0;
     right: 0;
     width: 50px;
@@ -121,7 +145,7 @@ button i{
 
 button:hover i{
     color: rgb(162, 163, 163);
-}
+} */
 
 /* validacionesssss */
 
@@ -173,6 +197,7 @@ button:hover i{
     cursor: pointer;
     opacity: 0;
     transition: .6s;
+
   }
   #tap-1:checked ~ .inner-part .img-1,
   #tap-2:checked ~ .inner-part .img-2,
@@ -218,7 +243,7 @@ button:hover i{
     line-height: 1.5em;
     text-align: justify;
   }
-  .content button{
+  /* .content button{
     display: inline-flex;
     padding: 15px 20px;
     border: none;
@@ -235,7 +260,7 @@ button:hover i{
   }
   .content button:hover{
     background: linear-gradient(147deg, #fe791b 0%, #fd1c1c 74%);
-  }
+  } */
   .sliders{
     position: absolute;
     bottom: 25px;
@@ -314,3 +339,16 @@ button:hover i{
   background: linear-gradient(195deg, #197ddaaf 0%, #1bd870 100%);
    
   }
+
+    /* MODALS  */
+
+    .modal .documentologo img{
+   
+      width: 55px;
+      height: 55px;
+    }
+
+    .archivo  img{
+      width:50px;
+      height: 45px;
+    }

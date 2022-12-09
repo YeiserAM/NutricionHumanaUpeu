@@ -14,17 +14,19 @@
           <div class="col-auto">
             <div class="avatar avatar-xl position-relative">
               <img
-                src="../../../assets/users/user1.png"
+                src="../../../assets/users/student2.jpg"
                 alt="profile_image"
                 class="w-100 border-radius-lg shadow-sm"
               />
             </div>
           </div>
-          <div class="col-auto my-auto">
+          <div *ngFor="let data of dataUsers" class="col-auto my-auto">
             <div class="h-100">
-              <h5 class="mb-1">Yeiser Avila</h5>
+              <h4 class="mb-1">{{ data.nombre }} {{ data.apellidos }}</h4>
               <p class="mb-0 font-weight-normal text-sm">
-                Cod Estudiante / 202011796
+                <b>Cod Estudiante: </b>
+                {{ data.codigo }} &nbsp;&nbsp;&nbsp;&nbsp; <b>Dni:</b>
+                {{ data.dni }}
               </p>
             </div>
           </div>
@@ -46,27 +48,43 @@
     <div class="content">
       <form action="#">
         <div class="user-details">
-          <div class="input-box">
-            <span class="details">Documentos de ... </span>
-            
-          </div>
-          <div class="input-box">
-            <span class="details">Docuemntos de ...</span>  
-          </div>
+            <div class="input-box">
+              <span class="details">Subir Documentos de: </span>
+              <ul>
+                <li>Examen Psicologico</li>
+                <li>Guia de Practicas</li>
+                <li>Rubrica de Evaluacion</li>
+              </ul>
+            </div>
           <!-- SUBIR DOCUMENTOS -->
           <div class="load">
             <div class="wrapper">
-            <header>Arrastre Aqui sus Documentos</header>
+            <header>Documentos</header>
             <form action="#">
-              <input class="file-input" type="file" name="file" hidden />
-              <i class="fas fa-cloud-upload-alt"></i>
-              <p>Buscar Doc para subir</p>
+              <img src="../../../assets/icons/upload.svg" alt="">
+              <i class="fas fa-cloud-upload-alt"></i> 
+              
+              <div class="botoncito">
+                <input type="file" class="subir-doc " id="enviaar" (change)="uploadArchive($event)">
+                Subir Archivo
+              </div> <br>
+              <div class="loader" *ngIf="loader==true"></div>
+              
+                 <!-- <button onclick="getFile()"  class="button-75" role="button" ><span class="text">Subir Archivos
+                  <input type="file" id="enviaar" (change)="uploadArchive($event)">
+                 </span></button> -->
+
             </form>
-            <section class="progress-area"></section>
-            <section class="uploaded-area"></section>
+            <!-- <section class="progress-area"></section>
+            <section class="uploaded-area"></section> -->
           </div>
           </div>
-          
+         <script>
+          function getFile(){
+            document.getElementById('enviaar').click();
+             
+          }
+         </script> 
 
           <!-- FIN DE SUBIR DOCUMENTOS -->
         </div>

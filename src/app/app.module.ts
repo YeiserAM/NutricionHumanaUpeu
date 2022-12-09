@@ -25,6 +25,9 @@ import { ConfiguracionComponent } from './components/configuracion/configuracion
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 import { ValidarsoliadminComponent } from './components/validarsoliadmin/validarsoliadmin.component';
 import { DashboardadminComponent } from './components/dashboardadmin/dashboardadmin.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { DashboardadminComponent } from './components/dashboardadmin/dashboardad
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

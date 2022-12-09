@@ -27,6 +27,9 @@
   height: 74px !important;
   
 }
+.avatar img{
+  border-radius: 35px;
+}
 
 
 .page-header {

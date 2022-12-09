@@ -15,7 +15,7 @@
         <div class="row gx-4 mb-2">
           <div class="col-auto">
             <div class="avatar avatar-xl position-relative">
-              <img src="../../../assets/users/teacher.png" alt="profile_image"
+              <img src="../../../assets/users/teacher3.png" alt="profile_image"
                 class="w-100 border-radius-lg shadow-sm" />
             </div>
           </div>
@@ -55,8 +55,9 @@
                       <thead>
                         <tr>
                           <th scope="col">#</th>
-                          <th scope="col">SOLICITUDES</th>
+                          <th scope="col">NOMRRE</th>
                           <th scope="col">APELLIDOS</th>
+                          <th scope="col">NACIONALIDAD</th>
                           <th scope="col">DIRECCION</th>
                           <th scope="col">NUMERO</th>
                           
@@ -69,6 +70,7 @@
                           <th scope="row">{{i+1}}</th>
                           <td>{{data.nombre}}</td>
                           <td>{{data.apellidos}}</td>
+                          <td>{{data.nacionalidad}}</td>
                           <td>{{data.direccion}}</td>
                           <td><b>{{data.telefonoe}}</b></td>
                           <td></td>
@@ -112,7 +114,7 @@
         <div  class="model-data">
           <div class="modal fade" id="viewdetail" tabindex="-1" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
-          <div class="modal-dialog modal-lg ">
+          <div class="modal-dialog modal-lg modal-dialog-centered ">
             <div class="modal-content">
               <div class="modal-header">
                 <div class="documentologo">
@@ -126,37 +128,47 @@
               <div class="modal-body">
                 <div class="row g-3">
                   <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Empresa:</label>
+                    <label for="recipient-name" class="col-form-label"><b>Empresa:</b></label>
                      <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombree}}</div>
                   </div>
                   <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Datos del Supervisor:</label>
-                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombrerep}}</div>
+                    <label for="recipient-name" class="col-form-label"><b>Datos del Supervisor:</b></label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.gradosup}}</div>
                   </div>
                   <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Archivos Adjuntados:</label> 
+                    <label for="recipient-name" class="col-form-label"><b>Archivos Adjuntados:</b></label> 
+                    <p>Documentos Requeridos</p>
                   </div>
                   <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Cargo Rep de la empresa:</label>
+                    <label for="recipient-name" class="col-form-label"><b>Cargo Rep de la empresa:</b></label>
                      <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.cargorep}}</div>
                   </div>
                   <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Teléfono y/o celular:</label>
+                    <label for="recipient-name" class="col-form-label"><b>Teléfono y/o celular:</b></label>
                      <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.telefonoe}}</div>
                   </div>
+                  <div class="archivo col-md-4">
+                    <button  type="button" class="btn btn-default btn-sm" >
+                      <img src="../../../assets/icons/archivo2.svg" alt="">
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm">
+                      <img src="../../../assets/icons/archivo2.svg" alt="">
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm">
+                      <img src="../../../assets/icons/archivo2.svg" alt="">
+                    </button>
+                   
+                </div>
                   <div class="col-md-4">
-                    
-                  </div>
-                  <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Dirección:</label>
+                    <label for="recipient-name" class="col-form-label"><b>Dirección:</b></label>
                      <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.direccion}}</div>
                   </div>
                   <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Área de Práctica:</label>
+                    <label for="recipient-name" class="col-form-label"><b>Área de Práctica:</b></label>
                      <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.areappp}}</div>
                   </div>
                   <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Fecha que inicia las PPP: </label>
+                    <label for="recipient-name" class="col-form-label"><b>Fecha que inicia las PPP:</b> </label>
                      <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.fechappp}}</div>
                   </div>
                   

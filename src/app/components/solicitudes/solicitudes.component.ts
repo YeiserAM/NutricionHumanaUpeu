@@ -35,7 +35,7 @@ export class SolicitudesComponent {
         estadocivil: this.estudiante.estadocivil,
         idperso: this.dataUsers[0].idpersona
     }
-    // console.log(dataestudiante);
+     console.log(dataestudiante);
     // console.log(this.estudiante);
 
 

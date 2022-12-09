@@ -13,13 +13,16 @@ import Swal from 'sweetalert2';
 export class FormularioempresaComponent implements OnInit{
   empresas: string = `${window.sessionStorage.getItem('users')}`;
   empresa : any= [];
+  users: string = `${window.sessionStorage.getItem('users')}`;
+  dataUsers : any= [];
 
   dataEmpresa = new Empresa();
 
   constructor(private router : Router, private empresaService : EmpresaService) { }
 
   ngOnInit(): void {
-    this.empresa.push(JSON.parse(this.empresas))
+    this.empresa.push(JSON.parse(this.empresas)),
+    this.dataUsers.push(JSON.parse(this.users))
   }
 
   registrarempresa(){

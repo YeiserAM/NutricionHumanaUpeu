@@ -28,6 +28,9 @@
       height: 74px !important;
       
     }
+    .avatar img{
+      border-radius: 25px;
+    }
   
   
     .page-header {
@@ -323,3 +326,7 @@ input:focus{
     height: 40px;
   }
 
+  .archivo  img{
+    width:50px;
+    height: 45px;
+  }

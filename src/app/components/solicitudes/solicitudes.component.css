@@ -28,6 +28,10 @@
   
 }
 
+.avatar img{
+  border-radius: 35px;
+}
+
 
 .page-header {
   padding: 0;

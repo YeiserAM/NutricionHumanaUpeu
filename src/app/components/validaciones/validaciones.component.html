@@ -17,7 +17,7 @@
           <div class="col-auto">
             <div class="avatar avatar-xl position-relative">
               <img
-                src="../../../assets/users/user1.png"
+                src="../../../assets/users/student2.jpg"
                 alt="profile_image"
                 class="w-100 border-radius-lg shadow-sm"
               />
@@ -33,17 +33,18 @@
               </p>
             </div>
           </div>
-          <div class="validaciones">
+          <br><br>
+          <!-- <div class="validaciones">
             <div class="container">
               <form>
                 <input type="text" name="" placeholder="Buscar..." />
-                <button type="submit">
+                <button class="buscar">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
             </div>
-            <!-- box -->
-          </div>
+          
+          </div> -->
         </div>
 
         <!-- VALIDACIONES -->
@@ -57,75 +58,47 @@
 
                     <table class="table datatable">
                       <thead>
-                        <tr>
+                        <tr >
                           <th scope="col">#</th>
                           <th scope="col">DATA</th>
                           <th scope="col">FECHA</th>
                           <th scope="col">LUGAR</th>
                           <th scope="col">ESTADO</th>
-                          <th scope="col">EP</th>
+                          <th scope="col">VER</th>
                           <th></th>
                           <th></th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">1</th>
+                        <tr *ngFor="let data of solicitudes let i=index"  >
+                          <th scope="row">{{i+1}}</th>
                           <td>Informe de actividad</td>
-                          <td>05-12-2022</td>
-                          <td>Clinica</td>
-                          <td><b>Aceptado</b></td>
-                          <td>EP Nutricion</td>
+                          <td>{{data.fechappp}}</td>
+                          <td>{{data.nombree}}</td>
+                          <td><b>PENDIENTE</b></td>
+                          <!-- <td>EP Nutricion</td> -->
                           <td>
-                            <img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAY1JREFUSEu1lY0xQ1EQhU8qQAWoABWgA6kgdEAF6IAKUAEqkFRAKggd0IH5Mrtm3bvvJzPv3ZlMXm5u9ts9e+5mopHXZOT4KgE3ku4kfQ8FjgCCX0v6kHQ6FCQCtiXNJR0MCSklKiFTSceSziTtSTo06agSGR8lvbZVmzU5Qvq2AnnvM1AGINPnkC2QK0kvkj6NyJkTe81CVVXvMoneTY6l/dB7giznliWwWwMiG1KlvSsBNBnNWfsWzBtfynVkZmA/ysp5KlmvCCC7hxDF7cpWBiGIN9shfN6VdGFV/QOgL1+iN7BYchMEJ+2EpDxJYqFACoCOxuWdyCA/Jo8zHPBlfUwlgo6+MWCTXE9WrUu0MmAqkQekyVnArr03s/bC7Fs1uWwUAcmEitrk4hwLu2Jt7sffsOxzk70f+H7LqgOMCfC/ryp42eToc3x9adM17rc9p1O46w8HEIMOd/BM1iyyRTqvjvdeN7lvtuW5xlHfVcEmwAhhzFNV9Ze5ScDsLBBctA4+BqCCDilRWv0vleJuGYI2aeIAAAAASUVORK5CYII="
-                            />
+                            
+                            <!-- BOTONES DE VISTAS -->
+
+                            <button (click)="buscarDatos(data.idpersona)" type="button" class="btn btn-default btn-sm"  data-bs-toggle="modal" data-bs-target="#viewdetail">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                <path
+                                  d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                              </svg>
+                            </button>
+
                           </td>
-                          <td>
-                            <img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKlJREFUSEvtlcERQDAQRZ9KlIBOlEIFlKQUOqASJjM4hJ0fIje5ZTbZ9//uJJuReGWJ86MANdABpSFkBlpgsIQqgEuQC5cjUL0FrPtFS4iKyxKpBCp+ARwXYnt/OvatJwccyqV1z6J5/nXzvgb4CtX+5Ic6UAmjS/QDLu/qaUn+HsivKbpEivAYEDJofOh0N/msl+xGZQ8USvoeX4DmbnSqkRmY3z6WHLABUDk4GfuOp84AAAAASUVORK5CYII="
-                            />
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Informe de actividad</td>
-                          <td>15-12-2022</td>
-                          <td>Clinica</td>
-                          <td><b>Aceptado</b></td>
-                          <td>EP Nutricion</td>
-                          <td>
-                            <img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAY1JREFUSEu1lY0xQ1EQhU8qQAWoABWgA6kgdEAF6IAKUAEqkFRAKggd0IH5Mrtm3bvvJzPv3ZlMXm5u9ts9e+5mopHXZOT4KgE3ku4kfQ8FjgCCX0v6kHQ6FCQCtiXNJR0MCSklKiFTSceSziTtSTo06agSGR8lvbZVmzU5Qvq2AnnvM1AGINPnkC2QK0kvkj6NyJkTe81CVVXvMoneTY6l/dB7giznliWwWwMiG1KlvSsBNBnNWfsWzBtfynVkZmA/ysp5KlmvCCC7hxDF7cpWBiGIN9shfN6VdGFV/QOgL1+iN7BYchMEJ+2EpDxJYqFACoCOxuWdyCA/Jo8zHPBlfUwlgo6+MWCTXE9WrUu0MmAqkQekyVnArr03s/bC7Fs1uWwUAcmEitrk4hwLu2Jt7sffsOxzk70f+H7LqgOMCfC/ryp42eToc3x9adM17rc9p1O46w8HEIMOd/BM1iyyRTqvjvdeN7lvtuW5xlHfVcEmwAhhzFNV9Ze5ScDsLBBctA4+BqCCDilRWv0vleJuGYI2aeIAAAAASUVORK5CYII="
-                            />
-                          </td>
-                          <td>
-                            <img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKlJREFUSEvtlcERQDAQRZ9KlIBOlEIFlKQUOqASJjM4hJ0fIje5ZTbZ9//uJJuReGWJ86MANdABpSFkBlpgsIQqgEuQC5cjUL0FrPtFS4iKyxKpBCp+ARwXYnt/OvatJwccyqV1z6J5/nXzvgb4CtX+5Ic6UAmjS/QDLu/qaUn+HsivKbpEivAYEDJofOh0N/msl+xGZQ8USvoeX4DmbnSqkRmY3z6WHLABUDk4GfuOp84AAAAASUVORK5CYII="
-                            />
-                          </td>
-                        </tr>
-                        <!-- <tr>
-                            <th scope="row">3</th>
-                            <td>Ashleigh Langosh</td>
-                            <td>Finance</td>
-                            <td>45</td>
-                            <td>2011-08-12</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">4</th>
-                            <td>Angus Grady</td>
-                            <td>HR</td>
-                            <td>34</td>
-                            <td>2012-06-11</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">5</th>
-                            <td>Raheem Lehner</td>
-                            <td>Dynamic Division Officer</td>
-                            <td>47</td>
-                            <td>2011-04-19</td>
-                          </tr> -->
+                            <!-- <td>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-x" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.146 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z"/>
+                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                              </svg>
+                            </td> -->
+                        </tr> 
                       </tbody>
                     </table>
                   </div>
@@ -133,6 +106,81 @@
               </div>
             </div>
           </section>
+        </div>
+
+        <!-- MODAL 1 -->
+        <div  class="model-data">
+          <div class="modal fade" id="viewdetail" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="documentologo">
+                  <img src="../../../assets/icons/solicitud2.png">
+                  
+                </div> &nbsp;&nbsp;
+                <br><br><h1 class="modal-title" id="exampleModalLabel"> Informe Registrado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label"><b>Empresa:</b></label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombree}}</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label"><b>Datos del Supervisor:</b></label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombrerep}}</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label"><b>Archivos Adjuntados:</b></label> 
+                    <p>Documentos Requeridos</p>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label"><b>Cargo Rep de la empresa:</b></label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.cargorep}}</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label"><b>Teléfono y/o celular:</b></label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.telefonoe}}</div>
+                  </div>
+                  <div class="archivo col-md-4">
+                      <button  type="button" class="btn btn-default btn-sm" >
+                        <img src="../../../assets/icons/archivo2.svg" alt="">
+                      </button>
+                      <button type="button" class="btn btn-default btn-sm">
+                        <img src="../../../assets/icons/archivo2.svg" alt="">
+                      </button>
+                      <button type="button" class="btn btn-default btn-sm">
+                        <img src="../../../assets/icons/archivo2.svg" alt="">
+                      </button>
+                     
+                  </div>
+                  
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label"><b>Dirección:</b></label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.direccion}}</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label"><b>Área de Práctica:</b></label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.areappp}}</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="recipient-name" class="col-form-label"><b>Fecha que inicia las PPP: </b></label>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.fechappp}}</div>
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- BOTON DE MODAL  -->
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button> -->
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar Envio</button>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
 
         <div class="btn-volver col-lg-6">

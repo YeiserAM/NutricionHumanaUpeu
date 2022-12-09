@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Solicitudes } from 'src/app/models/solicitudes';
 import { SolicitudesService } from 'src/app/services/solicitudes.service';
+import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-validarsoliadmin',
@@ -33,6 +34,7 @@ export class ValidarsoliadminComponent implements OnInit {
     fechappp: String,
     direccion: String
   };
+
   
   valiSoli: Solicitudes[] = [];
   dataSoli : any = [];  
@@ -46,7 +48,7 @@ export class ValidarsoliadminComponent implements OnInit {
   ) {
 
     this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
-      // console.log(resp.data)
+      console.log(resp.data)
       this.solicitudes = resp.data;
     })
   
