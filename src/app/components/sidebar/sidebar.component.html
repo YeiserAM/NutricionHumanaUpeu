@@ -2,8 +2,11 @@
   class="sidebar-contenedor"
   [ngClass]="collapsed ? 'sidebar' : 'sidebar-collapsed'"
 >
-  <div class="header-sidebar">
+  <div class="header-sidebar" (click)="closesidebar()" [ngClass]="collapsed ? 'menu-items-text' : 'invisible'">
     <img class="logo-header" src="../../../assets/img/logo-login.png" alt="" />
+  </div>
+  <div class="header-sidebar-oculto"  *ngIf="logooculto==true"  >
+    <img class="logo-header-oculto" src="../../../assets/img/logo-oculto.png" alt=""(click)="abrirsidebar()">
   </div>
   <div class="sidebar-body">
     <ul *ngFor="let data of sidebar1" class="menu">
@@ -14,17 +17,17 @@
         [routerLinkActiveOptions]="{ exact: true }"
       >
         <i [class]="data.icon"></i>
-        <span class="menu-items-text">
+        <span class="menu-items-text" [ngClass]="collapsed ? 'menu-items-text' : 'invisible'">
           {{ data.nombre }}
         </span>
       </li>
     </ul>
     <li class="menu-items" (click)="singOff()">
       <i class="bx bx-log-out menu-items-icon"></i>
-      <span class="menu-items-text"> Cerrar Sesión </span>
+      <span class="menu-items-text" [ngClass]="collapsed ? 'menu-items-text' : 'invisible'"> Cerrar Sesión </span>
     </li>
   </div>
-  <div class="footer-sidebar">
+  <div class="footer-sidebar"  [ngClass]="collapsed ? 'menu-items-text' : 'invisible'">
     <img
       class="footer-sidebar-img"
       src="../../../assets/img/logo-inferior.png"

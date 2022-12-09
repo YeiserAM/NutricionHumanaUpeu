@@ -16,10 +16,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo-header {
   width: 200px;
+}
+
+.header-sidebar-oculto {
+  padding-top: 20px;
+  padding-bottom: 13px;
+  width: 98px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo-header-oculto {
+  width: 70px;
+  transition: all 0.3s ease;
 }
 
 .sidebar-collapsed {
@@ -122,4 +139,10 @@
 
 .footer-sidebar-img {
   width: 200px;
+}
+
+.invisible {
+  transition: all 0.3s ease;
+  display: none;
+  /* visibility: hidden; */
 }

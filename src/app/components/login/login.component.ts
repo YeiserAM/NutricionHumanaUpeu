@@ -13,6 +13,9 @@ import { PerfilComponent } from '../perfil/perfil.component';
 })
 export class LoginComponent implements OnInit{
   @Input()idperson:any;
+
+  screenLoading = false;
+
   ngOnInit() {
 
     }
@@ -36,6 +39,7 @@ export class LoginComponent implements OnInit{
   }
 
  logIn(){
+  this.screenLoading = true;
   this.loginService.singin(this.users).subscribe( (res) => {
      sessionStorage.setItem('token',res.token);
      let json = JSON.parse(atob(res.token.split(".")[1]));
@@ -68,8 +72,9 @@ export class LoginComponent implements OnInit{
     //   data:res.data
     //  })
 
-    sessionStorage.setItem('users', JSON.stringify(this.data_users))
-    sessionStorage.setItem('sidebar', JSON.stringify(this.arraySidebar))
+    sessionStorage.setItem('users', JSON.stringify(this.data_users));
+    sessionStorage.setItem('sidebar', JSON.stringify(this.arraySidebar));
+    this.screenLoading = false;
     this.router.navigate(['/menu/dashboard']);
     this.toastr.success('Se inicio sesión correctamente')
   },
