@@ -28,6 +28,7 @@ import { DashboardadminComponent } from './components/dashboardadmin/dashboardad
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     ConfiguracionComponent,
     MenuadminComponent,
     ValidarsoliadminComponent,
-    DashboardadminComponent
+    DashboardadminComponent,
+    LoadingScreenComponent
   ],
   imports: [
     FormsModule,
