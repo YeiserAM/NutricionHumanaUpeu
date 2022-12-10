@@ -16,6 +16,8 @@ export class ValidarsoliadminComponent implements OnInit {
   dataUsers: any = [];
   showModal = false;
 
+  urltrue = false;
+
   documentsBuscar: any[] = [];
 
   Validaciones = {
@@ -99,16 +101,21 @@ export class ValidarsoliadminComponent implements OnInit {
       const idpersona = this.solicitudes[i]["idpersona"];
       if (id == idpersona) {
         const idstudent = this.solicitudes[i]["idestudiante"];
-        let json = [];
-
+        let json : any[] = [];
         for (let y = 0; y < this.documents.length; y++) {
-          if (idstudent == this.documents[i]["idestud"]) {
+          if (idstudent == this.documents[y]["idestud"]) {
+            this.urltrue = true;
             json.push({
-              url: this.documents[i]["url"]
+              url: this.documents[y]["url"]
             });
+          } else {
+            this.urltrue = false;
+            json = [{
+              url: ''
+            }]
           }
         }
-
+        console.log('====>> ' + json);
         this.Validaciones = {
           idpersona: this.solicitudes[i]["idpersona"],
           nombre: this.solicitudes[i]["nombre"],
