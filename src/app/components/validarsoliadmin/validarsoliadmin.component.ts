@@ -139,6 +139,7 @@ export class ValidarsoliadminComponent implements OnInit {
         };
 
         this.documentsBuscar = json
+        console.log(this.documentsBuscar);
       }
     }
   }
