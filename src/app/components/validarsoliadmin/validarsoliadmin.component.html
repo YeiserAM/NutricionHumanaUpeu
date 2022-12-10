@@ -224,16 +224,12 @@
                       {{ this.Validaciones.telefono }}
                     </div>
                   </div>
-                  <div class="archivo col-md-4">
-                    <button type="button" class="btn btn-default btn-sm">
-                      <img src="../../../assets/icons/archivo2.svg" alt="" />
-                    </button>
-                    <button type="button" class="btn btn-default btn-sm">
-                      <img src="../../../assets/icons/archivo2.svg" alt="" />
-                    </button>
-                    <button type="button" class="btn btn-default btn-sm">
-                      <img src="../../../assets/icons/archivo2.svg" alt="" />
-                    </button>
+                  <div class="archivo col-md-4" *ngFor="let docu of documentsBuscar">
+                    <a href="{{docu.url}}">
+                      <button type="button" class="btn btn-default btn-sm">
+                        <img src="../../../assets/icons/archivo2.svg" alt="" />
+                      </button>
+                    </a>
                   </div>
 
                   <div class="col-md-4">
