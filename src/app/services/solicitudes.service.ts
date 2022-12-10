@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Solicitudes } from '../models/solicitudes';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { environment } from 'src/environments/environment';
 export class SolicitudesService {
 
   @Output() disparadacalidaciones: EventEmitter<any> = new EventEmitter();
-  url='https://backend-nutricion.herokuapp.com/api/solicitud/solicitudes'  
+  url='https://backend-nutricion.herokuapp.com/api/solicitud/solicitudes'
+  private URL = environment.url; 
 
   constructor(
     public http: HttpClient
@@ -25,5 +27,10 @@ export class SolicitudesService {
         headers: header
       });
   }
+
+  eliminarsolicitud(idestudiante:{}){
+    return this.http.delete(this.URL+'/api/solicitud/delete'+idestudiante);
+
+}
 
 }

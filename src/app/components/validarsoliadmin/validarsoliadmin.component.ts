@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Estudiante } from 'src/app/models/estudiante';
 import { Solicitudes } from 'src/app/models/solicitudes';
 import { SolicitudesService } from 'src/app/services/solicitudes.service';
 import { UploadService } from 'src/app/services/upload.service';
@@ -57,6 +58,33 @@ export class ValidarsoliadminComponent implements OnInit {
   ngOnInit(): void {
     this.dataUsers.push(JSON.parse(this.users));
 
+  }
+
+  getsolicitud(){
+    this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
+      console.log(resp.data)
+      this.solicitudes = resp.data;
+    })
+  }
+
+  // eliminarsoli(idpersona:any):void{
+  //   console.log('eliminarrrr');
+  //   this.solicitudService.eliminarsolicitud(idpersona).subscribe(
+  //     res=>this.solicitudService.getSolicitudes().subscribe(
+  //       response=>this.dataUsers=response
+  //     )
+  //   );
+  // }
+
+  eliminarsoli(idestudiante:{}){
+    if (confirm('Seguro que desea eliminar?')) {
+      this.solicitudService.eliminarsolicitud(idestudiante).subscribe((resp:any)=>{
+        this.getsolicitud();
+      },(error)=>{
+        console.log(error);
+      }
+      )
+    }
   }
 
   buscarDatos(id:any){
