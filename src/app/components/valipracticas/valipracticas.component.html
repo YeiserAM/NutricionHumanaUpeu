@@ -1,0 +1,349 @@
+<link rel="stylesheet" href="valipracticas.component.css">
+<body class="g-sidenav-show bg-gray-200">
+    <div class="main-content position-relative max-height-vh-100 h-100">
+      <div class="container-fluid px-2 px-md-4">
+        <div
+          class="page-header min-height-300 border-radius-xl mt-4"
+          style="background-image: url('../../../assets/img/carrucel/1.jpg')"
+        >
+          <span class="mask bg-gradient-primary opacity-6"></span>
+        </div>
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+          <div class="row gx-4 mb-2">
+            <div class="col-auto">
+              <div class="avatar avatar-xl position-relative">
+                <img
+                  src="../../../assets/users/teacher3.png"
+                  alt="profile_image"
+                  class="w-100 border-radius-lg shadow-sm"
+                />
+              </div>
+            </div>
+            <div *ngFor="let data of dataUsers" class="col-auto my-auto">
+              <div class="h-100">
+                <h4 class="mb-1">Doc. {{ data.nombre }} {{ data.apellidos }}</h4>
+                <p class="mb-0 font-weight-normal text-sm">
+                  <b>Dni:</b>
+                  {{ data.dni }}
+                </p>
+              </div>
+            </div>
+            <!-- boton volver  -->
+            <div class="btn-volver col-lg-6">
+              <div class="btn-v">
+                <input
+                  type="submit"
+                  value="Volver"
+                  class="box"
+                  [routerLink]="['/menu/dashboardadmin']"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                />
+              </div>
+            </div>
+  
+            <div class="validaciones">
+              <div class="container">
+                <form>
+                  <input type="text" name="" placeholder="Buscar..." />
+                  <button class="buscar">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div>
+              <!-- box -->
+            </div>
+          </div>
+  
+          <!-- VALIDACIONES -->
+          <div class="validacion">
+            <section class="section">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><b> Validación de Prácticas</b></h5>
+  
+                      <table class="table datatable">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">APELLIDOS</th>
+                            <th scope="col">FACULTAD</th>
+                            <th scope="col">TELEFONO</th>
+  
+                            <!-- <th scope="col">EMPRESA A LA QUE POSTULA</th> -->
+                            <!-- <th scope="col">EP</th> -->
+                            <th></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr >
+                            <th scope="row"></th>
+                            <td>hfd</td>
+                            <td>kjvv</td>
+                            <td>kjhg</td>
+                            <td>lkjh</td>
+  
+                            <!-- <td>{{data.nombree}}</td> -->
+  
+                            <!-- <td>Nutricion</td> -->
+                            <td>
+                              <!-- BOTONES DE VISTAS -->
+  
+                              <button
+                                
+                                type="button"
+                                class="btn btn-default btn-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#viewdetail"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="16"
+                                  height="16"
+                                  fill="currentColor"
+                                  class="bi bi-eye-fill"
+                                  viewBox="0 0 16 16"
+                                >
+                                  <path
+                                    d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"
+                                  />
+                                  <path
+                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-danger"
+                                
+                              >
+                                Eliminar
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-default btn-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#eliminarmodal"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="16"
+                                  height="16"
+                                  fill="currentColor"
+                                  class="bi bi-trash3-fill"
+                                  viewBox="0 0 16 16"
+                                >
+                                  <path
+                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"
+                                  />
+                                </svg>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+  
+          <!-- MODAL 1 -->
+          <div
+            class="modal fade"
+            id="viewdetail"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="documentologo">
+                    <img src="../../../assets/icons/solicitud.png" />
+                  </div>
+                  &nbsp;&nbsp;&nbsp;
+                  <h1 class="modal-title" id="exampleModalLabel">Solicitudes</h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <label for="recipient-name" class="col-form-label"
+                        ><b>Empresa a la que postula:</b></label
+                      >
+                      <div type="text" class="form-control" id="recipient-name">
+                        qwed
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="recipient-name" class="col-form-label"
+                        ><b>Datos del Supervisor:</b></label
+                      >
+                      <div type="text" class="form-control" id="recipient-name">
+                        jhgf
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="recipient-name" class="col-form-label"
+                        ><b>Archivos Adjuntados:</b></label
+                      >
+                    </div>
+                    <div class="col-md-4">
+                      <label for="recipient-name" class="col-form-label"
+                        ><b>Cargo Rep de la empresa:</b></label
+                      >
+                      <div type="text" class="form-control" id="recipient-name">
+                        lkjh
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="recipient-name" class="col-form-label"
+                        ><b>Teléfono del Supervisor:</b></label
+                      >
+                      <div type="text" class="form-control" id="recipient-name">
+                        oiuy
+                      </div>
+                    </div>
+                    <div class="archivo col-md-4">
+                      <button type="button" class="btn btn-default btn-sm">
+                        <img src="../../../assets/icons/archivo2.svg" alt="" />
+                      </button>
+                      <button type="button" class="btn btn-default btn-sm">
+                        <img src="../../../assets/icons/archivo2.svg" alt="" />
+                      </button>
+                      <button type="button" class="btn btn-default btn-sm">
+                        <img src="../../../assets/icons/archivo2.svg" alt="" />
+                      </button>
+                    </div>
+  
+                    <div class="col-md-4">
+                      <label for="recipient-name" class="col-form-label"
+                        ><b>Dirección:</b></label
+                      >
+                      <div type="text" class="form-control" id="recipient-name">
+                        oiu
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="recipient-name" class="col-form-label"
+                        ><b>Área de Práctica:</b></label
+                      >
+                      <div type="text" class="form-control" id="recipient-name">
+                        <!-- {{ this.Validaciones.areappp }} -->
+                        ss
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="recipient-name" class="col-form-label"
+                        ><b>Fecha que inicia las PPP: </b></label
+                      >
+                      <div type="text" class="form-control" id="recipient-name">
+                        qazz
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Aceptar Solicitud
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- VISTA DE MODAL2 -->
+          <div
+            class="modal fade"
+            id="eliminarmodal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-xs modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="documentologo">
+                    <img src="../../../assets/icons/delete.png" />
+                  </div>
+                  &nbsp;&nbsp;&nbsp;
+                  <h1 class="modal-title" id="exampleModalLabel">Eliminar</h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row g-12">
+                    <div class="col-md-12">
+                      <label for="recipient-name" class="col-form-label"
+                        >¿Está seguro que desea eliminar esta solicitud?</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-dismiss="modal"
+                  >
+                    Si
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- <div class="btn-volver col-lg-6">
+            <div class="btn-v">
+              <input
+                type="submit"
+                value="Volver"
+                class="box"
+                [routerLink]="['/menu/dashboardadmin']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              />
+            </div>
+          </div> -->
+  
+          <div
+            class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer py-4"></footer>
+  </body>

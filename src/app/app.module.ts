@@ -29,6 +29,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
+import { ValipracticasComponent } from './components/valipracticas/valipracticas.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { LoadingScreenComponent } from './components/loading-screen/loading-scre
     MenuadminComponent,
     ValidarsoliadminComponent,
     DashboardadminComponent,
-    LoadingScreenComponent
+    LoadingScreenComponent,
+    ValipracticasComponent
   ],
   imports: [
     FormsModule,

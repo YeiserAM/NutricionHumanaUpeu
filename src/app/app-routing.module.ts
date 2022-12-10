@@ -13,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
 import { ValidacionesComponent } from './components/validaciones/validaciones.component';
 import { ValidarsoliadminComponent } from './components/validarsoliadmin/validarsoliadmin.component';
+import { ValipracticasComponent } from './components/valipracticas/valipracticas.component';
 import { AuthGuard } from './services/auth.guard';
 
 const dashboard: Routes = [
@@ -26,7 +27,8 @@ const dashboard: Routes = [
   {path: 'configuracion', component:ConfiguracionComponent},
   {path: 'menuadmin', component:MenuadminComponent},
   {path: 'validarsoliadmin', component:ValidarsoliadminComponent},
-  {path: 'dashboardadmin', component:DashboardadminComponent}
+  {path: 'dashboardadmin', component:DashboardadminComponent},
+  {path: 'valipracticas', component:ValipracticasComponent}
   
 ];
 
