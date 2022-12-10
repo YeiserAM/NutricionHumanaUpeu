@@ -290,19 +290,24 @@ input:focus{
 
 .validacion{
   padding: 0 20px 20px 20px;
+  position: relative;
 }
 
 .btn-volver{
   display: flex;
-  padding: 0 0 0 55%;
+  
    height: 45px;
-   margin: 35px 0
+   margin: 35px 0;
+   position: relative;
+   
  }
  .btn-v input{
+    display: flex;
+    position: absolute;
+    right: 0;
    height: 5vh;
    width: 19vh;
    border-radius: 12px;
-
    color: #fff;
    font-size: 18px;
    font-weight: 500;

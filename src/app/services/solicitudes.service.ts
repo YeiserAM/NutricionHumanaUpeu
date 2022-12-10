@@ -28,8 +28,8 @@ export class SolicitudesService {
       });
   }
 
-  eliminarsolicitud(idestudiante:{}){
-    return this.http.delete(this.URL+'/api/solicitud/delete'+idestudiante);
+  eliminarsolicitud(idestudiante:string){
+    return this.http.delete(this.URL+'/api/solicitud/delete/'+idestudiante);
 
 }
 

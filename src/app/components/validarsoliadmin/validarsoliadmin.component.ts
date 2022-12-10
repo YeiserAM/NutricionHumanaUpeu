@@ -11,6 +11,7 @@ import { UploadService } from 'src/app/services/upload.service';
   styleUrls: ['./validarsoliadmin.component.css']
 })
 export class ValidarsoliadminComponent implements OnInit {
+  documents =[];
   users: string = `${window.sessionStorage.getItem('users')}`;
   dataUsers : any= [];
   showModal = false;
@@ -50,6 +51,8 @@ export class ValidarsoliadminComponent implements OnInit {
 
     this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
       console.log(resp.data)
+      this.documents=resp.documents;
+      console.log(resp.documents);
       this.solicitudes = resp.data;
     })
   
@@ -60,12 +63,15 @@ export class ValidarsoliadminComponent implements OnInit {
 
   }
 
-  getsolicitud(){
-    this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
-      console.log(resp.data)
-      this.solicitudes = resp.data;
-    })
-  }
+  // getsolicitud(){
+  //   this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
+
+  //     // console.log(resp.data)
+  //     this.documents=resp.documents;
+  //     console.log(resp);
+  //     this.solicitudes = resp.data;
+  //   })
+  // }
 
   // eliminarsoli(idpersona:any):void{
   //   console.log('eliminarrrr');
@@ -76,10 +82,11 @@ export class ValidarsoliadminComponent implements OnInit {
   //   );
   // }
 
-  eliminarsoli(idestudiante:{}){
+  eliminarsoli(idestudiante:number){
     if (confirm('Seguro que desea eliminar?')) {
-      this.solicitudService.eliminarsolicitud(idestudiante).subscribe((resp:any)=>{
-        this.getsolicitud();
+      this.solicitudService.eliminarsolicitud(String(idestudiante)).subscribe((res:any)=>{
+        // this.getsolicitud();
+        console.log(res);
       },(error)=>{
         console.log(error);
       }
@@ -90,8 +97,36 @@ export class ValidarsoliadminComponent implements OnInit {
   buscarDatos(id:any){
     console.log(id)
     for (let i = 0; i < this.solicitudes.length; i++) {
-      const idpersona = this.solicitudes[i]['idpersona'];
-      if (id==idpersona) {
+      for (let y = 0; y < this.documents.length; y++) {
+        const idpersona = this.solicitudes[i]['idpersona'];
+        const idestudent = this.documents[i]['idestud'];
+      if (id==idpersona) { 
+        if (this.solicitudes[i]['idestudiante']==idestudent) {
+
+          this.Validaciones={ 
+            
+            idpersona: this.solicitudes[i]['idpersona'],
+            nombre: this.solicitudes[i]['nombre'],
+            apellidos: this.solicitudes[i]['apellidos'],
+            dni: this.solicitudes[i]['dni'],
+            codigo: this.solicitudes[i]['codigo'],
+            idestudiante: this.solicitudes[i]['idestudiante'],
+            telefonoe: this.solicitudes[i]['telefonoe'],
+            ubigeo: this.solicitudes[i]['ubigeo'],
+            nacionalidad: this.solicitudes[i]['nacionalidad'],
+            estadocivil: this.solicitudes[i]['estadocivil'],
+            idempresa: this.solicitudes[i]['idempresa'],
+            nombree: this.solicitudes[i]['nombree'],
+            nombrerep: this.solicitudes[i]['nombrerep'],
+            gradosup: this.solicitudes[i]['gradosup'],
+            cargorep: this.solicitudes[i]['cargorep'],
+            areappp: this.solicitudes[i]['areappp'],
+            telefono: this.solicitudes[i]['telefono'],
+            fechappp: this.solicitudes[i]['fechappp'],
+            direccion: this.solicitudes[i]['direccion']
+            
+        }
+        }
         this.Validaciones={ 
           
             idpersona: this.solicitudes[i]['idpersona'],
@@ -116,9 +151,15 @@ export class ValidarsoliadminComponent implements OnInit {
             
         }
       }
+        
+      }
     }
+
+
     // console.log(this.Validaciones)
   }
+
+  
 
 
 }

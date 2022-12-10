@@ -37,7 +37,7 @@ export class CargadocsComponent implements OnInit {
     // console.log(file);
     this.newUrl = `pdf/${file.name}`;
     const imgRef = ref(this.storage, `pdf/${file.name}`);
-
+    
     uploadBytes(imgRef, file)
       .then(async (response) => {
         this.getArchive();
