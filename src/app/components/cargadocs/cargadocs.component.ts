@@ -47,6 +47,10 @@ export class CargadocsComponent implements OnInit {
       .catch((error) => console.log(error));
   }
 
+  exito(){
+    this.toastService.success('Solicitud registrada Exitosamente!');
+  }
+
   getArchive() {
     const archivosRef = ref(this.storage, 'pdf');
     // console.log(archivosRef);

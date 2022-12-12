@@ -49,7 +49,7 @@ export class FormularioempresaComponent implements OnInit{
       Swal.fire({
         title: '<b style="color: #000000; font-family: Poppins, sans-serif; font-weight: 900; font-size: 45px">Registro Exitoso</b>',
         icon: 'success',
-        html: '<span style="font-size: 22px">Se ha Registrado tú Consulta, lo contactaremos en breve...!</span>',
+        html: '<span style="font-size: 22px">Se ha Registrado tú Empresa, Gracias...!</span>',
         confirmButtonText: 'Aceptar',
         confirmButtonColor: '#52A820',
         iconColor: '#52A820'

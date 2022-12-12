@@ -51,43 +51,60 @@
             <span class="details">Titulo </span>
             <input
               type="text"
-              placeholder="Ingrese empresa"
-           
-              name="empresa"
-              id="nombreempresa"
+              placeholder="Ingrese Titulo"
+              [(ngModel)]="dataReportes.titulo"
+              name="titulo"
+              id="titulo"
               required
             />
           </div>
           <div class="input-box">
-            <span class="details">Tipo</span>
-            <input type="text" placeholder="Ingrese el tipo de ppp" required />
-          </div>
-          <div class="input-box">
-            <span class="details">Descripcion</span>
+            <span class="details">Tipo </span>
             <input
               type="text"
-              placeholder="Ingrese una breve descripcion"
+              placeholder="Ingrese el Tipo"
+              [(ngModel)]="dataReportes.tipo"
+              name="tipo"
+              id="tipo"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">Descripcion </span>
+            <input
+              type="text"
+              placeholder="Ingrese Descripcion"
+              [(ngModel)]="dataReportes.descripcion"
+              name="descripcion"
+              id="descripcion"
               required
             />
           </div>
         </div>
           <!-- SUBIR DOCUMENTOS -->
         
-        <div class="gender-details">
-          <span class="gender-title">Subir Archivos</span>
           <div class="load">
             <div class="wrapper">
-              <header>Arrastre Aqui sus Archivos</header>
-              <form action="#">
-                <input class="file-input" type="file" name="file" hidden />
-                <i class="fas fa-cloud-upload-alt"></i>
-                <p>Buscar Doc para subir</p>
-              </form>
-              <section class="progress-area"></section>
-              <section class="uploaded-area"></section>
-            </div>
+            <header>Documentos</header>
+            <form action="#">
+              <img src="../../../assets/icons/upload.svg" alt="">
+              <i class="fas fa-cloud-upload-alt"></i> 
+              
+              <div class="botoncito">
+                <input type="file" class="subir-doc " id="enviaar" (change)="uploadArchive($event)">
+                Subir Archivo
+              </div> <br>
+              <div class="loader" *ngIf="loader==true"></div>
+              
+                 <!-- <button onclick="getFile()"  class="button-75" role="button" ><span class="text">Subir Archivos
+                  <input type="file" id="enviaar" (change)="uploadArchive($event)">
+                 </span></button> -->
+
+            </form>
+            <!-- <section class="progress-area"></section>
+            <section class="uploaded-area"></section> -->
           </div>
-        </div>
+          </div>
 
         <div class="botones col-lg-6">
           <div class="button">
@@ -105,7 +122,7 @@
               type="submit"
               value="Enviar"
               class="box"
-              [routerLink]="['/menu/dashboard']"
+              [routerLink]="['/menu/reportes']"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
               (click)="registrarReportes()"

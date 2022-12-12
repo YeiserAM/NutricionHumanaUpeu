@@ -1,45 +1,46 @@
-<link rel="stylesheet" href="dashboardadmin.component.css">
+<link rel="stylesheet" href="dashboardadmin.component.css" />
 <script
-	src="https://kit.fontawesome.com/dfb0fe0c87.js"
-	crossorigin="anonymous"
+  src="https://kit.fontawesome.com/dfb0fe0c87.js"
+  crossorigin="anonymous"
 ></script>
 
 <div class="contenedor-principal">
-	<!-- SECCION CARRUCEL -->
+  <!-- SECCION CARRUCEL -->
 
-	<section id="hero">
-		<div class="hero-container">
-			<div
-				id="heroCarousel"
-				class="carousel slide carousel-fade"
-				data-ride="carousel"
-			>
-				<ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+  <section id="hero">
+    <div class="hero-container">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-				<div class="carousel-inner" role="listbox">
-					<!-- Slide 1 -->
-					<div
-						class="carousel-item active"
-						style="
-							background: linear-gradient(
-									to bottom,
-									#eeb7405e,
-									#72260396,
-									#ce0101e3
-								),
-								url(../../../assets/img/carrucel/1.jpg);
-						"
-					>
-						<div class="carousel-container">
-							<div class="carousel-content">
-								<h2 class="animate__animated">
-									<span></span> Bienvenido
-								</h2>
-								<p *ngFor="let data of dataUsers" class="animate__animated animate__fadeInUp">
-									DOC. {{ data.nombre }} {{ data.apellidos }}
-								</p>
-								<div>
-									<!-- <li
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide 1 -->
+          <div
+            class="carousel-item active"
+            style="
+              background: linear-gradient(
+                  to bottom,
+                  #eeb7405e,
+                  #72260396,
+                  #ce0101e3
+                ),
+                url(../../../assets/img/carrucel/1.jpg);
+            "
+          >
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated"><span></span> Bienvenido</h2>
+                <p
+                  *ngFor="let data of dataUsers"
+                  class="animate__animated animate__fadeInUp"
+                >
+                  DOC. {{ data.nombre }} {{ data.apellidos }}
+                </p>
+                <div>
+                  <!-- <li
 										class="btn-menu animate__animated animate__fadeInUp scrollto"
 										Empezamos
 										[routerLink]="['/menu/profile']"
@@ -48,41 +49,37 @@
 									>
 										<span class="menu-items-text"> Empezamos </span>
 									</li> -->
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<br /><br />
-	
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br /><br />
+
   <!-- ======= MODULOS =======  -->
 
   <section id="why-us" class="why-us">
     <div class="container">
-      <div class="section-title">
-        <!-- <p>
-          Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
-          adipisci expedita at voluptas atque vitae autem.
-        </p> -->
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4">
+      <div class="col-lg-12 row">
+        <div class="col-lg-6">
           <div
             class="box modulos"
             [routerLink]="['/menu/validarsoliadmin']"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <img src="../../../assets/svg/adminsvg/validsolicitudes.svg" alt="" />
+            <img
+        	     src="../../../assets/svg/adminsvg/validsolicitudes.svg"
+              alt=""
+            />
             <h4>Validacion de Solicitudes</h4>
           </div>
         </div>
 
-        <div class="col-lg-4 mt-4 mt-lg-0">
+        <!-- <div class="col-lg-4 mt-4 mt-lg-0">
           <div
             class="box modulos"
             [routerLink]="['']"
@@ -92,9 +89,9 @@
             <img src="../../../assets/svg/adminsvg/validaciones.svg" alt="" />
             <h4>Validaciones</h4>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="col-lg-6">
           <div
             class="box modulos"
             [routerLink]="['/menu/valipracticas']"
