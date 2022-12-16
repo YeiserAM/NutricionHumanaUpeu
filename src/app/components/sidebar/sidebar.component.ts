@@ -2,10 +2,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
-interface SideNavToggle {
-  screenWidth: number;
-  collapsed: boolean;
-}
+// interface SideNavToggle {
+//   // screenWidth: number;
+//   collapsed: boolean;
+// }
 
 @Component({
   selector: 'app-sidebar',
@@ -14,14 +14,14 @@ interface SideNavToggle {
 })
 export class SidebarComponent implements OnInit{
 
-  @Output() onToggleSidenav: EventEmitter<SideNavToggle> = new EventEmitter();
+  // @Output() onToggleSidenav: EventEmitter<SideNavToggle> = new EventEmitter();
 
   sidebardata: string = `${window.sessionStorage.getItem('sidebar')}`;
 
   sidebar1 : any =[];
 
   collapsed = true;
-  screenWidth = 0;
+  // screenWidth = 0;
 
   logooculto = false;
 
@@ -36,14 +36,14 @@ export class SidebarComponent implements OnInit{
     this.logooculto = false;
     console.log(this.logooculto);
     this.collapsed = !this.collapsed;
-    this.onToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+    // this.onToggleSidenav.emit({ collapsed: this.collapsed });
   }
 
   closesidebar() : void {
     this.logooculto = true;
     console.log(this.logooculto);
     this.collapsed = false;
-    this.onToggleSidenav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+    // this.onToggleSidenav.emit({ collapsed: this.collapsed });
   }
 
   singOff() {
