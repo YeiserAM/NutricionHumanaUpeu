@@ -33,4 +33,8 @@ export class SolicitudesService {
 
 }
 
+  createsolicitud(datasolicitud:any){
+    return this.http.post(this.URL+'/api/solicitud/create-solicitud',datasolicitud)
+  }
+
 }

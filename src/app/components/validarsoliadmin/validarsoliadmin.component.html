@@ -224,12 +224,14 @@
                       {{ this.Validaciones.telefono }}
                     </div>
                   </div>
-                  <div class="archivo col-md-4" *ngFor="let docu of documentsBuscar">
-                    <a href="{{docu.url}}" target="_blank" *ngIf="urltrue==true">
-                      <button type="button" class="btn btn-default btn-sm">
-                        <img src="../../../assets/icons/archivo2.svg" alt="" />
-                      </button>
-                    </a>
+                  <div class="archivo col-md-4">
+                    <div  *ngFor="let docu of documentsBuscar">
+                      <a href="{{docu.url}}" target="_blank" *ngIf="urltrue==true">
+                        <button type="button" class="btn btn-default btn-sm">
+                          <img src="../../../assets/icons/archivo2.svg" alt="" />
+                        </button>
+                      </a>
+                    </div>
                   </div>
 
                   <div class="col-md-4">
@@ -260,6 +262,7 @@
               </div>
               <div class="modal-footer">
                 <button
+                  (click)="alertyes()"
                   type="button"
                   class="btn btn-primary"
                   data-bs-dismiss="modal"
@@ -293,7 +296,7 @@
                   <img src="../../../assets/icons/delete.png" />
                 </div>
                 &nbsp;&nbsp;&nbsp;
-                <h1 class="modal-title" id="exampleModalLabel">Eliminar</h1>
+                <h1 class="modal-title" id="exampleModalLabel">Rechazar</h1>
                 <button
                   type="button"
                   class="btn-close"
@@ -305,13 +308,14 @@
                 <div class="row g-12">
                   <div class="col-md-12">
                     <label for="recipient-name" class="col-form-label"
-                      >¿Está seguro que desea eliminar esta solicitud?</label
+                      >¿Está seguro que desea rechazar esta solicitud?</label
                     >
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
                 <button
+                (click)="alertnot()"
                   type="button"
                   class="btn btn-danger"
                   data-bs-dismiss="modal"

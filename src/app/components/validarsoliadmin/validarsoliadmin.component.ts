@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { Estudiante } from "src/app/models/estudiante";
+import { ToastrService } from 'ngx-toastr';
 import { Solicitudes } from "src/app/models/solicitudes";
 import { SolicitudesService } from "src/app/services/solicitudes.service";
 import { UploadService } from "src/app/services/upload.service";
@@ -49,29 +50,32 @@ export class ValidarsoliadminComponent implements OnInit {
 
   constructor(
     private solicitudService: SolicitudesService,
+    private toastr: ToastrService,
     private httpClient: HttpClient
   ) {
-    this.solicitudService.getSolicitudes().subscribe((resp: any) => {
-      // console.log(resp.data);
-      this.documents = resp.documents;
-      // console.log(resp.documents);
-      this.solicitudes = resp.data;
-    });
+    // this.solicitudService.getSolicitudes().subscribe((resp: any) => {
+    //   // console.log(resp.data);
+    //   this.documents = resp.documents;
+    //   // console.log(resp.documents);
+    //   this.solicitudes = resp.data;
+    // });
   }
 
   ngOnInit(): void {
     this.dataUsers.push(JSON.parse(this.users));
+    this.getsolicitud();
   }
 
-  // getsolicitud(){
-  //   this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
+  getsolicitud(){
+    this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
 
-  //     // console.log(resp.data)
-  //     this.documents=resp.documents;
-  //     console.log(resp);
-  //     this.solicitudes = resp.data;
-  //   })
-  // }
+      // console.log(resp.data)
+      this.documents=resp.documents;
+      console.log(resp);
+      this.solicitudes = resp.data;
+      console.log(resp.data);
+    })
+  }
 
   // eliminarsoli(idpersona:any):void{
   //   console.log('eliminarrrr');
@@ -94,6 +98,14 @@ export class ValidarsoliadminComponent implements OnInit {
         }
       );
     }
+  }
+
+  alertyes(){
+    this.toastr.success('Se acepto la solicitud')
+  }
+
+  alertnot(){
+    this.toastr.error('Se rechazo la solicitud')
   }
 
   buscarDatos(id: any) {

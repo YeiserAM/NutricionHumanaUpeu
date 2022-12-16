@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Empresa } from 'src/app/models/empresa';
 import { UserData } from 'src/app/models/user';
 import { EmpresaService } from 'src/app/services/empresa.service';
+import { SolicitudesService } from 'src/app/services/solicitudes.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -18,14 +19,18 @@ export class FormularioempresaComponent implements OnInit{
 
   dataEmpresa = new Empresa();
 
-  constructor(private router : Router, private empresaService : EmpresaService) { }
+  constructor(
+    private router : Router, 
+    private empresaService : EmpresaService, 
+    private solicitud : SolicitudesService
+    ) { }
 
   ngOnInit(): void {
     this.empresa.push(JSON.parse(this.empresas)),
     this.dataUsers.push(JSON.parse(this.users))
   }
 
-  registrarempresa(){
+  registrarsolicitud(){
 
     let dataempresa = {
       nombree: this.dataEmpresa.nombree,
@@ -44,7 +49,7 @@ export class FormularioempresaComponent implements OnInit{
     console.log("Funciono bien");
     console.log(dataempresa);
 
-    this.empresaService.CrearEmpresa(dataempresa).subscribe(data=>{
+    this.solicitud.createsolicitud(dataempresa).subscribe(data=>{
       console.log(data);
       Swal.fire({
         title: '<b style="color: #000000; font-family: Poppins, sans-serif; font-weight: 900; font-size: 45px">Registro Exitoso</b>',

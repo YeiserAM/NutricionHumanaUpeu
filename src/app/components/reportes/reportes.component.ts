@@ -42,6 +42,12 @@ export class ReportesComponent {
     this.dataUsers.push(JSON.parse(this.users)),
     this.reporte.push(JSON.parse(this.reportes))
   }
+  
+  lista: Array<any> = [
+    { value: 0, label: 'Seleccione una Opcion' },
+    { value: 1, label: 'Practicas Clínicas' },
+    { value: 2, label: 'Practicas Comunitarias' },
+  ];
 
   registrarReportes(){
 

@@ -79,6 +79,7 @@ export class LoginComponent implements OnInit{
     this.toastr.success('Se inicio sesión correctamente')
   },
    err=>{
+    this.screenLoading = false;
     this.toastr.error('Usuario o contraseña incorrectos')
    }
   )
