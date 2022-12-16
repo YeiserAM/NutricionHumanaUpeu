@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   Storage,
   ref,
@@ -15,8 +15,13 @@ import { UploadService } from 'src/app/services/upload.service';
   styleUrls: ['./cargadocs.component.css'],
 })
 export class CargadocsComponent implements OnInit {
+
+  @Input() respuestaSoli : any;
+
   users: string = `${window.sessionStorage.getItem('users')}`;
+
   dataUsers: any = [];
+
   loader = false;
 
   newUrl = '';
@@ -29,6 +34,7 @@ export class CargadocsComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataUsers.push(JSON.parse(this.users));
+    console.log(this.respuestaSoli)
   }
 
   uploadArchive($event: any) {
@@ -37,7 +43,7 @@ export class CargadocsComponent implements OnInit {
     // console.log(file);
     this.newUrl = `pdf/${file.name}`;
     const imgRef = ref(this.storage, `pdf/${file.name}`);
-    
+
     uploadBytes(imgRef, file)
       .then(async (response) => {
         this.getArchive();
@@ -63,8 +69,8 @@ export class CargadocsComponent implements OnInit {
           if (this.newUrl == item.fullPath) {
             const url = await getDownloadURL(item);
             let archivito2 = {
-              idestud: this.dataUsers[0].idestudiante,
               url: url,
+              id_solicitud: this.respuestaSoli[0].id_solicitud,
             };
             this.upload.TraerDocs(archivito2).subscribe((res) => {
               console.log(res);
