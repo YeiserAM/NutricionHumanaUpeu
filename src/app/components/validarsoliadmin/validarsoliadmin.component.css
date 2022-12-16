@@ -84,13 +84,13 @@
     text-align: center;
 }
 
-form{
+#busqui{
     background: rgb(240, 234, 234);
     border-radius: 20px;
     position: relative;
 }
 
-input{
+#buscar{
     width: 100%;
     height: 100%;
     display: block;
@@ -334,3 +334,66 @@ input:focus{
     width:50px;
     height: 45px;
   }
+
+  /* CORREO  */
+
+  form .cf{
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+  }
+  form input, form textarea {
+    border: 0;
+    outline: 0;
+    padding: 1em;
+    border-radius: 18px;
+    width: 80%;
+    margin-top: 1em;
+    font-family: "Merriweather", sans-serif;
+    box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.1);
+    resize: none;
+  }
+  form input:focus, form textarea:focus {
+    box-shadow: 0 0px 2px #DA950C !important;
+  }
+  form .enviar{
+    padding-left: 350px;
+    padding-bottom: 20px;
+  }
+  form #input-submit {
+    color: white;
+    background: #DA950C;
+    cursor: pointer;
+    height: 50px;
+    width: 140px;
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.1);
+  }
+  form #input-submit:hover {
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.6);
+  }
+  form textarea {
+    height: 126px;
+  }
+  
+  .half {
+    float: left;
+    width: 48%;
+    margin-bottom: 1em;
+  }
+  
+  .right {
+    width: 50%;
+  }
+  
+  .left {
+    margin-right: 2%;
+  }
+  
+  @media (max-width: 480px) {
+    .half {
+      width: 100%;
+      float: none;
+      margin-bottom: 0;
+    }
+  }
+ 
