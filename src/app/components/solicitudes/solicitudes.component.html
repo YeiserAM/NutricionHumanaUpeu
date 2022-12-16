@@ -1,3 +1,4 @@
+<div  *ngIf="aparece==true">
 <link rel="stylesheet" href="solicitudes.component.css" />
 <div class="cabecera">
   <div class="main-content position-relative max-height-vh-100 h-100">
@@ -52,7 +53,7 @@
             <input
               type="text"
               placeholder="Ingrese su estado civil"
-              [(ngModel)]="estudiante.estadocivil"
+              [(ngModel)]="solicitudCreate.estado_civil"
               name="estcivil"
               id="estadocivil"
               required
@@ -63,7 +64,7 @@
             <input
               type="text"
               placeholder="Ingrese su religion"
-              [(ngModel)]="estudiante.religion"
+              [(ngModel)]="solicitudCreate.religion"
               name="religion"
               id="religion"
               required
@@ -88,7 +89,7 @@
               name="start"
               min="2022-03"
               value="2022-21"
-              [(ngModel)]="estudiante.fechanacimiento"
+              [(ngModel)]="solicitudCreate.fechanacimiento"
               name="fechanacimiento"
               id="fechanacimiento"
             />
@@ -98,7 +99,7 @@
             <input
               type="number"
               placeholder="Ingrese su codigo postal"
-              [(ngModel)]="estudiante.ubigeo"
+              [(ngModel)]="solicitudCreate.ubigeo"
               name="ubigeo"
               id="ubigeo"
               required
@@ -163,7 +164,8 @@
               type="submit"
               value="Continuar"
               class="box"
-              [routerLink]="['/menu/formempresa']"              
+
+              (click)="enviarDatos()"
             />
           </div>
         </div>
@@ -171,3 +173,5 @@
     </div>
   </div>
 </div>
+</div>
+<app-formularioempresa [soli]="solicitudCreate" *ngIf="aparece==false"></app-formularioempresa>

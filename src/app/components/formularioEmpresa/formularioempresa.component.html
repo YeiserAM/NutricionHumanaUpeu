@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="formularioempresa.component.css" />
+<div *ngIf="aparecer==true">
+  <link rel="stylesheet" href="formularioempresa.component.css" />
 
 <div class="cabecera">
   <div class="main-content position-relative max-height-vh-100 h-100">
@@ -53,7 +54,7 @@
             <input
               type="text"
               placeholder="Ingrese empresa"
-              [(ngModel)]="dataEmpresa.nombree"
+              [(ngModel)]="solicitudCreate.nombreemp"
               name="empresa"
               id="nombreempresa"
               required
@@ -64,7 +65,7 @@
             <input
               type="text"
               placeholder="Ingrese datos del Representante"
-              [(ngModel)]="dataEmpresa.nombrerep"
+              [(ngModel)]="solicitudCreate.nombreapeliidorep"
               name="nombrerep"
               id="nombrerep"
               required
@@ -75,7 +76,7 @@
             <input
               type="text"
               placeholder="Ingrese cargo academico"
-              [(ngModel)]="dataEmpresa.cargorep"
+              [(ngModel)]="solicitudCreate.cargorep"
               name="cargorep"
               id="cargorep"
               required
@@ -86,7 +87,7 @@
             <input
               type="text"
               placeholder="Ingrese Grado academico"
-              [(ngModel)]="dataEmpresa.gradosup"
+              [(ngModel)]="solicitudCreate.gradorep"
               name="gradosup"
               id="gradosup"
               required
@@ -97,7 +98,7 @@
             <input
               type="text"
               placeholder="Ingrese su direccion"
-              [(ngModel)]="dataEmpresa.direccion"
+              [(ngModel)]="solicitudCreate.direccionemp"
               name="direccion"
               id="direccion"
               required
@@ -108,7 +109,7 @@
             <input
               type="number"
               placeholder="Ingrese su telefono"
-              [(ngModel)]="dataEmpresa.telefono"
+              [(ngModel)]="solicitudCreate.telefonoemp"
               name="telefono"
               id="telefono"
               required
@@ -122,7 +123,7 @@
               name="start"
               min="2022-03"
               value="2022-21"
-              [(ngModel)]="dataEmpresa.fechappp"
+              [(ngModel)]="solicitudCreate.fechappp"
               name="fechappp"
               id="fechappp"
             />
@@ -132,7 +133,7 @@
             <input
               type="text"
               placeholder="Ingrese su Area de practica"
-              [(ngModel)]="dataEmpresa.areappp"
+              [(ngModel)]="solicitudCreate.areappp"
               name="areappp"
               id="areappp"
               required
@@ -155,7 +156,6 @@
               type="submit"
               value="Continuar"
               class="box"
-              [routerLink]="['/menu/cargadocs']"
               (click)="registrarsolicitud()"
             />
           </div>
@@ -164,3 +164,6 @@
     </div>
   </div>
 </div>
+</div>
+
+<app-cargadocs [respuestaSoli]="respuestaSolicitud" *ngIf="aparecer==false"></app-cargadocs>
