@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Solicitudes } from "src/app/models/solicitudes";
 import { SolicitudesService } from "src/app/services/solicitudes.service";
 import { UploadService } from "src/app/services/upload.service";
+import { MailsService } from '../../services/mails.service';
+import { Mail } from "src/app/models/mail";
 
 @Component({
   selector: "app-validarsoliadmin",
@@ -12,53 +14,35 @@ import { UploadService } from "src/app/services/upload.service";
   styleUrls: ["./validarsoliadmin.component.css"]
 })
 export class ValidarsoliadminComponent implements OnInit {
+
   documents = [];
+
   users: string = `${window.sessionStorage.getItem("users")}`;
+
   dataUsers: any = [];
+
   showModal = false;
 
   urltrue = false;
 
   documentsBuscar: any[] = [];
 
-  Validaciones = {
-    idpersona: String,
-    nombre: String,
-    apellidos: String,
-    dni: String,
-    codigo: String,
-    idestudiante: String,
-    telefonoe: String,
-    ubigeo: String,
-    nacionalidad: String,
-    estadocivil: String,
-    idempresa: String,
-    nombree: String,
-    nombrerep: String,
-    gradosup: String,
-    cargorep: String,
-    areappp: String,
-    telefono: String,
-    fechappp: String,
-    direccion: String
-  };
+  Validaciones:any = {};
 
   valiSoli: Solicitudes[] = [];
+
   dataSoli: any = [];
+
+  mailsJson = new Mail();
 
   public solicitudes: Array<any> = [];
 
   constructor(
     private solicitudService: SolicitudesService,
     private toastr: ToastrService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private mailService: MailsService
   ) {
-    // this.solicitudService.getSolicitudes().subscribe((resp: any) => {
-    //   // console.log(resp.data);
-    //   this.documents = resp.documents;
-    //   // console.log(resp.documents);
-    //   this.solicitudes = resp.data;
-    // });
   }
 
   ngOnInit(): void {
@@ -70,21 +54,11 @@ export class ValidarsoliadminComponent implements OnInit {
     this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
 
       // console.log(resp.data)
-      this.documents=resp.documents;
-      console.log(resp);
+      // this.documents=resp.documents;
       this.solicitudes = resp.data;
       console.log(resp.data);
     })
   }
-
-  // eliminarsoli(idpersona:any):void{
-  //   console.log('eliminarrrr');
-  //   this.solicitudService.eliminarsolicitud(idpersona).subscribe(
-  //     res=>this.solicitudService.getSolicitudes().subscribe(
-  //       response=>this.dataUsers=response
-  //     )
-  //   );
-  // }
 
   eliminarsoli(idestudiante: number) {
     if (confirm("Seguro que desea eliminar?")) {
@@ -109,50 +83,34 @@ export class ValidarsoliadminComponent implements OnInit {
   }
 
   buscarDatos(id: any) {
-    for (let i = 0; i < this.solicitudes.length; i++) {
-      const idpersona = this.solicitudes[i]["idpersona"];
-      if (id == idpersona) {
-        const idstudent = this.solicitudes[i]["idestudiante"];
-        let json : any[] = [];
-        for (let y = 0; y < this.documents.length; y++) {
-          if (idstudent == this.documents[y]["idestud"]) {
-            this.urltrue = true;
-            json.push({
-              url: this.documents[y]["url"]
-            });
-          } else {
-            this.urltrue = false;
-            json = [{
-              url: ''
-            }]
-          }
-        }
-        console.log('====>> ' + json);
-        this.Validaciones = {
-          idpersona: this.solicitudes[i]["idpersona"],
-          nombre: this.solicitudes[i]["nombre"],
-          apellidos: this.solicitudes[i]["apellidos"],
-          dni: this.solicitudes[i]["dni"],
-          codigo: this.solicitudes[i]["codigo"],
-          idestudiante: this.solicitudes[i]["idestudiante"],
-          telefonoe: this.solicitudes[i]["telefonoe"],
-          ubigeo: this.solicitudes[i]["ubigeo"],
-          nacionalidad: this.solicitudes[i]["nacionalidad"],
-          estadocivil: this.solicitudes[i]["estadocivil"],
-          idempresa: this.solicitudes[i]["idempresa"],
-          nombree: this.solicitudes[i]["nombree"],
-          nombrerep: this.solicitudes[i]["nombrerep"],
-          gradosup: this.solicitudes[i]["gradosup"],
-          cargorep: this.solicitudes[i]["cargorep"],
-          areappp: this.solicitudes[i]["areappp"],
-          telefono: this.solicitudes[i]["telefono"],
-          fechappp: this.solicitudes[i]["fechappp"],
-          direccion: this.solicitudes[i]["direccion"]
-        };
 
-        this.documentsBuscar = json
-        console.log(this.documentsBuscar);
+    for (let i = 0; i < this.solicitudes.length; i++) {
+
+      const id_solicitud = this.solicitudes[i]["id_solicitud"];
+
+      if (id == id_solicitud) {
+
+        this.Validaciones = this.solicitudes[i];
       }
     }
+  }
+
+  enviarCorreoObservacion() {
+
+    let jsonMail = {
+      email: this.mailsJson.email,
+      asunto: this.mailsJson.asunto,
+      mensaje: this.mailsJson.mensaje
+    }
+
+    console.log(jsonMail)
+
+    this.mailService.enviarMail(jsonMail).subscribe((resp:any) =>{
+      try {
+
+      } catch (error) {
+        console.log(error);
+      }
+    })
   }
 }

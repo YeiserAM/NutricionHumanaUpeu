@@ -92,9 +92,9 @@
                         <tr *ngFor="let data of solicitudes; let i = index">
                           <th scope="row">{{ i + 1 }}</th>
                           <td>{{ data.nombre }}</td>
-                          <td>{{ data.apellidos }}</td>
+                          <td>{{ data.apepat }} {{ data.apemat }}</td>
                           <td>EP Nutricion Humana</td>
-                          <td>{{ data.telefonoe }}</td>
+                          <td>{{ data.telefono }}</td>
 
                           <!-- <td>{{data.nombree}}</td> -->
 
@@ -103,7 +103,7 @@
                             <!-- BOTONES DE VISTAS -->
 
                             <button
-                              (click)="buscarDatos(data.idpersona)"
+                              (click)="buscarDatos(data.id_solicitud)"
                               type="button"
                               class="btn btn-default btn-sm"
                               data-bs-toggle="modal"
@@ -175,7 +175,7 @@
         </div>
 
         <!-- MODAL 1 -->
-        <div  
+        <div
           class="modal fade"
           id="viewdetail"
           tabindex="-1"
@@ -204,7 +204,7 @@
                       ><b>Empresa a la que postula:</b></label
                     >
                     <div type="text" class="form-control" id="recipient-name">
-                      {{ this.Validaciones.nombree }}
+                      {{ this.Validaciones.nombreemp }}
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -212,7 +212,7 @@
                       ><b>Datos del Supervisor:</b></label
                     >
                     <div type="text" class="form-control" id="recipient-name">
-                      {{ this.Validaciones.nombrerep }}
+                      {{ this.Validaciones.nombreapeliidorep }}
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -233,7 +233,7 @@
                       ><b>Teléfono del Supervisor:</b></label
                     >
                     <div type="text" class="form-control" id="recipient-name">
-                      {{ this.Validaciones.telefono }}
+                      {{ this.Validaciones.telefonoemp }}
                     </div>
                   </div>
                   <div class="archivo col-md-4">
@@ -251,7 +251,7 @@
                       ><b>Dirección:</b></label
                     >
                     <div type="text" class="form-control" id="recipient-name">
-                      {{ this.Validaciones.direccion }}
+                      {{ this.Validaciones.direccionemp }}
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -296,7 +296,7 @@
 
         <!-- MODAL CORREO -->
 
-        <div  
+        <div
           class="modal fade"
           id="enviarcorreo"
           tabindex="-1"
@@ -318,19 +318,19 @@
                   aria-label="Close"
                 ></button>
               </div>
-              
+
               <form class="cf">
                 <div class="half left cf">
-                  <input type="email"  placeholder="Correo Electronico" disabled>
-                  <input type="text"  placeholder="Titulo" disabled value="Observaciones de Documentos PPP">
+                  <input [(ngModel)]="mailsJson.email" type="email"  placeholder="Correo Electronico" value="{{this.Validaciones.correo}}" name="email">
+                  <input [(ngModel)]="mailsJson.asunto" type="text"  placeholder="Titulo" value="Observacionesde Documentos PPP "name="asunto">
                 </div>
                 <div class="half right cf">
-                  <textarea name="message" type="text" id="input-message" placeholder="Mensaje" ></textarea>
-                </div> 
-                <div class="enviar">
+                  <textarea name="message" type="text" id="input-message" placeholder="Mensaje" [(ngModel)]="mailsJson.mensaje"></textarea>
+                </div>
+                <div class="enviar" (click)="enviarCorreoObservacion()">
                   <input type="submit" value="Enviar" id="input-submit">
-                </div> 
-              </form>            
+                </div>
+              </form>
               <!-- <div class="modal-footer">
                 <button
                   type="button"
@@ -343,7 +343,7 @@
             </div>
           </div>
         </div>
-        
+
 
         <!-- VISTA DE MODAL2 -->
         <div
