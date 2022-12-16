@@ -51,6 +51,4 @@ export class SidebarComponent implements OnInit{
     this.toastr.info('Se ha cerrado la Sesión');
     this.router.navigate(['/']);
   }
-
-
 }

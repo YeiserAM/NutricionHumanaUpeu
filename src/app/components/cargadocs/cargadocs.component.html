@@ -100,7 +100,15 @@
             />
           </div>
           <div class="button">
-            <input type="submit" value="Continuar" />
+            <input
+              type="submit"
+              value="Finalizar"
+              class="box"
+              [routerLink]="['/menu/profile']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="exito()"
+            />
           </div>
           
         </div>
