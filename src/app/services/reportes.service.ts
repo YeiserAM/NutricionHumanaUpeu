@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Reportes } from '../models/reportes';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class ReportesService {
     return this.http.get(this.url, {
       headers: header
     })
+  }
+
+  getReportsAdmin() {
+    return this.http.get(this.URL + '/api/reporte/reports-all');
   }
 }

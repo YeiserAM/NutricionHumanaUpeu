@@ -11,14 +11,13 @@ export class SolicitudesService {
 
   @Output() disparadacalidaciones: EventEmitter<any> = new EventEmitter();
   url='https://backend-nutricion.herokuapp.com/api/solicitud/solicitudes'
-  private URL = environment.url; 
+  private URL = environment.url;
 
   constructor(
     public http: HttpClient
 
-  ) { 
-    
-    console.log("pruebaaa")
+  ) {
+
   }
 
   getSolicitudes(){

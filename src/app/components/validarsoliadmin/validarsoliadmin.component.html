@@ -7,7 +7,9 @@
   href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
   rel="stylesheet"
 />
-
+<div class="pantalla-loading" *ngIf="screenLoading==true">
+  <app-loading-screen></app-loading-screen>
+</div>
 <body class="g-sidenav-show bg-gray-200">
   <div class="main-content position-relative max-height-vh-100 h-100">
     <div class="container-fluid px-2 px-md-4">
@@ -321,8 +323,8 @@
 
               <form class="cf">
                 <div class="half left cf">
-                  <input [(ngModel)]="mailsJson.email" type="email"  placeholder="Correo Electronico" value="{{this.Validaciones.correo}}" name="email">
-                  <input [(ngModel)]="mailsJson.asunto" type="text"  placeholder="Titulo" value="Observacionesde Documentos PPP "name="asunto">
+                  <input value="{{this.mailsJson.email}}" type="email"  placeholder="Correo Electronico" name="email" disabled>
+                  <input value="{{this.mailsJson.asunto}}" type="text"  placeholder="Titulo" name="asunto" disabled>
                 </div>
                 <div class="half right cf">
                   <textarea name="message" type="text" id="input-message" placeholder="Mensaje" [(ngModel)]="mailsJson.mensaje"></textarea>

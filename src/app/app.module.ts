@@ -30,6 +30,8 @@ import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 import { ValipracticasComponent } from './components/valipracticas/valipracticas.component';
+import { CreateUsersComponent } from './components/create-users/create-users.component';
+import { ReportAdminComponent } from './components/report-admin/report-admin.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ValipracticasComponent } from './components/valipracticas/valipracticas
     ValidarsoliadminComponent,
     DashboardadminComponent,
     LoadingScreenComponent,
-    ValipracticasComponent
+    ValipracticasComponent,
+    CreateUsersComponent,
+    ReportAdminComponent
   ],
   imports: [
     FormsModule,

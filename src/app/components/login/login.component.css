@@ -9,6 +9,20 @@
   justify-content: center;
 }
 
+.create-user-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 12px;
+  color:#ffff00;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create-user-container:hover {
+  color: #F8A900;
+}
+
 .bienvenido {
   color: #F8A900;
   font-size: 3.3em;
@@ -196,5 +210,5 @@ input {
   padding: 1rem 1.5rem;
   border-radius: 25px;
   width: 100%;
-  height: 65%;
+  height: 75%;
 }

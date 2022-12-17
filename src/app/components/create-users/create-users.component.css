@@ -1,0 +1,103 @@
+
+.contenedor-padre {
+  width: 100%;
+  height: 100vh;
+  background: var(--azul-oscuro);
+}
+
+
+.form-titulo {
+  font-size: 40px;
+  color: var(--blanco);
+  font-weight: bold;
+}
+
+.contenedor-hijo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-create-user {
+  width: 40%;
+  min-width: 600px;
+  height: 80vh;
+  background: var(--azul);
+  border-radius: 35px;
+  padding: 40px 40px 40px 40px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.boton {
+  width: 100%;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 250px;
+  color: var(--blanco);
+  padding: 1em 1.8em;
+  background: var(--azul-oscuro);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.boton .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boton .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--azul-oscuro);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.3s;
+}
+
+.boton .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--blanco);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.boton:hover {
+  background-color: var(--amarillo-oscuro);
+}
+
+.boton:hover .arrow {
+  background: var(--blanco);
+}
+
+.arrow {
+  font-size: 100px;
+}
+
+.boton:hover .arrow:before {
+  right: 0;
+}
+
+.text-boton {
+  margin-left: 10px;
+}

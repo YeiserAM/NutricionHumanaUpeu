@@ -1,12 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { Estudiante } from "src/app/models/estudiante";
-import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from "ngx-toastr";
 import { Solicitudes } from "src/app/models/solicitudes";
 import { SolicitudesService } from "src/app/services/solicitudes.service";
 import { UploadService } from "src/app/services/upload.service";
-import { MailsService } from '../../services/mails.service';
+import { MailsService } from "../../services/mails.service";
 import { Mail } from "src/app/models/mail";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-validarsoliadmin",
@@ -14,6 +15,7 @@ import { Mail } from "src/app/models/mail";
   styleUrls: ["./validarsoliadmin.component.css"]
 })
 export class ValidarsoliadminComponent implements OnInit {
+  screenLoading = false;
 
   documents = [];
 
@@ -27,7 +29,7 @@ export class ValidarsoliadminComponent implements OnInit {
 
   documentsBuscar: any[] = [];
 
-  Validaciones:any = {};
+  Validaciones: any = {};
 
   valiSoli: Solicitudes[] = [];
 
@@ -41,23 +43,22 @@ export class ValidarsoliadminComponent implements OnInit {
     private solicitudService: SolicitudesService,
     private toastr: ToastrService,
     private httpClient: HttpClient,
-    private mailService: MailsService
-  ) {
-  }
+    private mailService: MailsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.dataUsers.push(JSON.parse(this.users));
     this.getsolicitud();
   }
 
-  getsolicitud(){
-    this.solicitudService.getSolicitudes().subscribe((resp:any) =>{
-
+  getsolicitud() {
+    this.solicitudService.getSolicitudes().subscribe((resp: any) => {
       // console.log(resp.data)
       // this.documents=resp.documents;
       this.solicitudes = resp.data;
       console.log(resp.data);
-    })
+    });
   }
 
   eliminarsoli(idestudiante: number) {
@@ -74,43 +75,46 @@ export class ValidarsoliadminComponent implements OnInit {
     }
   }
 
-  alertyes(){
-    this.toastr.success('Se acepto la solicitud')
+  alertyes() {
+    this.toastr.success("Se acepto la solicitud");
   }
 
-  alertnot(){
-    this.toastr.error('Se rechazo la solicitud')
+  alertnot() {
+    this.toastr.error("Se rechazo la solicitud");
   }
 
   buscarDatos(id: any) {
-
     for (let i = 0; i < this.solicitudes.length; i++) {
-
       const id_solicitud = this.solicitudes[i]["id_solicitud"];
 
       if (id == id_solicitud) {
-
         this.Validaciones = this.solicitudes[i];
+        this.mailsJson.email = this.Validaciones.correo;
+        this.mailsJson.asunto = "Observacionesde Documentos PPP";
       }
     }
   }
 
   enviarCorreoObservacion() {
+    this.screenLoading = true;
 
     let jsonMail = {
       email: this.mailsJson.email,
       asunto: this.mailsJson.asunto,
       mensaje: this.mailsJson.mensaje
-    }
+    };
 
-    console.log(jsonMail)
+    console.log(jsonMail);
 
-    this.mailService.enviarMail(jsonMail).subscribe((resp:any) =>{
+    this.mailService.enviarMail(jsonMail).subscribe(async (resp: any) => {
       try {
-
+        console.log(resp);
+        this.router.navigate(['/menu/dashboardadmin'])
+        this.screenLoading = false;
       } catch (error) {
         console.log(error);
       }
-    })
+    });
   }
+
 }

@@ -15,6 +15,8 @@ import { ValidacionesComponent } from './components/validaciones/validaciones.co
 import { ValidarsoliadminComponent } from './components/validarsoliadmin/validarsoliadmin.component';
 import { ValipracticasComponent } from './components/valipracticas/valipracticas.component';
 import { AuthGuard } from './services/auth.guard';
+import { CreateUsersComponent } from './components/create-users/create-users.component';
+import { ReportAdminComponent } from './components/report-admin/report-admin.component';
 
 const dashboard: Routes = [
   {path: 'formempresa', component:FormularioempresaComponent},
@@ -28,13 +30,14 @@ const dashboard: Routes = [
   {path: 'menuadmin', component:MenuadminComponent},
   {path: 'validarsoliadmin', component:ValidarsoliadminComponent},
   {path: 'dashboardadmin', component:DashboardadminComponent},
-  {path: 'valipracticas', component:ValipracticasComponent}
-  
+  {path: 'valipracticas', component:ValipracticasComponent},
+  {path: 'reportes-administrador', component: ReportAdminComponent},
 ];
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
-  {path: 'menu', component:SidebarComponent, canActivate: [AuthGuard], children:dashboard}
+  {path: 'menu', component:SidebarComponent, canActivate: [AuthGuard], children:dashboard},
+  {path: 'create-user', component:CreateUsersComponent}
 ];
 
 @NgModule({

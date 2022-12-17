@@ -12,6 +12,6 @@ export class MailsService {
   constructor(private http: HttpClient) { }
 
   enviarMail(emailData: {}) {
-    return this.http.post(this.URL + 'api/correo/enviar', emailData);
+    return this.http.post(this.URL + '/api/correo/enviar', emailData);
   }
 }
