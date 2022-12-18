@@ -27,8 +27,8 @@ export class SolicitudesService {
       });
   }
 
-  eliminarsolicitud(idestudiante:string){
-    return this.http.delete(this.URL+'/api/solicitud/delete/'+idestudiante);
+  eliminarsolicitud(id_solicitud:number){
+    return this.http.delete(this.URL+'/api/solicitud/delete/'+id_solicitud);
 
 }
 

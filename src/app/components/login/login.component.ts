@@ -14,7 +14,7 @@ import { PerfilComponent } from '../perfil/perfil.component';
 export class LoginComponent implements OnInit{
   @Input()idperson:any;
 
-  screenLoading = false;
+    screenLoading = false;
 
   ngOnInit() {
 
@@ -37,6 +37,10 @@ export class LoginComponent implements OnInit{
   iniciarsesion(){
     // this.router.navegate(['/menu'])
   }
+
+loading(){
+  this.screenLoading = true;
+}
 
  logIn(){
   this.screenLoading = true;

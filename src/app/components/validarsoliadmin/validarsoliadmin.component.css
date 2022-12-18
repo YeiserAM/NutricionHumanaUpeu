@@ -338,7 +338,7 @@ input[type="checkbox"] {
 }
 
 .btn-v input {
-  display: flex;
+  display: inline;
   position: absolute;
   right: 0;
   height: 5vh;
@@ -409,7 +409,7 @@ form #input-submit {
   cursor: pointer;
   height: 50px;
   width: 140px;
-  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 }
 
 form #input-submit:hover {

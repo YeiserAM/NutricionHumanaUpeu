@@ -1,76 +1,76 @@
-<div  *ngIf="aparece==true">
-<link rel="stylesheet" href="solicitudes.component.css" />
-<div class="cabecera">
-  <div class="main-content position-relative max-height-vh-100 h-100">
-    <div class="container-fluid px-2 px-md-4">
-      <div
-        class="page-header min-height-300 border-radius-xl mt-4"
-        style="background-image: url('../../../assets/img/carrucel/1.jpg')"
-      >
-        <span class="mask bg-gradient-primary opacity-6"></span>
-      </div>
-      <div class="card card-body mx-3 mx-md-4 mt-n6">
-        <div class="row gx-4 mb-2">
-          <div class="col-auto">
-            <div class="avatar avatar-xl position-relative">
-              <img
-                src="../../../assets/users/student2.jpg"
-                alt="profile_image"
-                class="w-100 border-radius-lg shadow-sm"
-              />
+<div *ngIf="aparece == true">
+  <link rel="stylesheet" href="solicitudes.component.css" />
+  <div class="cabecera">
+    <div class="main-content position-relative max-height-vh-100 h-100">
+      <div class="container-fluid px-2 px-md-4">
+        <div
+          class="page-header min-height-300 border-radius-xl mt-4"
+          style="background-image: url('../../../assets/img/carrucel/1.jpg')"
+        >
+          <span class="mask bg-gradient-primary opacity-6"></span>
+        </div>
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+          <div class="row gx-4 mb-2">
+            <div class="col-auto">
+              <div class="avatar avatar-xl position-relative">
+                <img
+                  src="../../../assets/users/student2.jpg"
+                  alt="profile_image"
+                  class="w-100 border-radius-lg shadow-sm"
+                />
+              </div>
             </div>
-          </div>
-          <div *ngFor="let data of dataUsers" class="col-auto my-auto">
-            <div class="h-100">
-              <h4 class="mb-1">{{ data.nombre }} {{ data.apellidos }}</h4>
-              <p class="mb-0 font-weight-normal text-sm">
-                <b>Cod Estudiante: </b>
-                {{ data.codigo }} &nbsp;&nbsp;&nbsp;&nbsp; <b>Dni:</b>
-                {{ data.dni }}
-              </p>
+            <div *ngFor="let data of dataUsers" class="col-auto my-auto">
+              <div class="h-100">
+                <h4 class="mb-1">{{ data.nombre }} {{ data.apellidos }}</h4>
+                <p class="mb-0 font-weight-normal text-sm">
+                  <b>Cod Estudiante: </b>
+                  {{ data.codigo }} &nbsp;&nbsp;&nbsp;&nbsp; <b>Dni:</b>
+                  {{ data.dni }}
+                </p>
+              </div>
             </div>
+            <div
+              class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
+            ></div>
           </div>
-          <div
-            class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3"
-          ></div>
         </div>
       </div>
+      <footer class="footer py-4"></footer>
     </div>
-    <footer class="footer py-4"></footer>
   </div>
-</div>
 
-<!-- FORMULARIO -->
+  <!-- FORMULARIO -->
 
-<div class="formulario">
-  <div class="container">
-    <div class="title">Datos Principales</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Estado civil </span>
-            <input
-              type="text"
-              placeholder="Ingrese su estado civil"
-              [(ngModel)]="solicitudCreate.estado_civil"
-              name="estcivil"
-              id="estadocivil"
-              required
-            />
-          </div>
-          <div class="input-box">
-            <span class="details">Religion</span>
-            <input
-              type="text"
-              placeholder="Ingrese su religion"
-              [(ngModel)]="solicitudCreate.religion"
-              name="religion"
-              id="religion"
-              required
-            />
-          </div>
-          <!-- <div class="input-box">
+  <div class="formulario">
+    <div class="container">
+      <div class="title">Datos Principales</div>
+      <div class="content">
+        <form action="#">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Estado civil </span>
+              <input
+                type="text"
+                placeholder="Ingrese su estado civil"
+                [(ngModel)]="solicitudCreate.estado_civil"
+                name="estcivil"
+                id="estadocivil"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Religion</span>
+              <input
+                type="text"
+                placeholder="Ingrese su religion"
+                [(ngModel)]="solicitudCreate.religion"
+                name="religion"
+                id="religion"
+                required
+              />
+            </div>
+            <!-- <div class="input-box">
             <span class="details">Nacionalidad</span>
             <input
               type="text"
@@ -81,31 +81,31 @@
               required
             />
           </div> -->
-          <div class="input-box">
-            <span class="details">Fecha Nacimiento</span>
-            <input
-              type="date"
-              id="start"
-              name="start"
-              min="2022-03"
-              value="2022-21"
-              [(ngModel)]="solicitudCreate.fechanacimiento"
-              name="fechanacimiento"
-              id="fechanacimiento"
-            />
-          </div>
-          <div class="input-box">
-            <span class="details">Ubigeo</span>
-            <input
-              type="number"
-              placeholder="Ingrese su codigo postal"
-              [(ngModel)]="solicitudCreate.ubigeo"
-              name="ubigeo"
-              id="ubigeo"
-              required
-            />
-          </div>
-          <!-- <div class="input-box">
+            <div class="input-box">
+              <span class="details">Fecha Nacimiento</span>
+              <input
+                type="date"
+                id="start"
+                name="start"
+                min="2022-03"
+                value="2022-21"
+                [(ngModel)]="solicitudCreate.fechanacimiento"
+                name="fechanacimiento"
+                id="fechanacimiento"
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Ubigeo</span>
+              <input
+                type="number"
+                placeholder="Ingrese su codigo postal"
+                [(ngModel)]="solicitudCreate.ubigeo"
+                name="ubigeo"
+                id="ubigeo"
+                required
+              />
+            </div>
+            <!-- <div class="input-box">
             <span class="details">Numero Telefono</span>
             <input
               type="number"
@@ -116,7 +116,7 @@
               required
             />
           </div> -->
-          <!-- <div class="input-box">
+            <!-- <div class="input-box">
             <span class="details">Genero</span>
             <input
               type="text"
@@ -127,8 +127,8 @@
               required
             />
           </div> -->
-        </div>
-        <!-- <div class="gender-details">
+          </div>
+          <!-- <div class="gender-details">
           <input type="radio" name="gender" id="dot-1" />
           <input type="radio" name="gender" id="dot-2" />
           <input type="radio" name="gender" id="dot-3" />
@@ -148,30 +148,32 @@
             </label>
           </div>
         </div> -->
-        <div class="botones col-lg-6">
-          <div class="button">
-            <input
-              type="submit"
-              value="Atras"
-              class="box"
-              [routerLink]="['/menu/profile']"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-            />
+          <div class="botones col-lg-6">
+            <div class="button">
+              <input
+                type="submit"
+                value="Atras"
+                class="box"
+                [routerLink]="['/menu/solicitudes']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              />
+            </div>
+            <div class="button">
+              <input
+                type="submit"
+                value="Continuar"
+                class="box"
+                (click)="enviarDatos()"
+              />
+            </div>
           </div>
-          <div class="button">
-            <input
-              type="submit"
-              value="Continuar"
-              class="box"
-
-              (click)="enviarDatos()"
-            />
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>
-</div>
-<app-formularioempresa [soli]="solicitudCreate" *ngIf="aparece==false"></app-formularioempresa>
+<app-formularioempresa
+  [soli]="solicitudCreate"
+  *ngIf="aparece == false"
+></app-formularioempresa>

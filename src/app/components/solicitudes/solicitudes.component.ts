@@ -11,10 +11,9 @@ import { SolicitudesCreate } from '../../models/solicitudes';
   styleUrls: ['./solicitudes.component.css'],
 })
 export class SolicitudesComponent {
-
   users: string = `${window.sessionStorage.getItem('users')}`;
 
-  dataUsers : any= [];
+  dataUsers: any = [];
 
   estudiante = new Estudiante();
 
@@ -22,15 +21,17 @@ export class SolicitudesComponent {
 
   solicitudCreate = new SolicitudesCreate();
 
-  constructor(private router : Router, private estudianteService : EstudianteService) { }
+  constructor(
+    private router: Router,
+    private estudianteService: EstudianteService
+  ) {}
 
   ngOnInit(): void {
-    this.dataUsers.push(JSON.parse(this.users))
+    this.dataUsers.push(JSON.parse(this.users));
   }
 
-  enviarDatos(){
+  enviarDatos() {
     this.aparece = false;
     // this.newItemEvent.emit(this.solicitudCreate);
- }
-
+  }
 }

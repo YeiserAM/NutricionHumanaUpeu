@@ -6,6 +6,7 @@ export class Solicitudes{
     areappp!: string;
     nombree!: string;
     fechappp!: string;
+    id_solicitud!: number;
 
 }
 
@@ -23,4 +24,5 @@ export class SolicitudesCreate {
   fechanacimiento!: string;
   ubigeo!: string;
   id_usuario!: string;
+  fecharegistro!: string;
 }

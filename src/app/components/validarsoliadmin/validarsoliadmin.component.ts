@@ -8,6 +8,7 @@ import { UploadService } from "src/app/services/upload.service";
 import { MailsService } from "../../services/mails.service";
 import { Mail } from "src/app/models/mail";
 import { Router } from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: "app-validarsoliadmin",
@@ -53,30 +54,47 @@ export class ValidarsoliadminComponent implements OnInit {
   }
 
   getsolicitud() {
+    this.screenLoading = true;
     this.solicitudService.getSolicitudes().subscribe((resp: any) => {
       // console.log(resp.data)
       // this.documents=resp.documents;
       this.solicitudes = resp.data;
       console.log(resp.data);
+      this.screenLoading = false;
     });
   }
 
-  eliminarsoli(idestudiante: number) {
-    if (confirm("Seguro que desea eliminar?")) {
-      this.solicitudService.eliminarsolicitud(String(idestudiante)).subscribe(
+  eliminarsoli(id_solicitud: number) {
+    this.screenLoading = true;
+      this.solicitudService.eliminarsolicitud(Number(id_solicitud)).subscribe(
         (res: any) => {
           // this.getsolicitud();
-          // console.log(res);
+          console.log(res);
+        this.router.navigate(['/menu/validarsoliadmin'])
+        this.screenLoading = false;
+        window.location.reload();
         },
         error => {
           console.log(error);
         }
       );
-    }
-  }
+      Swal.fire({
+        title: '<b style="color: #000000; font-family: Poppins, sans-serif; font-weight: 900; font-size: 45px">Solicitud Rechazada</b>',
+        icon: 'success',
+        html: '<span style="font-size: 22px" >Se ha rechazado la colicitud, Correctamente...!</span>',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#023052',
+        iconColor: '#52A820',
+       
+      });
+
+
+  };
 
   alertyes() {
+    this.screenLoading = true;
     this.toastr.success("Se acepto la solicitud");
+    this.screenLoading = false;
   }
 
   alertnot() {
@@ -109,12 +127,23 @@ export class ValidarsoliadminComponent implements OnInit {
     this.mailService.enviarMail(jsonMail).subscribe(async (resp: any) => {
       try {
         console.log(resp);
-        this.router.navigate(['/menu/dashboardadmin'])
+        this.router.navigate(['/menu/validarsoliadmin'])
         this.screenLoading = false;
       } catch (error) {
         console.log(error);
       }
+      Swal.fire({
+        title: '<b style="color: #000000; font-family: Poppins, sans-serif; font-weight: 900; font-size: 45px">Correo Enviado</b>',
+        icon: 'success',
+        html: '<span style="font-size: 22px" >Se ha enviado la correccion, Gracias...!</span>',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#023052',
+        iconColor: '#52A820',
+       
+      });
     });
+    
   }
+  
 
 }

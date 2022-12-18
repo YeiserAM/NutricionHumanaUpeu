@@ -130,7 +130,7 @@
                             <!-- <button
                               type="button"
                               class="btn btn-danger"
-                              (click)="eliminarsoli(data.idestudiante)"
+                              (click)="eliminarsoli(data.id_solicitud)"
                             >
                               Eliminar
                             </button> -->
@@ -330,7 +330,8 @@
                   <textarea name="message" type="text" id="input-message" placeholder="Mensaje" [(ngModel)]="mailsJson.mensaje"></textarea>
                 </div>
                 <div class="enviar" (click)="enviarCorreoObservacion()">
-                  <input type="submit" value="Enviar" id="input-submit">
+                  <button type="submit" data-bs-dismiss="modal" id="input-submit" >Enviar</button>
+                  <!-- <input type="submit" value="Enviar" data-bs-dismiss="modal" id="input-submit"> -->
                 </div>
               </form>
               <!-- <div class="modal-footer">
@@ -349,6 +350,7 @@
 
         <!-- VISTA DE MODAL2 -->
         <div
+        *ngFor="let data of solicitudes"
           class="modal fade"
           id="eliminarmodal"
           tabindex="-1"
@@ -379,9 +381,10 @@
                   </div>
                 </div>
               </div>
-              <div class="modal-footer">
+              <div class="modal-footer" >
                 <button
-                (click)="alertnot()"
+                
+                  (click)="eliminarsoli(data.id_solicitud)"
                   type="button"
                   class="btn btn-danger"
                   data-bs-dismiss="modal"
