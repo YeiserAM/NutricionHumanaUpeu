@@ -24,5 +24,5 @@ export class SolicitudesCreate {
   fechanacimiento!: string;
   ubigeo!: string;
   id_usuario!: string;
-  fecharegistro!: string;
+  fecharegistro!: Date;
 }

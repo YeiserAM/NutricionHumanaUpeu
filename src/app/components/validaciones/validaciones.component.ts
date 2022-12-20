@@ -25,7 +25,7 @@ export class ValidacionesComponent implements OnInit {
     dni: String,
     codigo: String,
     idestudiante: String,
-    telefonoe: String,
+    telefonoemp: String,
     ubigeo: String,
     nacionalidad: String,
     estadocivil: String,
@@ -37,7 +37,9 @@ export class ValidacionesComponent implements OnInit {
     areappp: String,
     telefono: String,
     fechappp: String,
-    direccion: String
+    direccionemp: String,
+    nombreemp: String,
+    nombreapeliidorep: String
   };
 
 
@@ -71,7 +73,7 @@ export class ValidacionesComponent implements OnInit {
             dni: this.solicitudes[i]['dni'],
             codigo: this.solicitudes[i]['codigo'],
             idestudiante: this.solicitudes[i]['idestudiante'],
-            telefonoe: this.solicitudes[i]['telefonoe'],
+            telefonoemp: this.solicitudes[i]['telefonoemp'],
             ubigeo: this.solicitudes[i]['ubigeo'],
             nacionalidad: this.solicitudes[i]['nacionalidad'],
             estadocivil: this.solicitudes[i]['estadocivil'],
@@ -83,7 +85,9 @@ export class ValidacionesComponent implements OnInit {
             areappp: this.solicitudes[i]['areappp'],
             telefono: this.solicitudes[i]['telefono'],
             fechappp: this.solicitudes[i]['fechappp'],
-            direccion: this.solicitudes[i]['direccion']
+            direccionemp: this.solicitudes[i]['direccionemp'],
+            nombreemp: this.solicitudes[i]['nombreemp'],
+            nombreapeliidorep: this.solicitudes[i]['nombreapeliidorep']
             
         }
       }

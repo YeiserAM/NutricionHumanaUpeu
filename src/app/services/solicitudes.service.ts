@@ -8,9 +8,8 @@ import { Solicitudes } from '../models/solicitudes';
   providedIn: 'root'
 })
 export class SolicitudesService {
-
   @Output() disparadacalidaciones: EventEmitter<any> = new EventEmitter();
-  url='https://backend-nutricion.herokuapp.com/api/solicitud/solicitudes'
+  url='https://backend-nutricion.herokuapp.com/api/solicitud/solicitudpendiente'
   private URL = environment.url;
 
   constructor(
@@ -27,13 +26,16 @@ export class SolicitudesService {
       });
   }
 
-  eliminarsolicitud(id_solicitud:number){
-    return this.http.delete(this.URL+'/api/solicitud/delete/'+id_solicitud);
+  eliminarsolicitud(id_solicitud:any){
+    return this.http.delete<any>(this.URL+'/api/solicitud/delete/'+id_solicitud);
 
 }
 
   createsolicitud(datasolicitud:any){
     return this.http.post(this.URL+'/api/solicitud/create-solicitud',datasolicitud)
   }
-
+  
+  getdocumentos(){
+    return this.http.get<any>(this.URL+'/api/documento/documento')
+  }
 }

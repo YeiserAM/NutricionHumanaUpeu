@@ -1,8 +1,9 @@
 export class Reportes{
+    id_documentorep!: string;
+    url!: string;
     titulo!: string;
     tipo!: string;
     descripcion!: string;
-    idestudi!: number;
-    idrol!: number;
-    iddoc!: number;
+    id_usuario!: string;
+
 }

@@ -21,7 +21,7 @@
           </div>
           <div *ngFor="let data of dataUsers" class="col-auto my-auto">
             <div class="h-100">
-              <h4 class="mb-1">{{ data.nombre }} {{ data.apellidos }}</h4>
+              <h4 class="mb-1">Doc. {{ data.nombre }} {{ data.apellidos }}</h4>
               <p class="mb-0 font-weight-normal text-sm">
                 <b>Dni:</b>
                 {{ data.dni }}
@@ -42,10 +42,11 @@
 
 <div class="formulario">
   <div class="container">
-    <div class="title">Validacion de Practicas</div>
+    <div class="title">Generar un Reporte</div>
     <div class="content">
       <form action="#">
         <div class="user-details">
+
           <div class="input-box">
             <span class="details">Titulo </span>
             <input
@@ -59,16 +60,27 @@
           </div>
 
           <div class="input-box">
-            <span class="details"> Tipo </span>
+            <span class="details">Tipo </span>
             <input
               type="text"
-              placeholder="Ingrese el Tipo"
+              placeholder="Ingrese el tipo"
               [(ngModel)]="dataReportes.tipo"
-              name="tipo"
-              id="tipo"
+              name="titulo"
+              id="titulo"
               required
             />
           </div>
+<!-- 
+          <div class="input-box">
+            <span class="details"> Tipo </span>
+            <select class="form-select form-select-sm" name="tipo"
+                     id="tipo" style="border-radius: 11px;"
+                aria-label=".form-select-lg example">
+                <option selected disabled>Tipo de Acceso</option>
+                <option value="1">Comunitarias</option>
+                <option value="2">Clinicas</option>
+              </select>
+          </div> -->
           
 
           <div class="input-box">
@@ -81,6 +93,30 @@
               id="descripcion"
               required
             />
+          </div>
+
+          <div  class="input-box">
+            <span class="details"> Seleccione el estudiante </span>
+            <select 
+              [(ngModel)]="dataReportes.id_usuario"
+             class="form-select form-select-sm" name="tipo"
+                     id="tipo" style="border-radius: 11px;"
+                aria-label=".form-select-lg example"
+                
+                >
+                <option selected disabled value="0"  >Tipo de Acceso</option>
+                <option *ngFor="let data of nomestud" value="{{data.id_usuario}}">
+                  {{data.nombre}} {{data.apepat}} {{data.apemat}}
+                </option>
+              </select>
+            <!-- <input
+              type="text"
+              placeholder="Ingrese el Tipo"
+              [(ngModel)]="dataReportes.tipo"
+              name="tipo"
+              id="tipo"
+              required
+            /> -->
           </div>
         </div>
         <!-- SUBIR DOCUMENTOS -->
@@ -119,7 +155,7 @@
               type="submit"
               value="Cancelar"
               class="box"
-              [routerLink]="['/menu/profile']"
+              [routerLink]="['/menu/dashboardadmin']"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             />

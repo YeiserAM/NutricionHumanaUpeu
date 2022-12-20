@@ -441,3 +441,10 @@ form textarea {
     margin-bottom: 0;
   }
 }
+
+/* boton aceptar solicitud */
+
+.aceptargaaa {
+  background-color: #41ad0f;
+  color: white;
+}

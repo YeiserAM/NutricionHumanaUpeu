@@ -13,8 +13,8 @@ export class ReportesService {
 
   constructor(private http: HttpClient) { }
 
-  CrearReportes(reporte:{}){
-    return this.http.post<Reportes[]>(this.URL+'/api/reporte/create-reporte', reporte);
+  CrearReportes(reporte:any){
+    return this.http.post(this.URL+'/api/reporte/create-reporte', reporte);
   }
 
   getReportes(){
@@ -27,4 +27,9 @@ export class ReportesService {
   getReportsAdmin() {
     return this.http.get(this.URL + '/api/reporte/reports-all');
   }
+
+  getUsername(){
+    return this.http.get(this.URL + '/api/rol/estudiantes');
+  }
+
 }

@@ -74,8 +74,8 @@
                           <th scope="row">{{i+1}}</th>
                           <td>Informe de actividad</td>
                           <td>{{data.fechappp}}</td>
-                          <td>{{data.nombree}}</td>
-                          <td><b>ACEPTADA </b></td>
+                          <td>{{data.direccionemp}}</td>
+                          <td><b>PENDIENTE </b></td>
                           <!-- <td>EP Nutricion</td> -->
                           <td>
 
@@ -127,11 +127,11 @@
                 <div class="row g-3">
                   <div class="col-md-4">
                     <label for="recipient-name" class="col-form-label"><b>Empresa:</b></label>
-                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombree}}</div>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombreemp}}</div>
                   </div>
                   <div class="col-md-4">
                     <label for="recipient-name" class="col-form-label"><b>Datos del Supervisor:</b></label>
-                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombrerep}}</div>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.nombre}} {{this.Validaciones.nombreapeliidorep}}</div>
                   </div>
                   <div class="col-md-4">
                     <label for="recipient-name" class="col-form-label"><b>Archivos Adjuntados:</b></label>
@@ -144,7 +144,7 @@
                   </div>
                   <div class="col-md-4">
                     <label for="recipient-name" class="col-form-label"><b>Teléfono y/o celular:</b></label>
-                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.telefonoe}}</div>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.telefonoemp}}</div>
                   </div>
                   <div class="archivo col-md-4">
                       <button  type="button" class="btn btn-default btn-sm" >
@@ -161,7 +161,7 @@
 
                   <div class="col-md-4">
                     <label for="recipient-name" class="col-form-label"><b>Dirección:</b></label>
-                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.direccion}}</div>
+                     <div type="text" class="form-control" id="recipient-name">{{this.Validaciones.direccionemp}}</div>
                   </div>
                   <div class="col-md-4">
                     <label for="recipient-name" class="col-form-label"><b>Área de Práctica:</b></label>

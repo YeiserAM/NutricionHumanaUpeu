@@ -2,13 +2,15 @@
 .contenedor-padre {
   width: 100%;
   height: 100vh;
-  background: var(--azul-oscuro);
+  background: linear-gradient(#023052,
+  #166caa,
+  #023052); 
 }
 
 
 .form-titulo {
   font-size: 40px;
-  color: var(--blanco);
+  color: var(--amarillo-oscuro);
   font-weight: bold;
 }
 
@@ -25,7 +27,7 @@
   width: 40%;
   min-width: 600px;
   height: 80vh;
-  background: var(--azul);
+  background: #034e83;
   border-radius: 35px;
   padding: 40px 40px 40px 40px;
 }

@@ -21,7 +21,7 @@
             </div>
             <div *ngFor="let data of dataUsers" class="col-auto my-auto">
               <div class="h-100">
-                <h4 class="mb-1">Doc. {{ data.nombre }} {{ data.apellidos }}</h4>
+                <h4 class="mb-1"> {{ data.nombre }} {{ data.apellidos }}</h4>
                 <p class="mb-0 font-weight-normal text-sm">
                   <b>Cod Estudiante: </b>
                 {{ data.codigo }} &nbsp;&nbsp;&nbsp;&nbsp; <b>Dni:</b>
@@ -36,7 +36,7 @@
                   type="submit"
                   value="Volver"
                   class="box"
-                  [routerLink]="['/menu/dashboardadmin']"
+                  [routerLink]="['/menu/profile']"
                   routerLinkActive="active"
                   [routerLinkActiveOptions]="{ exact: true }"
                 />
@@ -63,14 +63,13 @@
                 <div class="col-lg-12">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title"><b> Validación de Prácticas</b></h5>
+                      <h5 class="card-title"><b> Listado de Reportes</b></h5>
   
                       <table class="table datatable">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">NOMBRE</th>
-                            <th scope="col">APELLIDOS</th>
+                           
                             <th scope="col">TITULO DE REPORTE</th>
                             <th scope="col">TIPO</th>
                             <th scope="col">DESCRIPCION</th>
@@ -84,13 +83,12 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let data of practiquitas; let i = index">
-                            <th scope="row">{{ i + 1 }}</th>
-                            <td>{{data.nombre}}</td>
-                            <td>{{data.apellidos}}</td>
-                            <td>{{data.titulo}}</td>
-                            <td>{{data.tipo}}</td>
-                            <td>{{data.descripcion}}</td>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Primer mes</td>
+                            <td>Comunitaria</td>
+                            <td>Este tipo de reporte se efectua el primer todo bien!</td>
+                            
   
                             <!-- <td>{{data.nombree}}</td> -->
   
@@ -111,26 +109,6 @@
                               </svg>
                               </button>
                               </a>
-                              
-                              <!-- <button
-                                type="button"
-                                class="btn btn-default btn-sm"
-                                data-bs-toggle="modal"
-                                data-bs-target="#eliminarmodal"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="16"
-                                  height="16"
-                                  fill="currentColor"
-                                  class="bi bi-trash3-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path
-                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"
-                                  />
-                                </svg>
-                              </button> -->
                             </td>
                           </tr>
                         </tbody>
