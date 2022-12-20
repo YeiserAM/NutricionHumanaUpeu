@@ -1,0 +1,41 @@
+.reporte-container {
+  width: 100%;
+  display: flex;
+}
+
+.graphycs-barras {
+  width: 700px;
+  min-width: 300px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  padding: 25px 25px 25px 25px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.graphys-torta {
+  width: 360px;
+  height: 375px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  /* padding: 25px 25px 25px 25px; */
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-left: 30px;
+}
+
+.grafico-1 {
+  position: relative;
+  width: 100%;
+}
+
+.grafico-2 {
+  width: 100%;
+  position: relative;
+}

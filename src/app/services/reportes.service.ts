@@ -32,4 +32,8 @@ export class ReportesService {
     return this.http.get(this.URL + '/api/rol/estudiantes');
   }
 
+  getReportsAdminMensual() {
+    return this.http.get<any>(this.URL+'/api/reporte/reports-mensuales');
+  }
+
 }
